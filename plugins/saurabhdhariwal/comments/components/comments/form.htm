@@ -1,0 +1,54 @@
+<div class="main-single">
+    <div class="comments-area">
+        <div class="comment-respond" id="comment-form">
+            <h2 class="comment-reply-title">Leave a comment
+                <small><a onclick="Comment.cancel()" style="display: none;" rel="nofollow" id="cancel-comment-reply-link"
+                      title="Cancel reply">×</a>
+                </small>
+            </h2>
+            <form novalidate="" class="comment-form clearfix" id="commentform">
+                <div id="comment_flash_message"></div>
+                <div class="wrap-input clearfix">
+                    {% if(user == false) %}
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <p class="comment-notes">
+                                <input placeholder="Name" class="form-control" name="author" type="text">
+                            </p>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <p class="comment-notes">
+                                <input placeholder="Email" class="form-control" name="email" type="text">
+                            </p>
+                        </div>
+                    {% endif %}                                
+                </div>
+                <!-- Content Field -->
+                <div class="form-group">
+                    <p class="comment-form-comment">
+                        <textarea placeholder="Leave a comment ..." class="form-control" id="comment-text" name="content"
+                                  tabindex="4"></textarea>
+                    </p>
+                </div>
+
+                <input name="post_id" type="hidden" value="{{__SELF__.post_id}}">
+
+                {% if (__SELF__.settings.recaptcha_enabled) %}  
+                <div class="g-recaptcha" data-sitekey="{{ __SELF__.settings.site_key }}"></div>
+                <br>
+                {% endif %}
+
+                <!-- Submit Field -->
+                <div class="form-group">
+                    <p class="form-submit">
+                        <button type="submit" class="comment-submit effect-button" onclick="Comment.saveButton(event)">Send</button>
+                    </p>
+                </div>
+            </form>
+        </div><!-- /.comment-respond -->
+    </div><!-- /.comments-area -->
+</div>
+
+

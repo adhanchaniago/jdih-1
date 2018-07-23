@@ -1,0 +1,715 @@
+1532319872a:1:{s:11:"beranda.htm";a:11:{s:8:"fileName";s:11:"beranda.htm";s:7:"content";s:20980:"title = "beranda"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[FaqAsk]
+[searchForm]
+==
+<?php
+	use Pda\Peraturan\Models\Peraturan;
+    use Pda\Peraturan\Models\Jenis;
+    use Pda\Peraturan\Models\Berita;
+
+	function onStart() {
+		$peraturan     = Db::table('pda_peraturan_hukum')
+    				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
+    				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
+                         ->orderBy('jenis_id', 'asc')
+    				     ->get();
+
+        $this['jenis'] = Jenis::all();
+
+        $this['berita'] = Berita::orderBy('tanggal', 'desc')->get();
+
+        $years = [];
+        // $jenis_id = [];
+        // $jenis_nama = [];
+        $totalList = [];
+
+        foreach ($peraturan as $aturan) {
+            $years[] = $aturan->tahun;
+            // $jenis_nama[] = $aturan->jenis_nama;
+        }
+
+        foreach ($this['jenis'] as $jns) {
+            $totalList[] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jns->id)->count();
+        }
+
+        $years = array_unique($years);
+        // $jenis_id = array_unique($jenis_id);
+        // $jenis_nama = array_unique($jenis_nama);
+        rsort($years);
+        // rsort($totalList);
+
+        // for ($i=0; $i < count($jenis_id) ; $i++) { 
+        //     $totalList[$i] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jenis_id[$i])->count();
+        // }
+
+        $this['peraturan'] = $peraturan;
+        $this['years'] = $years;
+        // $this['jenis_id'] = $jenis_id;
+        // $this['jenis_nama'] = $jenis_nama;
+        $this['totalList'] = $totalList;
+        // print_r($jenis_id);
+    }
+?>
+==
+	<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+                <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
+                <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
+                    <div class="slotholder"></div>
+                    <ul><!-- SLIDE  -->
+                
+                        <!-- SLIDE 1 -->
+                        <li data-index="rs-3050" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">                        
+
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('/') }}/themes/jdih/assets/listany/images/slides/1.jpg"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 12 -->
+                            <div class="tp-caption title-slide" 
+                                id="slide-3050-layer-1" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-128','-128','-128','-50']" 
+                                data-fontsize="['65','65','45','30']"
+                                data-lineheight="['65','65','45','35']"
+                                data-fontweight="['600','600','600','600']"
+                                data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                     
+                                data-type="text" 
+                                data-responsive_offset="on"                             
+
+                                data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[10,10,10,10]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 16; white-space: nowrap;">JDIH LAPAN
+                            </div>
+
+                            <!-- LAYER NR. 13 -->
+                            <div class="tp-caption sub-title" 
+                                id="slide-3050-layer-4" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
+                                data-fontsize="['20',20','20','14']" 
+                                data-lineheight="['35','35','35','20']"
+                                data-fontweight="['300','300','300','300']"
+                                data-width="['1200','660','660','350']"
+                                data-height="none"
+                                data-whitespace="['nowrap',normal','normal','normal']" 
+                     
+                                data-type="text" 
+                                data-responsive_offset="on" 
+
+                                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 17; white-space: nowrap;">Jaringan Dokumentasi dan Informasi Hukum Lembaga Penerbangan dan Antariksa Nasional
+                            </div>
+                        </li>
+
+                        <!-- SLIDE 2 -->
+                       <li data-index="rs-3051" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">                        
+
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('/') }}/themes/jdih/assets/listany/images/slides/1.jpg"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 12 -->
+                            <div class="tp-caption title-slide" 
+                                id="slide-3051-layer-1" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-128','-128','-128','-50']" 
+                                data-fontsize="['65','65','45','30']"
+                                data-lineheight="['65','65','45','35']"
+                                data-fontweight="['600','600','600','600']"
+                                data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                     
+                                data-type="text" 
+                                data-responsive_offset="on"                             
+
+                                data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[10,10,10,10]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 16; white-space: nowrap;">JDIH LAPAN
+                            </div>
+
+                            <!-- LAYER NR. 13 -->
+                            <div class="tp-caption sub-title" 
+                                id="slide-3051-layer-4" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
+                                data-fontsize="['20',20','20','14']" 
+                                data-lineheight="['35','35','35','20']"
+                                data-fontweight="['300','300','300','300']"
+                                data-width="['1200','660','660','300']"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                     
+                                data-type="text" 
+                                data-responsive_offset="on" 
+
+                                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 17; white-space: nowrap;">Wadah pendayagunaan bersama atas dokumen hukum secara tertib, terpadu dan berkesinambungan
+                            </div>
+                        </li>                       
+                    </ul>
+                </div>
+    </div><!-- END REVOLUTION SLIDER -->
+
+    <div class="container">
+        <div class="wrap-form">
+            <div class="flat-formsearch ">
+            <!-- <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post" action="#"> -->
+            	<form novalidate="" class="search-form form-filter clearfix" id="main-contact-form" action="{{ 'listing' | page }}" method="get">
+				    <span class="input-question">
+				        <input type="text" placeholder="Nomor" name="nomor">
+				    </span>
+				    <span class="input-question">
+				        <input type="text" placeholder="Tentang" name="tentang">
+				    </span>
+				    <!-- <span class="input-location">
+				        <input type="text" placeholder="Location" name="location" id="location">
+				        <span class="filter">
+				            <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
+				        </span>
+				    </span> --> 
+				    <span class="select">
+				        <select name="tahun">
+				            <option value="">Tahun</option>
+				            {% for year in years %}
+				            	<option value="{{ year }}">{{ year }}</option>
+				            {% endfor %}
+				        </select>
+				    </span>                        
+				    <span class="form-submit text-right">                 
+				        <button type="submit" class="flat-button">Search <i class="ion-ios-search-strong"></i></button>
+				    </span>
+				</form>
+            </div>
+        </div>
+    </div>
+	<section class="flat-row section-client">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section text-center">
+                        <h1 class="title">Produk Hukum</h1>
+                        <div class="sub-title">
+                            Jenis Peraturan
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flat-client" data-item="4" data-nav="true" data-dots="false" data-auto="false">
+                        {% set i = 0 %}
+                        {% for jns in jenis %}
+	                        <div class="client">
+	                            <div class="featured-client">
+	                                <img src="{{ url('/') }}/themes/jdih/assets/listany/images/clients/1.jpg" alt="image">
+	                            </div>
+	                            <div class="content-client clearfix">
+	                                <div class="icon">
+	                                    <img src="{{ jns.logo.path }}" alt="image" style="width: 59px; height: 55px;">
+	                                </div>
+	                                <div class="text">
+	                                	<input type="hidden" name="jenis" value="Undang-Undang" />
+	                                    <h6><a href="{{ 'listing'|page({ slug: jns.nama }) }}" title="">{{ jns.nama }}</a></h6>
+	                                    <p>{{ totalList[i] }} Listing</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                        {% set i = i+1 %}
+                        {% endfor %}
+                    </div><!-- /.flat-client -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="flat-row blog-shortcode">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section style2">
+                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Berita Terkini</a></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for news in berita|slice(0, 3) %}
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="post clearfix">
+                            <div class="featured-post">
+                                <a href="{{ 'berita/detail'|page({ judul: news.slug }) }}"><img src="{{ news.gambar.path }}" alt="img"></a>
+                                <ul class="post-comment">
+                                    <li class="date">
+                                        {{ news.tanggal| date('j') }}        
+                                    </li>
+                                    <li class="month">
+                                        {{ news.tanggal| date('F') }}
+                                    </li>
+                                </ul>
+                            </div><!-- /.feature-post -->
+                            <div class="content-post">     
+                                <ul class="meta-data clearfix">
+                                    <li class="category">
+                                        Posted in: <a href="https://maps.google.com?q={{ news.lokasi }}" target="_blank">{{ news.lokasi }}</a>
+                                    </li>
+                                    <li> by: <a href="#">admin</a></li>
+                                </ul><!-- /.meta-post -->
+                                <h3 class="title-post"><a href="blog-single.html">
+                                    {{ news.judul }}
+                                    </a></h3>                        
+                                <p>{{ str_words(news.isi, 10) }}</p>
+                                <div class="more-link">
+                                    <a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">Read More</a>
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <section class="flat-row v1 bg-theme">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- <div class="title-section">
+                        <h1 class="title">Newsletter</h1>
+                        <div class="sub-title">
+                            Subscribe now and receive weekly newsletter with
+                        </div>
+                    </div> -->
+                    <div>
+                        <h2>Tanyakan pada kami</h2>
+                        {% component 'FaqAsk' %}
+                    </div><!-- 
+                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="#" data-mailchimp="true">
+                        <div class="field clearfix" id="subscribe-content"> 
+                            <p class="wrap-input-email">
+                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
+                            </p>
+                            <p class="wrap-btn">
+                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
+                            </p>
+                        </div>
+                        <div id="subscribe-msg"></div>
+                    </form> -->
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-ios-book"></i>
+                            </div>
+                            <div class="name-count">Peraturan</div>
+                            <div class="numb-count" data-to="{{ peraturan.count() }}" data-speed="2000" data-waypoint-active="yes">{{ peraturan.count() }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-pricetags"></i>
+                            </div>
+                            <div class="name-count">Kategori</div>
+                            <div class="numb-count" data-to="{{ jenis.count() }}" data-speed="2000" data-waypoint-active="yes">12</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-ios-people"></i>
+                            </div>
+                            <div class="name-count">Pengunjung</div>
+                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>";s:5:"mtime";i:1532313088;s:6:"markup";s:19247:"<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+                <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
+                <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
+                    <div class="slotholder"></div>
+                    <ul><!-- SLIDE  -->
+                
+                        <!-- SLIDE 1 -->
+                        <li data-index="rs-3050" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">                        
+
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('/') }}/themes/jdih/assets/listany/images/slides/1.jpg"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 12 -->
+                            <div class="tp-caption title-slide" 
+                                id="slide-3050-layer-1" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-128','-128','-128','-50']" 
+                                data-fontsize="['65','65','45','30']"
+                                data-lineheight="['65','65','45','35']"
+                                data-fontweight="['600','600','600','600']"
+                                data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                     
+                                data-type="text" 
+                                data-responsive_offset="on"                             
+
+                                data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[10,10,10,10]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 16; white-space: nowrap;">JDIH LAPAN
+                            </div>
+
+                            <!-- LAYER NR. 13 -->
+                            <div class="tp-caption sub-title" 
+                                id="slide-3050-layer-4" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
+                                data-fontsize="['20',20','20','14']" 
+                                data-lineheight="['35','35','35','20']"
+                                data-fontweight="['300','300','300','300']"
+                                data-width="['1200','660','660','350']"
+                                data-height="none"
+                                data-whitespace="['nowrap',normal','normal','normal']" 
+                     
+                                data-type="text" 
+                                data-responsive_offset="on" 
+
+                                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 17; white-space: nowrap;">Jaringan Dokumentasi dan Informasi Hukum Lembaga Penerbangan dan Antariksa Nasional
+                            </div>
+                        </li>
+
+                        <!-- SLIDE 2 -->
+                       <li data-index="rs-3051" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">                        
+
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('/') }}/themes/jdih/assets/listany/images/slides/1.jpg"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 12 -->
+                            <div class="tp-caption title-slide" 
+                                id="slide-3051-layer-1" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-128','-128','-128','-50']" 
+                                data-fontsize="['65','65','45','30']"
+                                data-lineheight="['65','65','45','35']"
+                                data-fontweight="['600','600','600','600']"
+                                data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                     
+                                data-type="text" 
+                                data-responsive_offset="on"                             
+
+                                data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[10,10,10,10]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 16; white-space: nowrap;">JDIH LAPAN
+                            </div>
+
+                            <!-- LAYER NR. 13 -->
+                            <div class="tp-caption sub-title" 
+                                id="slide-3051-layer-4" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
+                                data-fontsize="['20',20','20','14']" 
+                                data-lineheight="['35','35','35','20']"
+                                data-fontweight="['300','300','300','300']"
+                                data-width="['1200','660','660','300']"
+                                data-height="none"
+                                data-whitespace="nowrap"
+                     
+                                data-type="text" 
+                                data-responsive_offset="on" 
+
+                                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+
+                                style="z-index: 17; white-space: nowrap;">Wadah pendayagunaan bersama atas dokumen hukum secara tertib, terpadu dan berkesinambungan
+                            </div>
+                        </li>                       
+                    </ul>
+                </div>
+    </div><!-- END REVOLUTION SLIDER -->
+
+    <div class="container">
+        <div class="wrap-form">
+            <div class="flat-formsearch ">
+            <!-- <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post" action="#"> -->
+            	<form novalidate="" class="search-form form-filter clearfix" id="main-contact-form" action="{{ 'listing' | page }}" method="get">
+				    <span class="input-question">
+				        <input type="text" placeholder="Nomor" name="nomor">
+				    </span>
+				    <span class="input-question">
+				        <input type="text" placeholder="Tentang" name="tentang">
+				    </span>
+				    <!-- <span class="input-location">
+				        <input type="text" placeholder="Location" name="location" id="location">
+				        <span class="filter">
+				            <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
+				        </span>
+				    </span> --> 
+				    <span class="select">
+				        <select name="tahun">
+				            <option value="">Tahun</option>
+				            {% for year in years %}
+				            	<option value="{{ year }}">{{ year }}</option>
+				            {% endfor %}
+				        </select>
+				    </span>                        
+				    <span class="form-submit text-right">                 
+				        <button type="submit" class="flat-button">Search <i class="ion-ios-search-strong"></i></button>
+				    </span>
+				</form>
+            </div>
+        </div>
+    </div>
+	<section class="flat-row section-client">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section text-center">
+                        <h1 class="title">Produk Hukum</h1>
+                        <div class="sub-title">
+                            Jenis Peraturan
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flat-client" data-item="4" data-nav="true" data-dots="false" data-auto="false">
+                        {% set i = 0 %}
+                        {% for jns in jenis %}
+	                        <div class="client">
+	                            <div class="featured-client">
+	                                <img src="{{ url('/') }}/themes/jdih/assets/listany/images/clients/1.jpg" alt="image">
+	                            </div>
+	                            <div class="content-client clearfix">
+	                                <div class="icon">
+	                                    <img src="{{ jns.logo.path }}" alt="image" style="width: 59px; height: 55px;">
+	                                </div>
+	                                <div class="text">
+	                                	<input type="hidden" name="jenis" value="Undang-Undang" />
+	                                    <h6><a href="{{ 'listing'|page({ slug: jns.nama }) }}" title="">{{ jns.nama }}</a></h6>
+	                                    <p>{{ totalList[i] }} Listing</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                        {% set i = i+1 %}
+                        {% endfor %}
+                    </div><!-- /.flat-client -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="flat-row blog-shortcode">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section style2">
+                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Berita Terkini</a></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for news in berita|slice(0, 3) %}
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="post clearfix">
+                            <div class="featured-post">
+                                <a href="{{ 'berita/detail'|page({ judul: news.slug }) }}"><img src="{{ news.gambar.path }}" alt="img"></a>
+                                <ul class="post-comment">
+                                    <li class="date">
+                                        {{ news.tanggal| date('j') }}        
+                                    </li>
+                                    <li class="month">
+                                        {{ news.tanggal| date('F') }}
+                                    </li>
+                                </ul>
+                            </div><!-- /.feature-post -->
+                            <div class="content-post">     
+                                <ul class="meta-data clearfix">
+                                    <li class="category">
+                                        Posted in: <a href="https://maps.google.com?q={{ news.lokasi }}" target="_blank">{{ news.lokasi }}</a>
+                                    </li>
+                                    <li> by: <a href="#">admin</a></li>
+                                </ul><!-- /.meta-post -->
+                                <h3 class="title-post"><a href="blog-single.html">
+                                    {{ news.judul }}
+                                    </a></h3>                        
+                                <p>{{ str_words(news.isi, 10) }}</p>
+                                <div class="more-link">
+                                    <a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">Read More</a>
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <section class="flat-row v1 bg-theme">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- <div class="title-section">
+                        <h1 class="title">Newsletter</h1>
+                        <div class="sub-title">
+                            Subscribe now and receive weekly newsletter with
+                        </div>
+                    </div> -->
+                    <div>
+                        <h2>Tanyakan pada kami</h2>
+                        {% component 'FaqAsk' %}
+                    </div><!-- 
+                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="#" data-mailchimp="true">
+                        <div class="field clearfix" id="subscribe-content"> 
+                            <p class="wrap-input-email">
+                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
+                            </p>
+                            <p class="wrap-btn">
+                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
+                            </p>
+                        </div>
+                        <div id="subscribe-msg"></div>
+                    </form> -->
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-ios-book"></i>
+                            </div>
+                            <div class="name-count">Peraturan</div>
+                            <div class="numb-count" data-to="{{ peraturan.count() }}" data-speed="2000" data-waypoint-active="yes">{{ peraturan.count() }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-pricetags"></i>
+                            </div>
+                            <div class="name-count">Kategori</div>
+                            <div class="numb-count" data-to="{{ jenis.count() }}" data-speed="2000" data-waypoint-active="yes">12</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-ios-people"></i>
+                            </div>
+                            <div class="name-count">Pengunjung</div>
+                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>";s:4:"code";s:1620:"	use Pda\Peraturan\Models\Peraturan;
+    use Pda\Peraturan\Models\Jenis;
+    use Pda\Peraturan\Models\Berita;
+
+	function onStart() {
+		$peraturan     = Db::table('pda_peraturan_hukum')
+    				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
+    				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
+                         ->orderBy('jenis_id', 'asc')
+    				     ->get();
+
+        $this['jenis'] = Jenis::all();
+
+        $this['berita'] = Berita::orderBy('tanggal', 'desc')->get();
+
+        $years = [];
+        // $jenis_id = [];
+        // $jenis_nama = [];
+        $totalList = [];
+
+        foreach ($peraturan as $aturan) {
+            $years[] = $aturan->tahun;
+            // $jenis_nama[] = $aturan->jenis_nama;
+        }
+
+        foreach ($this['jenis'] as $jns) {
+            $totalList[] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jns->id)->count();
+        }
+
+        $years = array_unique($years);
+        // $jenis_id = array_unique($jenis_id);
+        // $jenis_nama = array_unique($jenis_nama);
+        rsort($years);
+        // rsort($totalList);
+
+        // for ($i=0; $i < count($jenis_id) ; $i++) { 
+        //     $totalList[$i] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jenis_id[$i])->count();
+        // }
+
+        $this['peraturan'] = $peraturan;
+        $this['years'] = $years;
+        // $this['jenis_id'] = $jenis_id;
+        // $this['jenis_nama'] = $jenis_nama;
+        $this['totalList'] = $totalList;
+        // print_r($jenis_id);
+    }";s:5:"title";s:7:"beranda";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:6:"FaqAsk";a:0:{}s:10:"searchForm";a:0:{}}}

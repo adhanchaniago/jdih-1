@@ -1,0 +1,50 @@
+name: 'Menu Utama'
+items:
+    -
+        title: Beranda
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: beranda
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Produk Hukum'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: listing
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Berita
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: berita/listing
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Tanya-Jawab
+        type: cms-page
+        code: ''
+        reference: faq
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

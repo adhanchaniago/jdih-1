@@ -1,0 +1,11 @@
+name: Berita
+modelClass: Pda\Peraturan\Models\Berita
+form: $/pda/peraturan/models/berita/fields.yaml
+defaultRedirect: pda/peraturan/berita
+create:
+    redirect: 'pda/peraturan/berita/update/:id'
+    redirectClose: pda/peraturan/berita
+update:
+    redirect: pda/peraturan/berita
+    redirectClose: pda/peraturan/berita
+preview: {  }

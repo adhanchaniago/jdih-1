@@ -1,0 +1,10 @@
+name: Peraturan
+form: $/pda/peraturan/models/peraturan/fields.yaml
+modelClass: Pda\Peraturan\Models\Peraturan
+defaultRedirect: pda/peraturan/peraturan
+create:
+    redirect: 'pda/peraturan/peraturan/update/:id'
+    redirectClose: pda/peraturan/peraturan
+update:
+    redirect: pda/peraturan/peraturan
+    redirectClose: pda/peraturan/peraturan

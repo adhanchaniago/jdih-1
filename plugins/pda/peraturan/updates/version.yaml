@@ -1,0 +1,53 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Updated table pda_peraturan_hukum'
+    - builder_table_update_pda_peraturan_hukum.php
+1.0.3:
+    - 'Created table pda_peraturan_jenis'
+    - builder_table_create_pda_peraturan_jenis.php
+1.0.4:
+    - 'Updated table pda_peraturan_hukum'
+    - builder_table_update_pda_peraturan_hukum_2.php
+1.0.5:
+    - 'Updated table pda_peraturan_jenis'
+    - builder_table_update_pda_peraturan_kategori.php
+1.0.6:
+    - 'Updated table pda_peraturan_hukum'
+    - builder_table_update_pda_peraturan_hukum_3.php
+1.0.7:
+    - 'Updated table pda_peraturan_hukum'
+    - builder_table_update_pda_peraturan_hukum_4.php
+1.0.8:
+    - 'Updated table pda_peraturan_kategori'
+    - builder_table_update_pda_peraturan_jenis.php
+1.0.9:
+    - 'Updated table pda_peraturan_hukum'
+    - builder_table_update_pda_peraturan_hukum_5.php
+1.0.10:
+    - 'Created table pda_peraturan_berita'
+    - builder_table_create_pda_peraturan_berita.php
+1.0.11:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita.php
+1.0.12:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita_2.php
+1.0.13:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita_3.php
+1.0.14:
+    - 'Updated table pda_peraturan_jenis'
+    - builder_table_update_pda_peraturan_jenis_2.php
+1.0.15:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita_4.php
+1.0.16:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita_5.php
+1.0.17:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita_6.php
+1.0.18:
+    - 'Updated table pda_peraturan_berita'
+    - builder_table_update_pda_peraturan_berita_7.php

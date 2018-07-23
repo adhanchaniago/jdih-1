@@ -1,0 +1,59 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+
+        <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/normalize.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/font-awesome.min.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/icomoon.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/animate.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/prettyPhoto.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/owl.theme.default.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/transitions.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/color.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/responsive.css'|theme }}">
+        <script src="{{ 'assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js'|theme }}"></script>
+        {% styles %}
+    </head>
+    <body>
+
+        <!-- Header -->
+            {% partial 'header' %}
+
+        <!-- Content -->
+            {% page %}
+
+        <!-- Footer -->
+            {% partial 'footer' %}
+
+        <!-- Scripts -->
+        <script src="{{'assets/js/vendor/jquery-library.js'|theme }}"></script>
+        <script src="{{'assets/js/vendor/bootstrap.min.js'|theme }}"></script>
+        <script src="{{'assets/js/mapclustering/data.json'|theme }}"></script>
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>
+        <script src="{{'assets/js/mapclustering/markerclusterer.min.js'|theme }}"></script>
+        <script src="{{'assets/js/mapclustering/infobox.js'|theme }}"></script>
+        <script src="{{'assets/js/mapclustering/map.js'|theme }}"></script>
+        <script src="{{'assets/js/owl.carousel.min.js'|theme }}"></script>
+        <script src="{{'assets/js/isotope.pkgd.js'|theme }}"></script>
+        <script src="{{'assets/js/prettyPhoto.js'|theme }}"></script>
+        <script src="{{'assets/js/countdown.js'|theme }}"></script>
+        <script src="{{'assets/js/collapse.js'|theme }}"></script>
+        <script src="{{'assets/js/moment.js'|theme }}"></script>
+        <script src="{{'assets/js/gmap3.js'|theme }}"></script>
+        <script src="{{'assets/js/main.js'|theme }}"></script>
+
+    </body>
+</html>

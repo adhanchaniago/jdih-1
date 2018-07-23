@@ -1,0 +1,18 @@
+<!-- {{ peraturan.render|raw }} -->
+<p class="book-form-select icon">            
+    <select class="dropdown_sort" id="mycars" name="Filter[page]">
+        <!-- <option value="">Pages</option> -->
+        {% for i in 1..pages %}
+        	{% if i == page %}
+            	<option value="{{ page }}" selected>{{ page }}</option>
+        	{% else %}
+        		<option value="{{ i }}">{{ i }}</option>
+        	{% endif %}
+        {% endfor %}
+    </select>
+    <i class="fa fa-angle-down"></i>
+</p>
+
+<script type="text/javascript">
+	
+</script>

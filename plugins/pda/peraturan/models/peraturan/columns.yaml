@@ -1,0 +1,49 @@
+columns:
+    kategori:
+        label: kategori
+        type: text
+    jenis:
+        label: jenis
+        type: text
+        searchable: true
+        invisible: false
+        sortable: true
+    nomor:
+        label: nomor
+        type: text
+        searchable: true
+        sortable: true
+    tahun:
+        label: tahun
+        type: text
+        searchable: true
+        sortable: true
+    tentang:
+        label: tentang
+        type: text
+        searchable: true
+        sortable: true
+    keterangan:
+        label: keterangan
+        type: text
+    filename:
+        label: filename
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+    jenis_id:
+        label: Jenis
+        type: number
+        searchable: true
+        sortable: true
+        select: nama
+        relation: jenis

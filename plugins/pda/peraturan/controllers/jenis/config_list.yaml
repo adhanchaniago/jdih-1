@@ -1,0 +1,12 @@
+list: $/pda/peraturan/models/jenis/columns.yaml
+modelClass: Pda\Peraturan\Models\Jenis
+title: Jenis
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pda/peraturan/jenis/update/:id'

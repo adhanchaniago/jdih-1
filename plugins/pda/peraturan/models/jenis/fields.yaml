@@ -1,0 +1,21 @@
+fields:
+    nama:
+        label: 'Jenis Peraturan'
+        span: full
+        required: 1
+        type: text
+        comment: '*tidak boleh menggunakan "/" (garis miring)'
+    singkatan:
+        label: Singkatan
+        span: full
+        required: 1
+        type: text
+    logo:
+        label: Logo
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

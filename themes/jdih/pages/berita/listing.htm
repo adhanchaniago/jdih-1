@@ -1,0 +1,184 @@
+title = "list_berita"
+url = "/berita"
+layout = "default"
+is_hidden = 0
+
+==
+<?php
+    use Pda\Peraturan\Models\Berita;
+
+    function onStart() {
+        $this['all'] = Berita::orderBy('tanggal', 'desc')->paginate(5);
+    }
+?>
+==
+    <!-- Page title -->
+    <div class="page-title parallax parallax1">
+        <div class="section-overlay">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">                    
+                    <div class="page-title-heading">
+                        <h1 class="title">Berita</h1>
+                    </div><!-- /.page-title-captions -->
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="{{ url('/') }}">Beranda</a></li>
+                            <li> - </li>                            
+                            <li><a href="{{ 'berita/listing'|page }}">Berita</a></li>
+                        </ul>                   
+                    </div><!-- /.breadcrumbs -->   
+                </div><!-- /.col-md-12 -->  
+            </div><!-- /.row -->  
+        </div><!-- /.container -->                      
+    </div><!-- /.page-title --> 
+
+    <!-- Blog posts -->
+    <section class="main-content blog-posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="post-wrap">
+                        {% for berita in all %}
+                            <article class="post clearfix">
+                                <h3 class="title-post"><a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">
+                                    {{ berita.judul }}
+                                    </a></h3>                          
+                                <ul class="meta-post clearfix">
+                                    <li class="time">
+                                        {{ berita.tanggal|date('F j, Y') }}
+                                    </li>
+                                    <li class="author">
+                                        <a href="#">Admin</a>
+                                    </li>
+                                    <li class="categories"> 
+                                        <a href="#">Business</a>
+                                    </li>
+                                    <li class="vote">
+                                        <a href="#">No comment</a>
+                                    </li>
+                                </ul><!-- /.meta-post -->
+                                <div class="featured-post">
+                                    <a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}"><img src="{{ berita.gambar.thumb(870, 367, {'mode' : 'crop'}) }}" alt="image"></a>
+                                </div><!-- /.feature-post -->
+                                <div class="content-post">
+                                    <div align="justify">                              
+                                        {{ str_words(berita.isi, 50) }}
+                                        <div class="more-link">
+                                            <a class="effect-button" href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">Read More <i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div><!-- /.content-post -->
+                            </article>
+                        {% endfor %}
+                    </div><!-- /.post-wrap --> 
+
+                    <div class="blog-pagination">
+                        {{ all.render|raw }}<!-- /.flat-pagination -->
+                    </div><!-- /.blog-pagination -->                  
+                </div><!-- /.col-lg-9 -->    
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <div class="widget widget-recent-news">
+                            <h5 class="widget-title">Recent Post</h5>
+                            <ul class="popular-news clearfix">
+                                {% for list in all %}
+                                    <li>
+                                        <div class="text">
+                                            <h6>
+                                                <a href="#">
+                                                {{ list.judul }}
+                                                </a>
+                                            </h6>  
+                                            <p>{{ list.tanggal|date('F j, Y') }}</p>                                     
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul><!-- /.popular-news -->
+                        </div><!-- /.widget-popular-news -->
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Category</h5>
+                            <ul>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Finanve</a></li>
+                                <li><a href="#">Insurance</a></li>
+                                <li><a href="#">Leasing</a></li>
+                            </ul>
+                        </div><!-- /.widget-categories -->
+ 
+                        <div class="widget widget_tag">
+                            <h5 class="widget-title">Tags</h5>
+                            <div class="tag-list">
+                                <a href="#">Business</a>
+                                <a href="#">Consulting</a>
+                                <a href="#">Finanve</a>
+                                <a href="#">Insurance</a>
+                                <a href="#">Management</a>
+                                <a href="#">Portfolio</a>    
+                            </div>
+                        </div><!-- /.widget-tag -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-md-3 -->            
+            </div><!-- /.row -->           
+        </div><!-- /.container -->   
+    </section> 
+
+    <section class="flat-row v1 bg-theme">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="title-section">
+                        <h1 class="title">Newsletter</h1>
+                        <div class="sub-title">
+                            Subscribe now and receive weekly newsletter with
+                        </div>
+                    </div>
+                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="#" data-mailchimp="true">
+                        <div class="field clearfix" id="subscribe-content"> 
+                            <p class="wrap-input-email">
+                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
+                            </p>
+                            <p class="wrap-btn">
+                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
+                            </p>
+                        </div>
+                        <div id="subscribe-msg"></div>
+                    </form>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-waterdrop"></i>
+                            </div>
+                            <div class="name-count">Listing</div>
+                            <div class="numb-count" data-to="1897" data-speed="2000" data-waypoint-active="yes">1897</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-pricetags"></i>
+                            </div>
+                            <div class="name-count">Categories</div>
+                            <div class="numb-count" data-to="967" data-speed="2000" data-waypoint-active="yes">967</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="flat-counter text-center">                            
+                        <div class="content-counter">
+                            <div class="icon-count">
+                                <i class="ion-ios-people"></i>
+                            </div>
+                            <div class="name-count">Users</div>
+                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>  

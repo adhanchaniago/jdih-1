@@ -1,0 +1,41 @@
+fields:
+    judul:
+        label: Judul
+        span: full
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: full
+        required: 1
+        preset:
+            field: judul
+            type: slug
+        type: text
+    tanggal:
+        label: 'Tanggal Berita'
+        mode: datetime
+        span: left
+        required: 1
+        type: datepicker
+    lokasi:
+        label: 'Lokasi Berita'
+        span: right
+        required: 1
+        type: text
+    isi:
+        label: Isi
+        size: ''
+        span: full
+        required: 1
+        type: richeditor
+    gambar:
+        label: Gambar
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        required: 1
+        type: fileupload

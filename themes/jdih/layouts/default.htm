@@ -1,0 +1,94 @@
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- my edit --->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Acme" />
+	
+<!-- end my edit -->	
+
+
+	<link rel="stylesheet" href="{{ 'assets/listany/stylesheets/bootstrap.css'|theme }}">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="{{ 'assets/listany/stylesheets/responsive.css'|theme }}">
+	<link rel="stylesheet" href="{{ 'assets/listany/stylesheets/style.css'|theme }}">
+	<link rel="stylesheet" href="{{ 'assets/listany/stylesheets/animate.css'|theme }}">
+	<link rel="stylesheet" href="{{ 'assets/listany/revolution/css/layers.css'|theme }}">
+	<link rel="stylesheet" href="{{ 'assets/listany/revolution/css/settings.css'|theme }}">
+	<link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.min.css">
+	<!-- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> -->
+	<!-- <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
+	<!-- <link href="https://cdn.datatables.net/scroller/1.5.1/css/scroller.bootstrap.min.css" rel="stylesheet"> -->
+
+	<!-- Favicon and touch icons  -->
+    <link href="{{ 'assets/listany/icon/apple-touch-icon-48-precomposed.png'|theme }}" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="{{ 'assets/listany/icon/apple-touch-icon-32-precomposed.png'|theme }}" rel="apple-touch-icon-precomposed">
+    <link href="{{ 'assets/listany/icon/favicon.png'|theme }}" rel="shortcut icon">
+
+	<link rel="shortcut icon" href="https://lapan.go.id/favicon.ico" type="image/x-icon">
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	
+	<script src="{{ 'assets/listany/javascript/jquery.min.js'|theme }}"></script>
+	<script src="{{ 'assets/listany/javascript/app.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/javascript/tether.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/javascript/bootstrap.min.js'|theme }}"></script> 
+    
+    <script src="{{ 'assets/listany/javascript/jquery.easing.js'|theme }}"></script>    
+    <script src="{{ 'assets/listany/javascript/jquery-waypoints.js'|theme }}"></script> 
+    <script src="{{ 'assets/listany/javascript/jquery-countTo.js'|theme }}"></script>  
+    <script src="{{ 'assets/listany/javascript/owl.carousel.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/javascript/jquery.cookie.js'|theme }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="{{ 'assets/listany/javascript/parallax.js'|theme }}"></script>
+    <!-- <script src="{{ 'assets/listany/javascript/bootstrap-slider.min.js'|theme }}"></script> -->
+    <script src="{{ 'assets/listany/javascript/smoothscroll.js'|theme }}"></script>   
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/mark.js(jquery.mark.min.js)"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.js"></script>
+    <!-- <script src="https://cdn.datatables.net/scroller/1.5.1/js/dataTables.scroller.min.js"></script> -->
+    <script src="{{ 'assets/listany/javascript/main.js'|theme }}"></script>
+    
+
+    <!-- Revolution Slider -->
+    <script src="{{ 'assets/listany/revolution/js/jquery.themepunch.tools.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/jquery.themepunch.revolution.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/slider.js'|theme }}"></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->    
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.actions.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.carousel.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.kenburn.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.layeranimation.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.migration.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.navigation.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.parallax.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.slideanims.min.js'|theme }}"></script>
+    <script src="{{ 'assets/listany/revolution/js/extensions/revolution.extension.video.min.js'|theme }}"></script>
+	
+    <!-- {% styles %} -->
+    
+	<title>JDIH LAPAN</title>
+</head>
+
+  	
+  	<body>
+    	
+	    	{% partial 'header' %}
+	    	{% page %}
+		    {% component 'googleTracker' %}
+		
+	</body>
+			<!--footer-->
+		    {% partial 'footer' %}
+    
+        {% framework extras %}
+        {% scripts %}  
+
+    
+
+</html>

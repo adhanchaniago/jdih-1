@@ -1,0 +1,17 @@
+columns:
+    judul:
+        label: Judul
+        type: text
+        searchable: true
+        sortable: true
+    isi:
+        label: Isi
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    tanggal:
+        label: 'Tanggal Berita'
+        type: datetime
+        searchable: true
+        sortable: true

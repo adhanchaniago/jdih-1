@@ -1,0 +1,51 @@
+1532319897a:1:{s:15:"menu-utama.yaml";a:7:{s:8:"fileName";s:15:"menu-utama.yaml";s:7:"content";s:1035:"name: 'Menu Utama'
+items:
+    -
+        title: Beranda
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: beranda
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Produk Hukum'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: listing
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Berita
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: berita/listing
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Tanya-Jawab
+        type: cms-page
+        code: ''
+        reference: faq
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+";s:5:"mtime";i:1532314111;s:6:"markup";N;s:4:"code";N;s:4:"name";s:10:"Menu Utama";s:5:"items";a:4:{i:0;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:7:"Beranda";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"beranda";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:1;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:12:"Produk Hukum";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"listing";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:2;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:6:"Berita";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:14:"berita/listing";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:3;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:11:"Tanya-Jawab";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";N;s:4:"type";s:8:"cms-page";s:3:"url";N;s:4:"code";s:0:"";s:9:"reference";s:3:"faq";s:7:"replace";N;s:7:"cmsPage";N;s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}}}}

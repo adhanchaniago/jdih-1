@@ -1,0 +1,377 @@
+[staticMenu]
+code = "headermenu"
+
+[viewBag]
+==
+<!--************************************
+			Wrapper Start
+	*************************************-->
+<div id="tg-wrapper" class="tg-wrapper">
+    <!--************************************
+            Header Start
+    *************************************-->
+    <header id="tg-header" class="tg-header tg-haslayout">
+        <div class="tg-topbar">
+            <div class="tg-leftbox">
+                <span id="tg-datebox" class="tg-datebox"></span>
+            </div>
+            <div class="tg-rightbox">
+                <span class="tg-tollfree">Toll Free: 0800-123-456</span>
+                <div class="tg-themedropdown tg-languagesdropdown">
+                    <a href="" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span><img src="{{ 'assets/images/flags/img-01.jpg'|theme}}" alt="image description"></span>
+                        <span>Eng</span>
+                    </a>
+                    <div class="tg-themedropdownbox" aria-labelledby="tg-languages">
+                        <ul class="tg-languageslist">
+                            <li>
+                                <span><img src="{{ 'assets/images/flags/img-02.jpg'|theme}}" alt="image description"></span>
+                                <span>Eng</span>
+                            </li>
+                            <li>
+                                <span><img src="{{ 'assets/images/flags/img-03.jpg'|theme}}" alt="image description"></span>
+                                <span>Eng</span>
+                            </li>
+                            <li>
+                                <span><img src="{{ 'assets/images/flags/img-04.jpg'|theme}}" alt="image description"></span>
+                                <span>Eng</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="tg-logoandnoticeboard">
+                        <strong class="tg-logo"><a href="index-2.html"><img src="{{'assets/images/logo.png'|theme}}" alt="University of Education and knowledge"></a></strong>
+                        <div class="tg-noticeboard hidden-xs">
+                            <div class="tg-textbox">
+                                <span>Admission Open!</span>
+                                <span>Last Date For Spring Admission 27-Sept-2017</span>
+                            </div>
+                            <figure><img src="{{'assets/images/img-01.jpg'|theme}}" alt="image description"></figure>
+                        </div>
+                    </div>
+                    <div class="tg-navigationarea">
+                        <nav id="tg-nav" class="tg-nav">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+                            {% component 'staticMenu' %}
+                                <ul>
+                                    <li class="current-menu-item"><a href="{{ 'home'|page }}">Home</a></li>
+                                    <li><a href="{{ 'about-us'|page }}">About Us</a></li>
+                                    <li class="menu-item-has-mega-menu">
+                                        <a href="">Courses</a>
+                                        <div class="mega-menu">
+                                            <ul class="mega-menu-row">
+                                                <li class="mega-menu-col">
+                                                    <a href="">Course Categories</a>
+                                                    <ul>
+                                                        <li><a href="#">Course One</a></li>
+                                                        <li><a href="#">Course Two</a></li>
+                                                        <li><a href="#">Course Three</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="mega-menu-col">
+                                                    <a href="">Faculties</a>
+                                                    <ul>
+                                                        <li><a href="#">faculties</a></li>
+                                                        <li><a href="#">faculty detail</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul class="mega-menu-row">
+                                                <li class="mega-menu-col">
+                                                    <figure><img src="{{ 'assets/images/img-02.jpg'|theme}}" alt="image description"></figure>
+                                                    <div class="tg-textbox">
+                                                        <strong>excellent service &amp; support</strong>
+                                                        <div class="tg-description">
+                                                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quistance nostrud exercitation ullamco laboris nisi ut aliquip commodo.</p>
+                                                        </div>
+                                                        <a class="tg-btn tg-bgn-sm" href="">contact now</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item-has-mega-menu">
+                                        <a href="">Events</a>
+                                        <div class="mega-menu tg-fullmegamenu">
+                                            <ul class="mega-menu-row">
+                                                <li class="mega-menu-col">
+                                                    <div class="tg-themetabs">
+                                                        <ul class="tg-themetabnav" role="tablist">
+                                                            <li role="presentation" class="active">
+                                                                <a href="#tg-science" aria-controls="tg-science" role="tab" data-toggle="tab">Science</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-management" aria-controls="tg-management" role="tab" data-toggle="tab">Management</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-medical" aria-controls="tg-medical" role="tab" data-toggle="tab">Medical</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-arts" aria-controls="tg-arts" role="tab" data-toggle="tab">Arts</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-informationtechnology" aria-controls="tg-informationtechnology" role="tab" data-toggle="tab">Information Technology</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-history" aria-controls="tg-history" role="tab" data-toggle="tab">History</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-economics" aria-controls="tg-economics" role="tab" data-toggle="tab">Economics</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a href="#tg-accounts" aria-controls="tg-accounts" role="tab" data-toggle="tab">Accounts</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tab-content tg-themetabcontent">
+                                                            <div role="tabpanel" class="tab-pane tg-tabpane active" id="tg-science">
+                                                                <strong>Latest Science Courses</strong>
+                                                                <div class="tg-posts">
+                                                                    <div id="tg-navtabslider" class="tg-navtabslider tg-megamenuslider owl-carousel">
+                                                                        <div class="item">
+                                                                            <article class="tg-themepost">
+                                                                                <figure class="tg-featuredimg">
+                                                                                    <a href="">
+                                                                                        <img src="{{'assets/images/themepost/img-01.jpg'|theme}}" alt="image description">
+                                                                                    </a>
+                                                                                </figure>
+                                                                                <div class="tg-themepostcontent">
+                                                                                    <ul class="tg-themeposttags">
+                                                                                        <li><a href="">Management</a></li>
+                                                                                        <li><a href="">Science</a></li>
+                                                                                    </ul>
+                                                                                    <div class="tg-themeposttitle">
+                                                                                        <h3><a href="eventslist.html">Become a Proffesional Teacher</a></h3>
+                                                                                    </div>
+                                                                                    <ul class="tg-matadata">
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-user"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-comment-o"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <span class="tg-pricebox"><a href="">$36/pm</a></span>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <article class="tg-themepost">
+                                                                                <figure class="tg-featuredimg">
+                                                                                    <a href="">
+                                                                                        <img src="{{'assets/images/themepost/img-02.jpg'|theme}}" alt="image description">
+                                                                                    </a>
+                                                                                </figure>
+                                                                                <div class="tg-themepostcontent">
+                                                                                    <ul class="tg-themeposttags">
+                                                                                        <li><a href="">Management</a></li>
+                                                                                        <li><a href="">Science</a></li>
+                                                                                    </ul>
+                                                                                    <div class="tg-themeposttitle">
+                                                                                        <h3><a href="eventsgrid.html">One Day Crash Course on Skills Improvement</a></h3>
+                                                                                    </div>
+                                                                                    <ul class="tg-matadata">
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-user"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-comment-o"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <span class="tg-pricebox"><a href="">$36/pm</a></span>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <article class="tg-themepost">
+                                                                                <figure class="tg-featuredimg">
+                                                                                    <a href="">
+                                                                                        <img src="{{'assets/images/themepost/img-03.jpg'|theme}}" alt="image description">
+                                                                                    </a>
+                                                                                </figure>
+                                                                                <div class="tg-themepostcontent">
+                                                                                    <ul class="tg-themeposttags">
+                                                                                        <li><a href="">Management</a></li>
+                                                                                        <li><a href="">Science</a></li>
+                                                                                    </ul>
+                                                                                    <div class="tg-themeposttitle">
+                                                                                        <h3><a href="eventdetail.html">Back To School, Open Discussion</a></h3>
+                                                                                    </div>
+                                                                                    <ul class="tg-matadata">
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-user"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-comment-o"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <span class="tg-pricebox"><a href="">$36/pm</a></span>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <article class="tg-themepost">
+                                                                                <figure class="tg-featuredimg">
+                                                                                    <a href="">
+                                                                                        <img src="{{'assets/images/themepost/img-04.jpg'|theme}}" alt="image description">
+                                                                                    </a>
+                                                                                </figure>
+                                                                                <div class="tg-themepostcontent">
+                                                                                    <ul class="tg-themeposttags">
+                                                                                        <li><a href="">Management</a></li>
+                                                                                        <li><a href="">Science</a></li>
+                                                                                    </ul>
+                                                                                    <div class="tg-themeposttitle">
+                                                                                        <h3><a href="eventslist.html">Make a Goal For Successful Your Life</a></h3>
+                                                                                    </div>
+                                                                                    <ul class="tg-matadata">
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-user"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-comment-o"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <span class="tg-pricebox"><a href="">$36/pm</a></span>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <article class="tg-themepost">
+                                                                                <figure class="tg-featuredimg">
+                                                                                    <a href="">
+                                                                                        <img src="{{'assets/images/themepost/img-01.jpg'|theme}}" alt="image description">
+                                                                                    </a>
+                                                                                </figure>
+                                                                                <div class="tg-themepostcontent">
+                                                                                    <ul class="tg-themeposttags">
+                                                                                        <li><a href="">Management</a></li>
+                                                                                        <li><a href="">Science</a></li>
+                                                                                    </ul>
+                                                                                    <div class="tg-themeposttitle">
+                                                                                        <h3><a href="eventslist.html">Become a Proffesional Teacher</a></h3>
+                                                                                    </div>
+                                                                                    <ul class="tg-matadata">
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-user"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-comment-o"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <span class="tg-pricebox"><a href="">$36/pm</a></span>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <article class="tg-themepost">
+                                                                                <figure class="tg-featuredimg">
+                                                                                    <a href="">
+                                                                                        <img src="{{'assets/images/themepost/img-02.jpg'|theme}}" alt="image description">
+                                                                                    </a>
+                                                                                </figure>
+                                                                                <div class="tg-themepostcontent">
+                                                                                    <ul class="tg-themeposttags">
+                                                                                        <li><a href="">Management</a></li>
+                                                                                        <li><a href="">Science</a></li>
+                                                                                    </ul>
+                                                                                    <div class="tg-themeposttitle">
+                                                                                        <h3><a href="eventsgrid.html">One Day Crash Course on Skills Improvement</a></h3>
+                                                                                    </div>
+                                                                                    <ul class="tg-matadata">
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-user"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a href="">
+                                                                                                <i class="fa fa-comment-o"></i>
+                                                                                                <span>1205</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <span class="tg-pricebox"><a href="">$36/pm</a></span>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="{{ 'blog/category'|page }}">Blog</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ 'blog/category'|page }}">Blog</a></li>
+                                            <li><a href="{{ 'blog/post'|page }}">Blog detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ 'gallery'|page }}">Gallery</a></li>
+                                    <li><a href="{{ '404'|page }}">404</a></li>
+                                    <li><a href="{{ 'contact'|page }}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="tg-searchbox">
+                            <a id="tg-btnsearch" class="tg-btnsearch" href=""><i class="icon-magnifier"></i></a>
+                            <form class="tg-formtheme tg-formsearch">
+                                <fieldset><input type="search" name="search" class="form-control" placeholder="Start Your Search Here"></fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--************************************
+            Header End
+    *************************************-->

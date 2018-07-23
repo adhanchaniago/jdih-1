@@ -1,0 +1,20 @@
+plugin:
+    name: 'pda.peraturan::lang.plugin.name'
+    description: 'pda.peraturan::lang.plugin.description'
+    author: PDA
+    icon: oc-icon-book
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'pda.peraturan::lang.plugin.name'
+        url: pda/peraturan/peraturan
+        icon: icon-bank
+        sideMenu:
+            jenis:
+                label: 'Jenis Peraturan'
+                url: pda/peraturan/jenis
+                icon: icon-list-ol
+            berita:
+                label: Berita
+                url: pda/peraturan/berita
+                icon: icon-book

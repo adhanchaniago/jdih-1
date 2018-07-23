@@ -1,0 +1,33 @@
+fields:
+    tentang:
+        label: Tentang
+        span: full
+        required: 1
+        type: text
+    kategori:
+        label: Kategori
+        span: full
+        type: text
+    tahun:
+        label: Tahun
+        span: full
+        required: 1
+        type: text
+    nomor:
+        label: Nomor
+        span: full
+        required: 1
+        type: text
+    jenis:
+        label: Jenis
+        nameFrom: nama
+        descriptionFrom: description
+        span: full
+        required: 1
+        type: relation
+    filename:
+        label: File
+        mode: file
+        span: auto
+        required: 1
+        type: mediafinder

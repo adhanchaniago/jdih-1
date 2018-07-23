@@ -1,0 +1,26 @@
+columns:
+    nama:
+        label: 'Jenis Peraturan'
+        type: text
+        searchable: true
+        sortable: true
+    singkatan:
+        label: Singkatan
+        type: text
+        searchable: true
+        sortable: true
+    id:
+        label: Level
+        type: number
+        searchable: false
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        sortable: false

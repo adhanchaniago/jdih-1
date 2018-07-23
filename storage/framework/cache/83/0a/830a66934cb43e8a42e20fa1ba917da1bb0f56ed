@@ -1,0 +1,169 @@
+1532319896a:1:{s:7:"faq.htm";a:8:{s:8:"fileName";s:7:"faq.htm";s:7:"content";s:5191:"title = "faq"
+url = "/faq"
+layout = "default"
+
+==
+
+<section class="flat-row page-addlisting">
+    <div class="container">            
+        <div class="wrap-accadion">
+            <div class="row">
+                <!-- <div class="col-lg-2">
+                    <h5 class="title-list">Pricing</h5>
+                </div> -->
+                <div class="col-lg-12">
+                    <div class="flat-accordion">
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Section 1</div>
+                            <div class="toggle-content">
+                                <form method="post" action="#" class="form-profile">
+                                    <ul class="list-input">
+                                        <li class="clearfix excep">
+                                            <p class="input-info title">
+                                                <input type="text" name="nell" placeholder="Nellara">
+                                            </p>
+                                            <p class="input-info descrip">
+                                                <input type="text" name="late" placeholder="Late evening craving for some comfort food led me to this place">
+                                            </p>
+                                            <p class="input-info pricing">
+                                                <input type="text" name="price" placeholder="7.99">
+                                                <span>USD</span>
+                                            </p>
+                                            <p class="input-info add-icon">
+                                                <i class="fa fa-minus-circle"></i>
+                                            </p>
+                                        </li>
+                                        <li class="clearfix">
+                                            <p class="input-info title">
+                                                <input type="text" name="title" placeholder="Title*">
+                                            </p>
+                                            <p class="input-info descrip">
+                                                <input type="text" name="des" placeholder="Description*">
+                                            </p>
+                                            <p class="input-info pricing">
+                                                <input type="text" name="price2"  placeholder="Price*">
+                                                <span>USD</span>
+                                            </p>
+                                            <p class="input-info add-icon">
+                                                <a href="#" title=""><i class="fa fa-plus-circle"></i></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </form>                              
+                            </div>
+                        </div><!-- /toggle -->
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Section 2</div>
+                            <div class="toggle-content">
+                                <form method="post" action="#" class="form-profile">
+                                    <ul class="list-input">
+                                        <li class="clearfix">
+                                            <p class="input-info title">
+                                                <input type="text" name="title" placeholder="Title*">
+                                            </p>
+                                            <p class="input-info descrip">
+                                                <input type="text" name="des" id="des" placeholder="Description*">
+                                            </p>
+                                            <p class="input-info pricing">
+                                                <input type="text" name="price2" id="price2" placeholder="Price*">
+                                                <span>USD</span>
+                                            </p>
+                                            <p class="input-info add-icon">
+                                                <a href="#" title=""><i class="fa fa-plus-circle"></i></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </form>                              
+                            </div>
+                        </div><!-- /toggle -->
+                    </div> <!-- /.flat-accordion -->
+                    <div class="button-addlisting">
+                        <button type="button" class="flat-button" onclick="location.href='page-addlisting.html'">Add Listing</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1532319294;s:6:"markup";s:5134:"<section class="flat-row page-addlisting">
+    <div class="container">            
+        <div class="wrap-accadion">
+            <div class="row">
+                <!-- <div class="col-lg-2">
+                    <h5 class="title-list">Pricing</h5>
+                </div> -->
+                <div class="col-lg-12">
+                    <div class="flat-accordion">
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Section 1</div>
+                            <div class="toggle-content">
+                                <form method="post" action="#" class="form-profile">
+                                    <ul class="list-input">
+                                        <li class="clearfix excep">
+                                            <p class="input-info title">
+                                                <input type="text" name="nell" placeholder="Nellara">
+                                            </p>
+                                            <p class="input-info descrip">
+                                                <input type="text" name="late" placeholder="Late evening craving for some comfort food led me to this place">
+                                            </p>
+                                            <p class="input-info pricing">
+                                                <input type="text" name="price" placeholder="7.99">
+                                                <span>USD</span>
+                                            </p>
+                                            <p class="input-info add-icon">
+                                                <i class="fa fa-minus-circle"></i>
+                                            </p>
+                                        </li>
+                                        <li class="clearfix">
+                                            <p class="input-info title">
+                                                <input type="text" name="title" placeholder="Title*">
+                                            </p>
+                                            <p class="input-info descrip">
+                                                <input type="text" name="des" placeholder="Description*">
+                                            </p>
+                                            <p class="input-info pricing">
+                                                <input type="text" name="price2"  placeholder="Price*">
+                                                <span>USD</span>
+                                            </p>
+                                            <p class="input-info add-icon">
+                                                <a href="#" title=""><i class="fa fa-plus-circle"></i></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </form>                              
+                            </div>
+                        </div><!-- /toggle -->
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Section 2</div>
+                            <div class="toggle-content">
+                                <form method="post" action="#" class="form-profile">
+                                    <ul class="list-input">
+                                        <li class="clearfix">
+                                            <p class="input-info title">
+                                                <input type="text" name="title" placeholder="Title*">
+                                            </p>
+                                            <p class="input-info descrip">
+                                                <input type="text" name="des" id="des" placeholder="Description*">
+                                            </p>
+                                            <p class="input-info pricing">
+                                                <input type="text" name="price2" id="price2" placeholder="Price*">
+                                                <span>USD</span>
+                                            </p>
+                                            <p class="input-info add-icon">
+                                                <a href="#" title=""><i class="fa fa-plus-circle"></i></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </form>                              
+                            </div>
+                        </div><!-- /toggle -->
+                    </div> <!-- /.flat-accordion -->
+                    <div class="button-addlisting">
+                        <button type="button" class="flat-button" onclick="location.href='page-addlisting.html'">Add Listing</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";N;s:5:"title";s:3:"faq";s:3:"url";s:4:"/faq";s:6:"layout";s:7:"default";}}

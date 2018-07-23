@@ -1,0 +1,9 @@
+	{{ form_open({ request: 'onPost' }) }}
+        {% flash %}
+            <div class="alert alert-{{ type }}">{{ message }}</div>
+        {% endflash %}
+        <textarea name="question" rows="3" placeholder="Question"></textarea> 
+        <input type="text" name="email" placeholder="Email"/>
+        <input type="submit" value="Send" name="submit"/>
+    {{ form_close() }}
+

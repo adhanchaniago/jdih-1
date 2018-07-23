@@ -1,0 +1,10 @@
+name: Jenis
+form: $/pda/peraturan/models/jenis/fields.yaml
+modelClass: Pda\Peraturan\Models\Jenis
+defaultRedirect: pda/peraturan/jenis
+create:
+    redirect: 'pda/peraturan/jenis/update/:id'
+    redirectClose: pda/peraturan/jenis
+update:
+    redirect: pda/peraturan/jenis
+    redirectClose: pda/peraturan/jenis
