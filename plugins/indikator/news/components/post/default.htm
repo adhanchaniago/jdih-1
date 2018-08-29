@@ -1,13 +1,41 @@
 {% set post = __SELF__.post %}
 
-<div class="post">
-    <div class="post-content">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.image %}<div class="post-image"><img src="{{ post.image|media }}" alt="{{ post.title }}"></div>{% endif %}
+<article class="post clearfix">
+	{% if post.image %}
+    <div class="featured-post" style="width: 870px; height: 600px;">
+        <img src="{{ post.image|media }}" alt="{{ post.title }}" style="width: 100%;">
+    </div><!-- /.feature-post -->
+    {% endif %}
+    <div class="content-post">
+        <h3 class="title-post">{{ post.title }}</h3>
+        <ul class="meta-post clearfix">
+            <li class="time">
+                {{ post.published_at|date('Y-m-d') }}
+            </li><!-- 
+            <li class="categories"> 
+                <a href="#">Business</a>, <a href="#">Leasing</a>
+            </li> -->
+        </ul><!-- /.meta-post -->
+        {% if post.content %}
+        <div align="justify">                              
+            {{ post.content|raw }}
+        </div>
+        {% endif %}
 
-        {% if post.introductory %}<div class="post-introductory">{{ post.introductory|raw }}</div>{% endif %}
-        {% if post.content %}<div class="post-content">{{ post.content|raw }}</div>{% endif %}
-
-        <p class="post-date">Posted on {{ post.published_at|date('Y-m-d') }}</p>
-    </div>
-</div>
+        <div class="direction clearfix">
+            <!-- <div class="tag-single float-left">
+                <span>Tags:</span>
+                <a href="#"> Business,</a>
+                <a href="#"> Tax,</a>
+                <a href="#"> Finance</a>
+            </div> -->
+            <div class="social-links float-right">
+                <span>Share:</span>
+                {% component 'ssbuttonsnb' %}
+                <!-- <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a> -->
+            </div>
+        </div>
+    </div><!-- /.content-post -->
+</article> 

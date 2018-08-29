@@ -1,9 +1,8 @@
 title = "detail_berita"
-url = "/berita/:judul"
+url = "/:slug"
 layout = "default"
 is_hidden = 0
 show_menu = 0
-
 
 [ssbuttonsnb]
 fa = "maxcdn"
@@ -18,6 +17,9 @@ order_facebook = 2
 order_google+ = 3
 order_stumbleupon = 4
 order_linkedin = 5
+
+[newsPost]
+slug = "{{ :slug }}"
 ==
 <?php
 use Pda\Peraturan\Models\Berita;
@@ -25,6 +27,7 @@ use Pda\Peraturan\Models\Berita;
 	function onStart() {
 		$this['all'] = Berita::orderBy('tanggal', 'desc')->get();
         $this['berita'] = Berita::where('slug', $this->param('judul'))->first();
+        $this['title'] = $this->param('title');
     }
 ?>
 ==
@@ -44,7 +47,7 @@ use Pda\Peraturan\Models\Berita;
                             <li> - </li>                            
                             <li><a href="{{ 'berita/listing'|page }}">Berita</a></li>
                             <li> - </li>
-                            <li><a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">{{ berita.judul }}</a></li>
+                            <li><a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">{{ title }}</a></li>
                         </ul>                   
                     </div><!-- /.breadcrumbs -->   
                 </div><!-- /.col-md-12 -->  
@@ -58,41 +61,7 @@ use Pda\Peraturan\Models\Berita;
             <div class="row">
                 <div class="col-lg-9">
                     <div class="post-wrap">
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <img src="{{ berita.gambar.thumb(870, 600, {'mode' : 'crop'}) }}" alt="image">
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <h3 class="title-post">{{ berita.judul }}</h3>
-                                <ul class="meta-post clearfix">
-                                    <li class="time">
-                                        {{ berita.tanggal| date('F j, Y') }}
-                                    </li><!-- 
-                                    <li class="categories"> 
-                                        <a href="#">Business</a>, <a href="#">Leasing</a>
-                                    </li> -->
-                                </ul><!-- /.meta-post -->
-                                <div align="justify">                              
-                                    {{ berita.isi|raw}}
-                                </div>
-
-                                <div class="direction clearfix">
-                                    <!-- <div class="tag-single float-left">
-                                        <span>Tags:</span>
-                                        <a href="#"> Business,</a>
-                                        <a href="#"> Tax,</a>
-                                        <a href="#"> Finance</a>
-                                    </div> -->
-                                    <div class="social-links float-right">
-                                        <span>Share:</span>
-                                        {% component 'ssbuttonsnb' %}
-                                        <!-- <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a> -->
-                                    </div>
-                                </div>
-                            </div><!-- /.content-post -->
-                        </article>  
+                        {% component 'newsPost' %} 
                         <div id="disqus_thread"></div>
                         <script>
 
@@ -162,6 +131,4 @@ use Pda\Peraturan\Models\Berita;
                 </div><!-- /.col-md-3 -->             
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>   
-
-    
+    </section>

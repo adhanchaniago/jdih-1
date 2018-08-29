@@ -915,8 +915,8 @@ article.post {
 }
 
 article.post .featured-post {
-	position: relative;
-	overflow: hidden;
+	
+    overflow: hidden;
 	margin-bottom: 32px;
 }
 

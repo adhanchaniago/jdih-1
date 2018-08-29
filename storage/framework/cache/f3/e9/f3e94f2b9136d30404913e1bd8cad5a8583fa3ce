@@ -1,4 +1,4 @@
-1535510741a:1:{s:18:"berita/listing.htm";a:11:{s:8:"fileName";s:18:"berita/listing.htm";s:7:"content";s:3918:"title = "list_berita"
+1535530432a:1:{s:18:"berita/listing.htm";a:11:{s:8:"fileName";s:18:"berita/listing.htm";s:7:"content";s:3918:"title = "list_berita"
 url = "/berita"
 layout = "default"
 is_hidden = 0
@@ -88,7 +88,7 @@ use Pda\Peraturan\Models\Berita;
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:5:"mtime";i:1535510134;s:6:"markup";s:3471:"<!-- Page title -->
+    </section>";s:5:"mtime";i:1535528935;s:6:"markup";s:3471:"<!-- Page title -->
     <div class="page-title parallax parallax1">
         <div class="section-overlay">
         </div>

@@ -1,5 +1,5 @@
 <?php 
-use Pda\Peraturan\Models\Peraturan;class Cms5b850610c2a62092912795_dc4d89069a1264d11a20c79d3de86f8cClass extends Cms\Classes\PartialCode
+use Pda\Peraturan\Models\Peraturan;class Cms5b861f38d835c387294456_1c20b3e5073030e3621f4cd1ea5c03aaClass extends Cms\Classes\PartialCode
 {
     
 public function onStart() {

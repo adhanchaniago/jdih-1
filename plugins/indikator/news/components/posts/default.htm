@@ -1,8 +1,29 @@
 {% set posts = __SELF__.posts %}
 
+<!-- <div class="post-list">
+    {% for post in posts %}
+    <div class="post-item">
+        {% if post.image %}<div class="post-image"><a href="/{{ postPage }}/{{ post.slug }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a></div>{% endif %}
+
+        <h2 class="post-title"><a href="/{{ postPage }}/{{ post.slug }}">{{ post.title }}</a></h2>
+        <p class="post-date">{{ post.published_at|date('Y-m-d') }}</p>
+
+        {% if post.introductory %}
+        <div class="post-introductory">{{ post.introductory|raw }}</div>
+        {% elseif post.content %}
+        <div class="post-content">{{ post.content|raw }}</div>
+        {% endif %}
+    </div>
+    {% else %}
+    <span class="post-nodata">{{ noPostsMessage }}</span>
+    {% endfor %}
+</div> -->
+
     {% for post in posts %}
         <article class="post clearfix">
-            <h3 class="title-post"><a href="/{{ postPage }}/{{ post.slug }}">{{ post.title }}</a></h3>                          
+            <h3 class="title-post"><a href="{{ 'berita/detail'|page({ slug: post.slug, title: post.title }) }}">
+                {{ post.title }}
+                </a></h3>                          
             <ul class="meta-post clearfix">
                 <li class="time">
                     {{ post.published_at|date('Y-m-d') }}
@@ -18,8 +39,8 @@
                 </li> -->
             </ul><!-- /.meta-post -->
             {% if post.image %}
-            <div class="featured-post">
-                <a href="/{{ postPage }}/{{ post.slug }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
+            <div class="featured-post" style="width: 870px; height: 367px;">
+                <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}"><img src="{{ post.image|media }}" alt="{{ post.title }}" style="width: 100%;"></a>
             </div><!-- /.feature-post -->
             {% endif %}
             {% if post.introductory %}
@@ -27,16 +48,16 @@
                 <div align="justify">                              
                     {{ post.introductory|raw }}
                     <div class="more-link">
-                        <a class="effect-button" href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="effect-button" href="{{ 'berita/detail'|page({ slug: post.slug }) }}">Read More <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div><!-- /.content-post -->
             {% elseif post.content %}
             <div class="content-post">
                 <div align="justify">                              
-                    {{ post.content|raw }}
+                    {{ post.introductory|raw }}
                     <div class="more-link">
-                        <a class="effect-button" href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="effect-button" href="{{ 'berita/detail'|page({ slug: post.slug }) }}">Read More <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div><!-- /.content-post -->

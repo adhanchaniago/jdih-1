@@ -236,4 +236,12 @@
   'Indikator\\News\\Models\\Settings' => 'plugins\\indikator\\news\\models\\Settings.php',
   'Indikator\\News\\FormWidgets\\PostInfo' => 'plugins\\indikator\\news\\formwidgets\\PostInfo.php',
   'Indikator\\News\\Models\\Logs' => 'plugins\\indikator\\news\\models\\Logs.php',
+  'manogi\\mediathumb\\Plugin' => 'plugins\\manogi\\mediathumb\\Plugin.php',
+  'indikator\\news\\Controllers\\categories' => 'plugins\\indikator\\news\\controllers\\categories.php',
+  'indikator\\news\\Controllers\\subscribers' => 'plugins\\indikator\\news\\controllers\\subscribers.php',
+  'Indikator\\News\\Models\\SubscribersImport' => 'plugins\\indikator\\news\\models\\SubscribersImport.php',
+  'Indikator\\News\\Models\\SubscribersExport' => 'plugins\\indikator\\news\\models\\SubscribersExport.php',
+  'Indikator\\News\\Models\\Subscribers' => 'plugins\\indikator\\news\\models\\Subscribers.php',
+  'indikator\\news\\Controllers\\statistics' => 'plugins\\indikator\\news\\controllers\\statistics.php',
+  'indikator\\news\\Controllers\\logs' => 'plugins\\indikator\\news\\controllers\\logs.php',
 );
