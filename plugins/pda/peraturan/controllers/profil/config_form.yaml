@@ -1,0 +1,10 @@
+name: Profil
+form: $/pda/peraturan/models/profil/fields.yaml
+modelClass: Pda\Peraturan\Models\Profil
+defaultRedirect: pda/peraturan/profil
+create:
+    redirect: 'pda/peraturan/profil/update/:id'
+    redirectClose: pda/peraturan/profil
+update:
+    redirect: pda/peraturan/profil
+    redirectClose: pda/peraturan/profil

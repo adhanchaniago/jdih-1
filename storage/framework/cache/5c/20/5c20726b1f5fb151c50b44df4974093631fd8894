@@ -1,0 +1,79 @@
+1535510741a:1:{s:30:"profil/struktur_organisasi.htm";a:8:{s:8:"fileName";s:30:"profil/struktur_organisasi.htm";s:7:"content";s:1913:"title = "Struktur Organisasi"
+url = "/struktur-organisasi"
+layout = "default"
+
+==
+<?php
+use Pda\Peraturan\Models\Profil;
+
+	function onStart() {
+		$this['profil'] = Profil::where('id', 1)->first();
+    }
+?>
+==
+
+	<section class="main-content blog-posts blog-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="post-wrap">
+                        <article class="post clearfix">
+                            <div class="content-post">
+                                <h3 class="title-post" align="center">STRUKTUR ORGANISASI JDIH LAPAN</h3>
+                                <div align="justify">                              
+                                    <img src="{{ profil.struktur.path }}"> 
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article> 
+                    </div><!-- /.post-wrap -->                                  
+                </div><!-- /.col-lg-9 -->  
+
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Profil</h5>
+                            <ul>
+                                <li><a href="{{ 'profil/sejarah'|page }}">Sejarah Singkat</a></li>
+                                <li><a href="{{ 'profil/visimisi'|page }}">Visi Misi</a></li>
+                                <li><a href="#">Struktur Organisasi</a></li>
+                            </ul>
+                        </div><!-- /.widget-categories --><!-- /.widget-tag -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-md-3 -->             
+            </div><!-- /.row -->           
+        </div><!-- /.container -->   
+    </section> ";s:5:"mtime";i:1535337570;s:6:"markup";s:1687:"<section class="main-content blog-posts blog-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="post-wrap">
+                        <article class="post clearfix">
+                            <div class="content-post">
+                                <h3 class="title-post" align="center">STRUKTUR ORGANISASI JDIH LAPAN</h3>
+                                <div align="justify">                              
+                                    <img src="{{ profil.struktur.path }}"> 
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article> 
+                    </div><!-- /.post-wrap -->                                  
+                </div><!-- /.col-lg-9 -->  
+
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Profil</h5>
+                            <ul>
+                                <li><a href="{{ 'profil/sejarah'|page }}">Sejarah Singkat</a></li>
+                                <li><a href="{{ 'profil/visimisi'|page }}">Visi Misi</a></li>
+                                <li><a href="#">Struktur Organisasi</a></li>
+                            </ul>
+                        </div><!-- /.widget-categories --><!-- /.widget-tag -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-md-3 -->             
+            </div><!-- /.row -->           
+        </div><!-- /.container -->   
+    </section>";s:4:"code";s:118:"use Pda\Peraturan\Models\Profil;
+
+	function onStart() {
+		$this['profil'] = Profil::where('id', 1)->first();
+    }";s:5:"title";s:19:"Struktur Organisasi";s:3:"url";s:20:"/struktur-organisasi";s:6:"layout";s:7:"default";}}

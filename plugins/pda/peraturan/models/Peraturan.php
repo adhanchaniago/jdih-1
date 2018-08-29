@@ -37,6 +37,10 @@ class Peraturan extends Model
         ],
     ];
 
+    public $morphMany = [
+        'logo' => ['Pda\Peraturan\Models\Jenis', 'name' => 'logos']
+    ];
+
     public static $allowedSortingOptions = array(
         'tentang desc' => 'Tentang - desc',
         'tentang asc' => 'Tentang - asc',

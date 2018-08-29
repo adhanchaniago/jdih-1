@@ -1,0 +1,80 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: indikator.news::lang.form.id
+        invisible: true
+
+    image:
+        label: indikator.news::lang.form.image
+        sortable: false
+        clickable: false
+        invisible: true
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_image.htm
+
+    title:
+        label: indikator.news::lang.form.title
+        searchable: true
+
+    slug:
+        label: indikator.news::lang.form.slug
+        searchable: true
+        invisible: true
+
+    statistics:
+        label: indikator.news::lang.stat.viewed
+        align: center
+
+    length:
+        label: indikator.news::lang.form.length
+        sortable: false
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_length.htm
+        align: center
+        width: 85px
+
+    featured:
+        label: indikator.news::lang.form.featured
+        sortable: false
+        invisible: true
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_featured.htm
+
+    last_send_at:
+        label: indikator.news::lang.form.last_send
+        searchable: true
+        type: timesince
+
+    stat:
+        label: indikator.news::lang.menu.statistics
+        sortable: false
+        clickable: false
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_stat.htm
+
+    status:
+        label: indikator.news::lang.form.status
+        sortable: false
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_status.htm
+
+    published_at:
+        label: indikator.news::lang.form.published_at
+        searchable: true
+        type: datetime
+
+    created_at:
+        label: indikator.news::lang.form.created_at
+        searchable: true
+        invisible: true
+        type: datetime
+
+    updated_at:
+        label: indikator.news::lang.form.updated_at
+        searchable: true
+        invisible: true
+        type: datetime

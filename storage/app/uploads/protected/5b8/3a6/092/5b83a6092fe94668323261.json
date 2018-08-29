@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "jdih-lapan-214604",
+  "private_key_id": "46191c8bfc5de3f8104d81def4fb976f1b1f2a50",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHgTurn6P+fAID\nZV6mvVij8zDtHHAuV+GsLVNwaQVTBOHTkkCxXZnEYNmBxm9de57ht2ahj3lvTWok\n6AXG/3/sYy8nmJLL7091yb7SNci2N2T8mRcK4hob3/EFvvRivfksYhlJA0o0TfkX\n0MvmPxc+uVkmDBmRzRH+GMSq4aqdtAdXkGS4taVHIujxKBpUsm1JU8iWgfZyN7bf\n2GdlqQ1Y38LCYwVm19JSw8g+63/VziW6XZ9+ApgaqypWJYAA3r+QEmep6WY2XKjn\nB9vTOI36XWAQecUD8YkF49mRjeHowClIhmRVAoeW6t2LKgqVpkx1so8JfXtc8AqS\nfjCYNURBAgMBAAECggEAATYZFJFvUjioCCO/LPV/hTKmjyX/TgoQD3bQp8vSHF8u\nTNXO6T9yKHsAZGqTRgbIX+1Nuk46n0ZMePAPYEDbDWZ2bz/cp6WAFBfBvhkqqw/l\nNShrzKUzTIyHSYY6NHhGppzriOHe0I2m+nH02aTJQW2oK37iz9u7enwQLkvDo1n6\npjMFdPhX6HWEvN8091oUysPFl9e02v3NRW90i1Sml+lVfpc0c2oL3Z9eKHeXdxtF\n2kysBV42Rm327eXGecikv+4LSACOcuj5yWhYvOcui9wtN/YMZ5x35s3kW24lJ8TV\nEuBDVHaxAsydjoABvdRQdGA+IPAEZFpjNchvFFbSHQKBgQDpN/WZlPJG0zk6ZmJN\n/KoduRyoatqYZ0ERlurStUxPfLbi71+r6AnYPD5UxYO3qOqacIFMsP+PAm7BmyPV\nfuDABynMFemNjMkNs6SRHJrjsl/l3QbAojMeVAq7yU876ufDSSsFgAr49LwaA3xE\nJ8FzuwBdJEUGKKo+ENZ2xSwwTQKBgQDa/jOYlq0XRnFozxxTaOPQtThzP/6g4KtP\n1a0ZFr54+z+BdgchICBp7B/V5+asOREIpEoF5QqOcf1zmGbqG59ncTzAOCiEIw68\nI+pNSXVvR8sH6uaIAVKltSTf0C2LZsXlaGG5nO2aAV7ya5k/N3D3zzXB1h1+PbCA\nNpy3c1j9xQKBgQCoMGoXg1oiB6xK2JFmiqOoYdov/zd8F2LOq5bXtFW/MUK3cEf/\nsox+/Bs7iWHPbqsaC67DvxXebbOwPhDeo+yzr7bN7rOLGI/aKMayu/1b3kTYgcif\n3Zmd8p/3A1v36xWPOVIkWk4PcnfBDuhsQnt52c+OXFzG70avEfeImfOfNQKBgFhE\nIym6eZOrCeTzrXgVC9XAZTtWrNvNEl+AQV+eYjFDG2qj1uXMHCR1TrOZ38jEy4/P\nICLWGXYmjcB8yeZMMeiwpIrZV8NCmhrM4xA5roKmzjenvzlMRzKRG4a2UtUgHF2F\nv/XfQYlUSh+trLvlLbxEIWe6VHLgjHZxDKOIc3L9AoGAQ2ereO10wq6KarJskQUh\nmUvRmo3R9Dxj17bWHQvMMHbhnYA4wX700LkKhzFX9tG4kQ+rFSNnXz2PYqqF3A2A\n6PlaMkCAgtS2XjnFXeQzPVTMVg7fHUgkiUQd7IzeEygB+j3deMguQGLHCbb/8fGE\neeqSsyB7OJR+d8FTIH2sZJw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jdih-lapan-analytics@jdih-lapan-214604.iam.gserviceaccount.com",
+  "client_id": "103249680171133251851",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jdih-lapan-analytics%40jdih-lapan-214604.iam.gserviceaccount.com"
+}

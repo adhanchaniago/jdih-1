@@ -1,0 +1,12 @@
+list: $/pda/peraturan/models/profil/columns.yaml
+modelClass: Pda\Peraturan\Models\Profil
+title: Profil
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pda/peraturan/profil/update/:id'

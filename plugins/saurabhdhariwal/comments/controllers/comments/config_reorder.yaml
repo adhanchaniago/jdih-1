@@ -1,4 +1,0 @@
-title: Comments
-modelClass: SaurabhDhariwal\Comments\Models\Comments
-toolbar:
-    buttons: reorder_toolbar

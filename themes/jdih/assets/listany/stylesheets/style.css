@@ -263,7 +263,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"] {	
 	background-color: transparent;
-    border: 1px solid #e5e5e5;
+    border: 2px solid #e5e5e5;
     height: 50px;
     padding-left: 15px;
     font-size: 13px;
@@ -354,7 +354,7 @@ input[type="color"],
 	   -moz-box-shadow: none;
 	     -o-box-shadow: none;
 	        box-shadow: none;
-	color: #b1b1b1;
+	/*color: #b1b1b1;*/
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: "Nunito", sans-serif; color: #333333; font-weight: 600; margin-bottom: 20px; }
@@ -2767,10 +2767,15 @@ footer a:hover {
 
 .one-half {
     float: left;
-    width: 50%;
+    width: 100%;
 }
 
 .widget ul.menu li {
+	padding: 0;
+	line-height: 32px;
+}
+
+.widget ul.icon li {
 	padding: 0;
 	line-height: 32px;
 }
@@ -2924,6 +2929,32 @@ footer a:hover {
     border-left: 1em solid #e8280b;
     -webkit-animation: fa-spin 2s infinite linear;
            animation: fa-spin 2s infinite linear;     
+}
+
+/* List
+-------------------------------------------------------------- */
+.text ul {
+  list-style-type: square;
+  padding-left: 25px;
+  color: #25282A;
+}
+
+.text ul li 
+{
+  	line-height: 1.5;
+  	margin-top: 1em;
+}
+.text ol li
+{
+	line-height: 1.5;
+	margin-top: 1em;
+}
+
+.text ol {
+  list-style-type: decimal;
+  color: #25282A;
+  padding-left: 25px;
+  margin-top: 1em;
 }
 
 

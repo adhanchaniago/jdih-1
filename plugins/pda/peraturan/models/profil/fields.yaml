@@ -1,0 +1,28 @@
+fields:
+    sejarah:
+        label: 'Sejarah Singkat'
+        size: large
+        span: full
+        required: 0
+        type: richeditor
+    visi:
+        label: Visi
+        size: large
+        span: full
+        required: 0
+        type: richeditor
+    misi:
+        label: Misi
+        size: large
+        span: full
+        required: 0
+        type: richeditor
+    struktur:
+        label: 'Struktur Organisasi'
+        span: full
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

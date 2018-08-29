@@ -1,11 +1,23 @@
-1532319872a:1:{s:17:"berita/detail.htm";a:12:{s:8:"fileName";s:17:"berita/detail.htm";s:7:"content";s:11252:"title = "detail_berita"
+1535510741a:1:{s:17:"berita/detail.htm";a:11:{s:8:"fileName";s:17:"berita/detail.htm";s:7:"content";s:8294:"title = "detail_berita"
 url = "/berita/:judul"
 layout = "default"
 is_hidden = 0
 show_menu = 0
 
-[commentsPost]
-[FaqAsk]
+
+[ssbuttonsnb]
+fa = "maxcdn"
+js = 0
+twitter = 1
+facebook = 1
+google+ = 1
+stumbleupon = 1
+linkedin = 1
+order_twitter = 1
+order_facebook = 2
+order_google+ = 3
+order_stumbleupon = 4
+order_linkedin = 5
 ==
 <?php
 use Pda\Peraturan\Models\Berita;
@@ -55,35 +67,32 @@ use Pda\Peraturan\Models\Berita;
                                 <ul class="meta-post clearfix">
                                     <li class="time">
                                         {{ berita.tanggal| date('F j, Y') }}
-                                    </li>
+                                    </li><!-- 
                                     <li class="categories"> 
                                         <a href="#">Business</a>, <a href="#">Leasing</a>
-                                    </li>
+                                    </li> -->
                                 </ul><!-- /.meta-post -->
                                 <div align="justify">                              
                                     {{ berita.isi|raw}}
                                 </div>
 
                                 <div class="direction clearfix">
-                                    <div class="tag-single float-left">
+                                    <!-- <div class="tag-single float-left">
                                         <span>Tags:</span>
                                         <a href="#"> Business,</a>
                                         <a href="#"> Tax,</a>
                                         <a href="#"> Finance</a>
-                                    </div>
+                                    </div> -->
                                     <div class="social-links float-right">
                                         <span>Share:</span>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        {% component 'ssbuttonsnb' %}
+                                        <!-- <a href="#"><i class="fa fa-facebook"></i></a>
                                         <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a> -->
                                     </div>
                                 </div>
                             </div><!-- /.content-post -->
-                        </article>
-                        <div>
-                            <h2>Tanyakan pada kami</h2>
-                           {% component 'FaqAsk' %}
-                        </div>   
+                        </article>  
                         <div id="disqus_thread"></div>
                         <script>
 
@@ -114,7 +123,7 @@ use Pda\Peraturan\Models\Berita;
                         <div class="widget widget-recent-news">
                             <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
-                            	{% for list in all %}
+                            	{% for list in all|slice(0,5) %}
                             		<li>
 	                                    <div class="text">
 	                                        <h6>
@@ -127,18 +136,18 @@ use Pda\Peraturan\Models\Berita;
 	                                </li>
                             	{% endfor %}
                             </ul><!-- /.popular-news -->
-                        </div><!-- /.widget-popular-news -->
+                        </div><!-- /.widget-popular-news --><!-- 
                         <div class="widget widget_categories">
-                            <h5 class="widget-title">Category</h5>
+                            <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finanve</a></li>
-                                <li><a href="#">Insurance</a></li>
-                                <li><a href="#">Leasing</a></li>
+                                <li><a href="#">Undang-Undang</a></li>
+                                <li><a href="#">Peraturan Pemerintah</a></li>
+                                <li><a href="#">Peraturan Presiden</a></li>
+                                <li><a href="#">Keputusan Presiden</a></li>
                             </ul>
-                        </div><!-- /.widget-categories -->
+                        </div> --><!-- /.widget-categories -->
  
-                        <div class="widget widget_tag">
+                        <!-- <div class="widget widget_tag">
                             <h5 class="widget-title">Tags</h5>
                             <div class="tag-list">
                                 <a href="#">Business</a>
@@ -148,71 +157,14 @@ use Pda\Peraturan\Models\Berita;
                                 <a href="#">Management</a>
                                 <a href="#">Portfolio</a>    
                             </div>
-                        </div><!-- /.widget-tag -->
+                        </div> --><!-- /.widget-tag -->
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-md-3 -->             
             </div><!-- /.row -->           
         </div><!-- /.container -->   
     </section>   
 
-    <section class="flat-row v1 bg-theme">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="title-section">
-                        <h1 class="title">Newsletter</h1>
-                        <div class="sub-title">
-                            Subscribe now and receive weekly newsletter with
-                        </div>
-                    </div>
-                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="#" data-mailchimp="true">
-                        <div class="field clearfix" id="subscribe-content"> 
-                            <p class="wrap-input-email">
-                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
-                            </p>
-                            <p class="wrap-btn">
-                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
-                            </p>
-                        </div>
-                        <div id="subscribe-msg"></div>
-                    </form>
-                </div>
-                <div class="col-lg-2">
-                    <div class="flat-counter text-center">                            
-                        <div class="content-counter">
-                            <div class="icon-count">
-                                <i class="ion-waterdrop"></i>
-                            </div>
-                            <div class="name-count">Listing</div>
-                            <div class="numb-count" data-to="1897" data-speed="2000" data-waypoint-active="yes">1897</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="flat-counter text-center">                            
-                        <div class="content-counter">
-                            <div class="icon-count">
-                                <i class="ion-pricetags"></i>
-                            </div>
-                            <div class="name-count">Categories</div>
-                            <div class="numb-count" data-to="967" data-speed="2000" data-waypoint-active="yes">967</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="flat-counter text-center">                            
-                        <div class="content-counter">
-                            <div class="icon-count">
-                                <i class="ion-ios-people"></i>
-                            </div>
-                            <div class="name-count">Users</div>
-                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    </section>";s:5:"mtime";i:1532312589;s:6:"markup";s:10897:"<!-- Page title -->
+    ";s:5:"mtime";i:1535339193;s:6:"markup";s:7742:"<!-- Page title -->
     <div class="page-title parallax parallax1">
         <div class="section-overlay">
         </div>
@@ -251,35 +203,32 @@ use Pda\Peraturan\Models\Berita;
                                 <ul class="meta-post clearfix">
                                     <li class="time">
                                         {{ berita.tanggal| date('F j, Y') }}
-                                    </li>
+                                    </li><!-- 
                                     <li class="categories"> 
                                         <a href="#">Business</a>, <a href="#">Leasing</a>
-                                    </li>
+                                    </li> -->
                                 </ul><!-- /.meta-post -->
                                 <div align="justify">                              
                                     {{ berita.isi|raw}}
                                 </div>
 
                                 <div class="direction clearfix">
-                                    <div class="tag-single float-left">
+                                    <!-- <div class="tag-single float-left">
                                         <span>Tags:</span>
                                         <a href="#"> Business,</a>
                                         <a href="#"> Tax,</a>
                                         <a href="#"> Finance</a>
-                                    </div>
+                                    </div> -->
                                     <div class="social-links float-right">
                                         <span>Share:</span>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        {% component 'ssbuttonsnb' %}
+                                        <!-- <a href="#"><i class="fa fa-facebook"></i></a>
                                         <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a> -->
                                     </div>
                                 </div>
                             </div><!-- /.content-post -->
-                        </article>
-                        <div>
-                            <h2>Tanyakan pada kami</h2>
-                           {% component 'FaqAsk' %}
-                        </div>   
+                        </article>  
                         <div id="disqus_thread"></div>
                         <script>
 
@@ -310,7 +259,7 @@ use Pda\Peraturan\Models\Berita;
                         <div class="widget widget-recent-news">
                             <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
-                            	{% for list in all %}
+                            	{% for list in all|slice(0,5) %}
                             		<li>
 	                                    <div class="text">
 	                                        <h6>
@@ -323,18 +272,18 @@ use Pda\Peraturan\Models\Berita;
 	                                </li>
                             	{% endfor %}
                             </ul><!-- /.popular-news -->
-                        </div><!-- /.widget-popular-news -->
+                        </div><!-- /.widget-popular-news --><!-- 
                         <div class="widget widget_categories">
-                            <h5 class="widget-title">Category</h5>
+                            <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finanve</a></li>
-                                <li><a href="#">Insurance</a></li>
-                                <li><a href="#">Leasing</a></li>
+                                <li><a href="#">Undang-Undang</a></li>
+                                <li><a href="#">Peraturan Pemerintah</a></li>
+                                <li><a href="#">Peraturan Presiden</a></li>
+                                <li><a href="#">Keputusan Presiden</a></li>
                             </ul>
-                        </div><!-- /.widget-categories -->
+                        </div> --><!-- /.widget-categories -->
  
-                        <div class="widget widget_tag">
+                        <!-- <div class="widget widget_tag">
                             <h5 class="widget-title">Tags</h5>
                             <div class="tag-list">
                                 <a href="#">Business</a>
@@ -344,73 +293,14 @@ use Pda\Peraturan\Models\Berita;
                                 <a href="#">Management</a>
                                 <a href="#">Portfolio</a>    
                             </div>
-                        </div><!-- /.widget-tag -->
+                        </div> --><!-- /.widget-tag -->
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-md-3 -->             
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>   
-
-    <section class="flat-row v1 bg-theme">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="title-section">
-                        <h1 class="title">Newsletter</h1>
-                        <div class="sub-title">
-                            Subscribe now and receive weekly newsletter with
-                        </div>
-                    </div>
-                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="#" data-mailchimp="true">
-                        <div class="field clearfix" id="subscribe-content"> 
-                            <p class="wrap-input-email">
-                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
-                            </p>
-                            <p class="wrap-btn">
-                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
-                            </p>
-                        </div>
-                        <div id="subscribe-msg"></div>
-                    </form>
-                </div>
-                <div class="col-lg-2">
-                    <div class="flat-counter text-center">                            
-                        <div class="content-counter">
-                            <div class="icon-count">
-                                <i class="ion-waterdrop"></i>
-                            </div>
-                            <div class="name-count">Listing</div>
-                            <div class="numb-count" data-to="1897" data-speed="2000" data-waypoint-active="yes">1897</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="flat-counter text-center">                            
-                        <div class="content-counter">
-                            <div class="icon-count">
-                                <i class="ion-pricetags"></i>
-                            </div>
-                            <div class="name-count">Categories</div>
-                            <div class="numb-count" data-to="967" data-speed="2000" data-waypoint-active="yes">967</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="flat-counter text-center">                            
-                        <div class="content-counter">
-                            <div class="icon-count">
-                                <i class="ion-ios-people"></i>
-                            </div>
-                            <div class="name-count">Users</div>
-                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
     </section>";s:4:"code";s:207:"use Pda\Peraturan\Models\Berita;
 
 	function onStart() {
 		$this['all'] = Berita::orderBy('tanggal', 'desc')->get();
         $this['berita'] = Berita::where('slug', $this->param('judul'))->first();
-    }";s:5:"title";s:13:"detail_berita";s:3:"url";s:14:"/berita/:judul";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:12:"commentsPost";a:0:{}s:6:"FaqAsk";a:0:{}}}
+    }";s:5:"title";s:13:"detail_berita";s:3:"url";s:14:"/berita/:judul";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:11:"ssbuttonsnb";a:12:{s:2:"fa";s:6:"maxcdn";s:2:"js";s:1:"0";s:7:"twitter";s:1:"1";s:8:"facebook";s:1:"1";s:7:"google+";s:1:"1";s:11:"stumbleupon";s:1:"1";s:8:"linkedin";s:1:"1";s:13:"order_twitter";s:1:"1";s:14:"order_facebook";s:1:"2";s:13:"order_google+";s:1:"3";s:17:"order_stumbleupon";s:1:"4";s:14:"order_linkedin";s:1:"5";}}}

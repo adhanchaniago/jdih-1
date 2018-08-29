@@ -30,7 +30,7 @@ class FaqAll extends ComponentBase
             'sortOrder' => [
              'title'             => 'Sort Order',
              'description'       => 'Choose sort ordering method. Default newest questions first',
-             'default'           => 'desc',
+             'default'           => 'asc',
              'type'              => 'dropdown',
              'placeholder'       => 'Select sort order',
              'options'           => ['desc'=>'Newest first', 'asc'=>'Oldest first', 'order'=>'User order']

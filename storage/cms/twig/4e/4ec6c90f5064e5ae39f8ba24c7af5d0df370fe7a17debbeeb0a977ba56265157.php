@@ -53,7 +53,7 @@ class __TwigTemplate_8392698966e19a004d37baf0e9e808493e29a60babe51bfd607f707e611
                     // line 12
                     if (twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "items", array())) {
                         // line 13
-                        echo "                <ul class=\"sub-menu\">";
+                        echo "                <ul class=\"submenu\">";
                         $context['__cms_partial_params'] = [];
                         $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "items", array())                        ;
                         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["__SELF__"] ?? null) . "::items")                        , $context['__cms_partial_params']                        , true                        );
@@ -149,7 +149,7 @@ class __TwigTemplate_8392698966e19a004d37baf0e9e808493e29a60babe51bfd607f707e611
             {% endif %}
 
             {% if item.items %}
-                <ul class=\"sub-menu\">{% partial __SELF__ ~ \"::items\" items=item.items %}</ul>
+                <ul class=\"submenu\">{% partial __SELF__ ~ \"::items\" items=item.items %}</ul>
             {% endif %}
         </li>
     {% else %}

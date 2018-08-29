@@ -27,4 +27,8 @@ class Jenis extends Model
     public $attachOne = [
         'logo' => 'System\Models\File'
     ];
+
+    public $morphTo = [
+        'logos' => 'System\Models\File'
+    ];
 }

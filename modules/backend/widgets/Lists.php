@@ -880,7 +880,7 @@ class Lists extends WidgetBase
             $value = $response;
         }
 
-        return $value;
+        return strip_tags($value);
     }
 
     /**

@@ -1,19 +1,23 @@
 <?php 
-use Pda\Peraturan\Models\Peraturan;use Pda\Peraturan\Models\Jenis;use Pda\Peraturan\Models\Berita;class Cms5b553e9e3526f588731243_2195959358738d126c2ca372e435074cClass extends \Cms\Classes\PageCode
+use Pda\Peraturan\Models\Peraturan;use Pda\Peraturan\Models\Jenis;use Pda\Peraturan\Models\Berita;class Cms5b85072830f38083148067_aaf38eb2d8e76421e204d40ca9b80e25Class extends \Cms\Classes\PageCode
 {
-	
+
     
     
 public function onStart() {
 		$peraturan     = Db::table('pda_peraturan_hukum')
     				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
     				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
-                         ->orderBy('jenis_id', 'asc')
+                         ->orderBy('tahun', 'desc')
     				     ->get();
 
         $this['jenis'] = Jenis::all();
 
         $this['berita'] = Berita::orderBy('tanggal', 'desc')->get();
+
+        // $this['latests'] = Peraturan::with('pda_peraturan_jenis', function ($q) {
+        //     $q->with('logo');
+        // })->get();
 
         $years = [];
         // $jenis_id = [];

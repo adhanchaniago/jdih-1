@@ -2,12 +2,16 @@ title = "beranda"
 url = "/"
 layout = "default"
 is_hidden = 0
+show_menu = 0
 
 [FaqAsk]
+
 [searchForm]
+
+[newsSubscribe]
 ==
 <?php
-	use Pda\Peraturan\Models\Peraturan;
+use Pda\Peraturan\Models\Peraturan;
     use Pda\Peraturan\Models\Jenis;
     use Pda\Peraturan\Models\Berita;
 
@@ -15,12 +19,16 @@ is_hidden = 0
 		$peraturan     = Db::table('pda_peraturan_hukum')
     				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
     				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
-                         ->orderBy('jenis_id', 'asc')
+                         ->orderBy('tahun', 'desc')
     				     ->get();
 
         $this['jenis'] = Jenis::all();
 
         $this['berita'] = Berita::orderBy('tanggal', 'desc')->get();
+
+        // $this['latests'] = Peraturan::with('pda_peraturan_jenis', function ($q) {
+        //     $q->with('logo');
+        // })->get();
 
         $years = [];
         // $jenis_id = [];
@@ -55,7 +63,7 @@ is_hidden = 0
     }
 ?>
 ==
-	<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
                 <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
                 <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
                     <div class="slotholder"></div>
@@ -259,7 +267,7 @@ is_hidden = 0
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-section style2">
-                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Berita Terkini</a></h1>
+                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Informasi Hukum Terkini</a></h1>
                     </div>
                 </div>
             </div>
@@ -285,7 +293,7 @@ is_hidden = 0
                                     </li>
                                     <li> by: <a href="#">admin</a></li>
                                 </ul><!-- /.meta-post -->
-                                <h3 class="title-post"><a href="blog-single.html">
+                                <h3 class="title-post"><a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">
                                     {{ news.judul }}
                                     </a></h3>                        
                                 <p>{{ str_words(news.isi, 10) }}</p>
@@ -304,27 +312,11 @@ is_hidden = 0
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <!-- <div class="title-section">
-                        <h1 class="title">Newsletter</h1>
-                        <div class="sub-title">
-                            Subscribe now and receive weekly newsletter with
-                        </div>
-                    </div> -->
-                    <div>
-                        <h2>Tanyakan pada kami</h2>
-                        {% component 'FaqAsk' %}
-                    </div><!-- 
-                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="#" data-mailchimp="true">
-                        <div class="field clearfix" id="subscribe-content"> 
-                            <p class="wrap-input-email">
-                                <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here">
-                            </p>
-                            <p class="wrap-btn">
-                                <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE</button>
-                            </p>
-                        </div>
-                        <div id="subscribe-msg"></div>
-                    </form> -->
+                    <div class="title-section">
+                        <h1>Newsletter</h1>
+                        <div class="sub-title">Dapatkan informasi terkini dari JDIH LAPAN</div><br>
+                        {% component 'newsSubscribe' %}
+                    </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="flat-counter text-center">                            
@@ -344,7 +336,7 @@ is_hidden = 0
                                 <i class="ion-pricetags"></i>
                             </div>
                             <div class="name-count">Kategori</div>
-                            <div class="numb-count" data-to="{{ jenis.count() }}" data-speed="2000" data-waypoint-active="yes">12</div>
+                            <div class="numb-count" data-to="{{ jenis.count() }}" data-speed="2000" data-waypoint-active="yes"></div>
                         </div>
                     </div>
                 </div>
@@ -355,7 +347,7 @@ is_hidden = 0
                                 <i class="ion-ios-people"></i>
                             </div>
                             <div class="name-count">Pengunjung</div>
-                            <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
+                            <div class="numb-count" data-to="{% partial 'visitor' %}" data-speed="2000" data-waypoint-active="yes">{% partial 'visitor' %}</div>
                         </div>
                     </div>
                 </div>

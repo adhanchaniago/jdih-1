@@ -1266,7 +1266,7 @@ section.flat-row.section-product {
 .flat-accordion .flat-toggle .toggle-title {
     position: relative;
     font-size: 14px;
-    color: #C3C3C3;
+    font-weight: bold;
     background-color: #f8f8f8;
     border: 1px solid #e0e0e0;
     padding: 13px 20px 11px;
@@ -1276,14 +1276,14 @@ section.flat-row.section-product {
     position: absolute;
     right: 17px;
     top: 13px;
-    content: "\f056";
+    content: "\f13a";
     font-family: "FontAwesome";
     font-size: 18px;
     color: #777;
 }
 
 .flat-accordion .flat-toggle .toggle-title.active:after {
-    content: "\f055";
+    content: "\f139";
 }
 
 

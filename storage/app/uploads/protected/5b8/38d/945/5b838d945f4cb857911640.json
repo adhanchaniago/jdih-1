@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "satu-lapan",
+  "private_key_id": "bfd5d9b11ec49def4c4bf89582521e8445b0cd4a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCWIQqWhwp5fKD0\nxpS/GDbP0ZWlRk+9cxGX5Y8MjafYDsaGVNqE5EFmjPF3WFy1bGduj3jH9ZTC2Ixu\nNehygLoXYvq8Me4QqFnRsYkr5O3xO3FsdE6hFmAxkMg/wrgvt/vPVyW25T0LZaen\nTFfSkUcuZfhCvbXTx9D9eTJlgbKkX6iuw7O0IiFZkfm4hEJjU7HHBaNT4pGKVwEI\nrLkRsSnvEWIUBoamDsVzZU9ljlxyV2Q8KobfKCy/0ukRKyW+V+cZHGGXSEb8y3uA\nsAED9v5WeZ9YQ1EwdBKoEVHXLyXEfwJgVUGb/sdRxP7fxARcGgfwrEoO6ILNLOnt\nhi203TTTAgMBAAECggEACRwgKsCVbIgyso4j4IsOzs8gJ+zh623cF3EhAqX/e8DW\nkx6UoMb11DJuEWV8DeMLs7QvcN+aE08iPMQ3D4IRyL5QCk0NVFcJSQwsD4A1k0ad\nvCY8NZ77koZlxr8a5h2UwVQmDOvqjfjkX4AZpCr+PFzu36ROlqp9Wz3LeeIqfboO\n4dHBsqQZ6/G+mNxxNVMU/BDBIeq6PNa1MJXN3BxFvgSIXdzgF6KCALdLejwFoUI4\nLhbWwSSXk5Im4yXe8xHrU8vVrPlEBSZERtiE3ozcQs95vUXoXujuRClTh3aqq5ux\nsN2Wp/alv1k+mFqX7dwDVS2hAx7XBqNQH2td4oW1AQKBgQDFB/tR4X2sci4T3TJd\nAmbVQOpb9iZjN6O8tGVDtLRsqpB2bUIIcAmFi22Th1vrZJlmhlPGrEkHtyXRRbpM\ncMsXYsJxTsn6h1crs+Yr1GsFkEuVtR8p66WzUfiAum9hlY/966gg/74ybKNQjva7\nKDMfJ/ust33tYHD8rgOqr9FaYQKBgQDDD4qdYZcH4NHj1cS1N3M6NA9okLpRKgHG\nW4CRToiKwSNzjoji263NbEmNhhBBVb88xr36IsttBMEE6ftziE49mmPVqGaLmGCz\nr/MM0A9Rhw80vrc7GDo86pgJ3VDa9C0KjE8fHrew4oS+BdimIPRGEwsprbzX6tu6\nzzlZ57fjswKBgDY6yitxOtvZ2WDSQuhintcXNOn2x/4K9GAd7rlB5V77WyOdUs1r\nuNMu2wv994jEeYxEcI6AIOGkwR3maS5c5Skcn5P8MY9o7M80hqeNoZ84ZfVgkqFB\nIKxIZXNY3Qso1Sb4U6Axg7HxQMoNb0938woiQRz6rAhHwRFq+8tg9OhBAoGBALzg\n+7RRn1F9nUAk6wke3HDroE/8dK3LI1TTnbcWeJkDVDS9PEePuMhFpyNnQa5CPZ+4\nQpVHw/uYst7zQw0oW7rDGRD2s/VQY7MbGRq7DVpAkbTdR8ftOddqwjYrG/QopMSm\nAKd9sxmQ/kCSoKqdFmwUXKbLGSVqwcIujrZD7oiJAoGAAizCyn/niUIe0hsu0wkW\nTS3eJSOg/R7+EJ+K89O3TDwzJ1xWGVwaiavkmhPbg3k3w6cMTJblAYxWpZ9hkSRS\n0vn+AqGVVsjedEvkoo28yr7LU464dqKikGvjDMmCGOrfaH8GQokpaKwsCY59SpRA\nz2F3Z4IJtmVB8LQbLlPWPsw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "satu-lapan@satu-lapan.iam.gserviceaccount.com",
+  "client_id": "108448935566620539840",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/satu-lapan%40satu-lapan.iam.gserviceaccount.com"
+}

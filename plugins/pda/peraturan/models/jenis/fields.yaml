@@ -18,4 +18,5 @@ fields:
             mode: crop
             extension: auto
         span: left
+        required: 1
         type: fileupload

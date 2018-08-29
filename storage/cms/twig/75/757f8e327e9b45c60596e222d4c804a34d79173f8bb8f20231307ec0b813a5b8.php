@@ -199,7 +199,7 @@ class __TwigTemplate_d8d85ef4327f44eda0411b8cf1ec45270eaf5ff6b376b2f901fcfb31ab6
 </head>
 
   \t
-  \t<body>
+  \t<body class=\"header_sticky\">
     \t
 \t    \t";
         // line 80
@@ -338,7 +338,7 @@ class __TwigTemplate_d8d85ef4327f44eda0411b8cf1ec45270eaf5ff6b376b2f901fcfb31ab6
 </head>
 
   \t
-  \t<body>
+  \t<body class=\"header_sticky\">
     \t
 \t    \t{% partial 'header' %}
 \t    \t{% page %}

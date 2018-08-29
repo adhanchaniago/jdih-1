@@ -1,0 +1,10 @@
+columns:
+    sejarah:
+        label: sejarah
+        type: text
+    visi:
+        label: visi
+        type: text
+    misi:
+        label: misi
+        type: text

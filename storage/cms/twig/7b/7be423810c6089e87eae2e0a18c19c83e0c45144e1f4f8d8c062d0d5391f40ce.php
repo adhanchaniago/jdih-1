@@ -275,7 +275,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                         <h1 class=\"title\"><a href=\"";
         // line 205
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/listing");
-        echo "\">Berita Terkini</a></h1>
+        echo "\">Informasi Hukum Terkini</a></h1>
                     </div>
                 </div>
             </div>
@@ -322,7 +322,10 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                                     </li>
                                     <li> by: <a href=\"#\">admin</a></li>
                                 </ul><!-- /.meta-post -->
-                                <h3 class=\"title-post\"><a href=\"blog-single.html\">
+                                <h3 class=\"title-post\"><a href=\"";
+            // line 231
+            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("judul" => twig_get_attribute($this->env, $this->getSourceContext(), $context["news"], "slug", array())));
+            echo "\">
                                     ";
             // line 232
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["news"], "judul", array()), "html", null, true);
@@ -355,32 +358,16 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-6\">
-                    <!-- <div class=\"title-section\">
-                        <h1 class=\"title\">Newsletter</h1>
-                        <div class=\"sub-title\">
-                            Subscribe now and receive weekly newsletter with
-                        </div>
-                    </div> -->
-                    <div>
-                        <h2>Tanyakan pada kami</h2>
+                    <div class=\"title-section\">
+                        <h1>Newsletter</h1>
+                        <div class=\"sub-title\">Dapatkan informasi terkini dari JDIH LAPAN</div><br>
                         ";
-        // line 258
+        // line 253
         $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("FaqAsk"        , $context['__cms_component_params']        );
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("newsSubscribe"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 259
-        echo "                    </div><!-- 
-                    <form id=\"subscribe-form\" class=\"flat-mailchimp\" method=\"post\" action=\"#\" data-mailchimp=\"true\">
-                        <div class=\"field clearfix\" id=\"subscribe-content\"> 
-                            <p class=\"wrap-input-email\">
-                                <input type=\"text\" tabindex=\"2\" id=\"subscribe-email\" name=\"subscribe-email\" placeholder=\"Your Email Here\">
-                            </p>
-                            <p class=\"wrap-btn\">
-                                <button type=\"button\" id=\"subscribe-button\" class=\" subscribe-submit effect-button\" title=\"Subscribe now\">SUBSCRIBE</button>
-                            </p>
-                        </div>
-                        <div id=\"subscribe-msg\"></div>
-                    </form> -->
+        // line 254
+        echo "                    </div>
                 </div>
                 <div class=\"col-lg-2\">
                     <div class=\"flat-counter text-center\">                            
@@ -390,7 +377,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                             </div>
                             <div class=\"name-count\">Peraturan</div>
                             <div class=\"numb-count\" data-to=\"";
-        // line 279
+        // line 263
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), ($context["peraturan"] ?? null), "count", array(), "method"), "html", null, true);
         echo "\" data-speed=\"2000\" data-waypoint-active=\"yes\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), ($context["peraturan"] ?? null), "count", array(), "method"), "html", null, true);
@@ -406,9 +393,9 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                             </div>
                             <div class=\"name-count\">Kategori</div>
                             <div class=\"numb-count\" data-to=\"";
-        // line 290
+        // line 274
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), ($context["jenis"] ?? null), "count", array(), "method"), "html", null, true);
-        echo "\" data-speed=\"2000\" data-waypoint-active=\"yes\">12</div>
+        echo "\" data-speed=\"2000\" data-waypoint-active=\"yes\"></div>
                         </div>
                     </div>
                 </div>
@@ -419,7 +406,16 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                                 <i class=\"ion-ios-people\"></i>
                             </div>
                             <div class=\"name-count\">Pengunjung</div>
-                            <div class=\"numb-count\" data-to=\"1101\" data-speed=\"2000\" data-waypoint-active=\"yes\">1101</div>
+                            <div class=\"numb-count\" data-to=\"";
+        // line 285
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("visitor"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        echo "\" data-speed=\"2000\" data-waypoint-active=\"yes\">";
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("visitor"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        echo "</div>
                         </div>
                     </div>
                 </div>
@@ -440,7 +436,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
 
     public function getDebugInfo()
     {
-        return array (  410 => 290,  394 => 279,  372 => 259,  368 => 258,  350 => 242,  338 => 236,  333 => 234,  328 => 232,  318 => 227,  308 => 220,  302 => 217,  294 => 214,  289 => 211,  285 => 210,  277 => 205,  264 => 194,  258 => 193,  256 => 192,  249 => 188,  243 => 187,  236 => 183,  229 => 179,  225 => 177,  220 => 176,  218 => 175,  192 => 151,  181 => 149,  177 => 148,  158 => 132,  93 => 70,  31 => 11,  19 => 1,);
+        return array (  411 => 285,  397 => 274,  381 => 263,  370 => 254,  366 => 253,  353 => 242,  341 => 236,  336 => 234,  331 => 232,  327 => 231,  318 => 227,  308 => 220,  302 => 217,  294 => 214,  289 => 211,  285 => 210,  277 => 205,  264 => 194,  258 => 193,  256 => 192,  249 => 188,  243 => 187,  236 => 183,  229 => 179,  225 => 177,  220 => 176,  218 => 175,  192 => 151,  181 => 149,  177 => 148,  158 => 132,  93 => 70,  31 => 11,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -649,7 +645,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
             <div class=\"row\">
                 <div class=\"col-md-12\">
                     <div class=\"title-section style2\">
-                        <h1 class=\"title\"><a href=\"{{ 'berita/listing'|page }}\">Berita Terkini</a></h1>
+                        <h1 class=\"title\"><a href=\"{{ 'berita/listing'|page }}\">Informasi Hukum Terkini</a></h1>
                     </div>
                 </div>
             </div>
@@ -675,7 +671,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                                     </li>
                                     <li> by: <a href=\"#\">admin</a></li>
                                 </ul><!-- /.meta-post -->
-                                <h3 class=\"title-post\"><a href=\"blog-single.html\">
+                                <h3 class=\"title-post\"><a href=\"{{ 'berita/detail'|page({ judul: news.slug }) }}\">
                                     {{ news.judul }}
                                     </a></h3>                        
                                 <p>{{ str_words(news.isi, 10) }}</p>
@@ -694,27 +690,11 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-6\">
-                    <!-- <div class=\"title-section\">
-                        <h1 class=\"title\">Newsletter</h1>
-                        <div class=\"sub-title\">
-                            Subscribe now and receive weekly newsletter with
-                        </div>
-                    </div> -->
-                    <div>
-                        <h2>Tanyakan pada kami</h2>
-                        {% component 'FaqAsk' %}
-                    </div><!-- 
-                    <form id=\"subscribe-form\" class=\"flat-mailchimp\" method=\"post\" action=\"#\" data-mailchimp=\"true\">
-                        <div class=\"field clearfix\" id=\"subscribe-content\"> 
-                            <p class=\"wrap-input-email\">
-                                <input type=\"text\" tabindex=\"2\" id=\"subscribe-email\" name=\"subscribe-email\" placeholder=\"Your Email Here\">
-                            </p>
-                            <p class=\"wrap-btn\">
-                                <button type=\"button\" id=\"subscribe-button\" class=\" subscribe-submit effect-button\" title=\"Subscribe now\">SUBSCRIBE</button>
-                            </p>
-                        </div>
-                        <div id=\"subscribe-msg\"></div>
-                    </form> -->
+                    <div class=\"title-section\">
+                        <h1>Newsletter</h1>
+                        <div class=\"sub-title\">Dapatkan informasi terkini dari JDIH LAPAN</div><br>
+                        {% component 'newsSubscribe' %}
+                    </div>
                 </div>
                 <div class=\"col-lg-2\">
                     <div class=\"flat-counter text-center\">                            
@@ -734,7 +714,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                                 <i class=\"ion-pricetags\"></i>
                             </div>
                             <div class=\"name-count\">Kategori</div>
-                            <div class=\"numb-count\" data-to=\"{{ jenis.count() }}\" data-speed=\"2000\" data-waypoint-active=\"yes\">12</div>
+                            <div class=\"numb-count\" data-to=\"{{ jenis.count() }}\" data-speed=\"2000\" data-waypoint-active=\"yes\"></div>
                         </div>
                     </div>
                 </div>
@@ -745,7 +725,7 @@ class __TwigTemplate_59a8febfcf75ddb869ace169d6dee17f348f5122abc4207dd8cd40949aa
                                 <i class=\"ion-ios-people\"></i>
                             </div>
                             <div class=\"name-count\">Pengunjung</div>
-                            <div class=\"numb-count\" data-to=\"1101\" data-speed=\"2000\" data-waypoint-active=\"yes\">1101</div>
+                            <div class=\"numb-count\" data-to=\"{% partial 'visitor' %}\" data-speed=\"2000\" data-waypoint-active=\"yes\">{% partial 'visitor' %}</div>
                         </div>
                     </div>
                 </div>

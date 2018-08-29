@@ -8,7 +8,7 @@ navigation:
     main-menu-item:
         label: 'pda.peraturan::lang.plugin.name'
         url: pda/peraturan/peraturan
-        icon: icon-bank
+        icon: icon-legal
         sideMenu:
             jenis:
                 label: 'Jenis Peraturan'
@@ -18,3 +18,7 @@ navigation:
                 label: Berita
                 url: pda/peraturan/berita
                 icon: icon-book
+            profil:
+                label: Profil
+                url: pda/peraturan/profil
+                icon: icon-building

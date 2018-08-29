@@ -14,6 +14,55 @@ items:
             cssClass: ''
             isExternal: '0'
     -
+        title: Profil
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: profil/sejarah
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Sejarah Singkat'
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: profil/sejarah
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Visi Misi'
+                type: cms-page
+                code: ''
+                reference: profil/visimisi
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Struktur Organisasi'
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: profil/struktur_organisasi
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
         title: 'Produk Hukum'
         nesting: ''
         type: cms-page
@@ -41,9 +90,13 @@ items:
             isExternal: '0'
     -
         title: Tanya-Jawab
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: faq
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
