@@ -49,38 +49,7 @@ use Pda\Peraturan\Models\Berita;
             <div class="row">
                 <div class="col-lg-9">
                     <div class="post-wrap">
-                        {% for berita in all %}
-                            <article class="post clearfix">
-                                <h3 class="title-post"><a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">
-                                    {{ berita.judul }}
-                                    </a></h3>                          
-                                <ul class="meta-post clearfix">
-                                    <li class="time">
-                                        {{ berita.tanggal|date('F j, Y') }}
-                                    </li>
-                                    <!-- <li class="author">
-                                        <a href="#">Admin</a>
-                                    </li>
-                                    <li class="categories"> 
-                                        <a href="#">Business</a>
-                                    </li>
-                                    <li class="vote">
-                                        <a href="#">No comment</a>
-                                    </li> -->
-                                </ul><!-- /.meta-post -->
-                                <div class="featured-post">
-                                    <a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}"><img src="{{ berita.gambar.thumb(870, 367, {'mode' : 'crop'}) }}" alt="image"></a>
-                                </div><!-- /.feature-post -->
-                                <div class="content-post">
-                                    <div align="justify">                              
-                                        {{ str_words(berita.isi, 50) }}
-                                        <div class="more-link">
-                                            <a class="effect-button" href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">Read More <i class="fa fa-angle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div><!-- /.content-post -->
-                            </article>
-                        {% endfor %}
+                        {% component 'newsPosts' %}
                     </div><!-- /.post-wrap --> 
 
                     <div class="blog-pagination">
