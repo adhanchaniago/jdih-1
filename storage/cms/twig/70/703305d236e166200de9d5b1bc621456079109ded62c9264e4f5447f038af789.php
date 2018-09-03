@@ -74,31 +74,31 @@ class __TwigTemplate_c514d5388cd5139c8354cc5c8b2a6fe0223ad295a4b25287972d6fe763e
         // line 41
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, ($context["all"] ?? null), 0, 5));
-        foreach ($context['_seq'] as $context["_key"] => $context["list"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 42
             echo "                                    <li>
                                         <div class=\"text\">
                                             <h6>
                                                 <a href=\"";
             // line 45
-            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("judul" => twig_get_attribute($this->env, $this->getSourceContext(), $context["list"], "slug", array())));
+            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("slug" => twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "slug", array())));
             echo "\">
                                                 ";
             // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["list"], "judul", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "title", array()), "html", null, true);
             echo "
                                                 </a>
                                             </h6>  
                                             <p>";
             // line 49
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["list"], "tanggal", array()), "F j, Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "published_at", array()), "F j, Y"), "html", null, true);
             echo "</p>                                     
                                         </div>
                                     </li>
                                 ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['list'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 53
         echo "                            </ul><!-- /.popular-news -->
@@ -176,15 +176,15 @@ class __TwigTemplate_c514d5388cd5139c8354cc5c8b2a6fe0223ad295a4b25287972d6fe763e
                         <div class=\"widget widget-recent-news\">
                             <h5 class=\"widget-title\">Recent Post</h5>
                             <ul class=\"popular-news clearfix\">
-                                {% for list in all|slice(0,5) %}
+                                {% for post in all|slice(0,5) %}
                                     <li>
                                         <div class=\"text\">
                                             <h6>
-                                                <a href=\"{{ 'berita/detail'|page({ judul: list.slug }) }}\">
-                                                {{ list.judul }}
+                                                <a href=\"{{ 'berita/detail'|page({ slug: post.slug }) }}\">
+                                                {{ post.title }}
                                                 </a>
                                             </h6>  
-                                            <p>{{ list.tanggal|date('F j, Y') }}</p>                                     
+                                            <p>{{ post.published_at|date('F j, Y') }}</p>                                     
                                         </div>
                                     </li>
                                 {% endfor %}

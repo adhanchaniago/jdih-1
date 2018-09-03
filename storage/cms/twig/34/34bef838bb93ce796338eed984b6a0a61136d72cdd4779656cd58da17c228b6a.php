@@ -100,7 +100,7 @@ $context["post"], "content", array())) {
             echo "        <article class=\"post clearfix\">
             <h3 class=\"title-post\"><a href=\"";
             // line 24
-            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("slug" => twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "slug", array()), "title" => twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "title", array())));
+            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("slug" => twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "slug", array())));
             echo "\">
                 ";
             // line 25
@@ -242,7 +242,7 @@ $context["post"], "content", array())) {
 
     {% for post in posts %}
         <article class=\"post clearfix\">
-            <h3 class=\"title-post\"><a href=\"{{ 'berita/detail'|page({ slug: post.slug, title: post.title }) }}\">
+            <h3 class=\"title-post\"><a href=\"{{ 'berita/detail'|page({ slug: post.slug }) }}\">
                 {{ post.title }}
                 </a></h3>                          
             <ul class=\"meta-post clearfix\">

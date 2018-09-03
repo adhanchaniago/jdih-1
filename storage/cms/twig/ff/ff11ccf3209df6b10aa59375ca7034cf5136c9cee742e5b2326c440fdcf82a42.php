@@ -38,11 +38,9 @@ class __TwigTemplate_f22c1bd2a9cce831d428191216f9ac5e3f5060a52c6bf913dabea3ecb6a
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/listing");
         echo "\">Berita</a></li>
                             <li> - </li>
-                            <li><a href=\"";
+                            <li><a href=\"#\">";
         // line 17
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("judul" => twig_get_attribute($this->env, $this->getSourceContext(), ($context["berita"] ?? null), "slug", array())));
-        echo "\">";
-        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), ($context["post"] ?? null), "title", array()), "html", null, true);
         echo "</a></li>
                         </ul>                   
                     </div><!-- /.breadcrumbs -->   
@@ -103,31 +101,31 @@ class __TwigTemplate_f22c1bd2a9cce831d428191216f9ac5e3f5060a52c6bf913dabea3ecb6a
         // line 62
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, ($context["all"] ?? null), 0, 5));
-        foreach ($context['_seq'] as $context["_key"] => $context["list"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 63
             echo "                            \t\t<li>
 \t                                    <div class=\"text\">
 \t                                        <h6>
 \t                                            <a href=\"";
             // line 66
-            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("judul" => twig_get_attribute($this->env, $this->getSourceContext(), $context["list"], "slug", array())));
+            echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("berita/detail", array("slug" => twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "slug", array())));
             echo "\">
 \t                                            ";
             // line 67
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["list"], "judul", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "title", array()), "html", null, true);
             echo "
 \t                                            </a>
 \t                                        </h6>  
 \t                                        <p>";
             // line 70
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["list"], "tanggal", array()), "F j, Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["post"], "published_at", array()), "F j, Y"), "html", null, true);
             echo "</p>                                     
 \t                                    </div>
 \t                                </li>
                             \t";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['list'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 74
         echo "                            </ul><!-- /.popular-news -->
@@ -172,7 +170,7 @@ class __TwigTemplate_f22c1bd2a9cce831d428191216f9ac5e3f5060a52c6bf913dabea3ecb6a
 
     public function getDebugInfo()
     {
-        return array (  133 => 74,  123 => 70,  117 => 67,  113 => 66,  108 => 63,  104 => 62,  80 => 41,  76 => 40,  62 => 31,  43 => 17,  38 => 15,  33 => 13,  19 => 1,);
+        return array (  131 => 74,  121 => 70,  115 => 67,  111 => 66,  106 => 63,  102 => 62,  78 => 41,  74 => 40,  60 => 31,  43 => 17,  38 => 15,  33 => 13,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -193,7 +191,7 @@ class __TwigTemplate_f22c1bd2a9cce831d428191216f9ac5e3f5060a52c6bf913dabea3ecb6a
                             <li> - </li>                            
                             <li><a href=\"{{ 'berita/listing'|page }}\">Berita</a></li>
                             <li> - </li>
-                            <li><a href=\"{{ 'berita/detail'|page({ judul: berita.slug }) }}\">{{ title }}</a></li>
+                            <li><a href=\"#\">{{ post.title }}</a></li>
                         </ul>                   
                     </div><!-- /.breadcrumbs -->   
                 </div><!-- /.col-md-12 -->  
@@ -238,15 +236,15 @@ class __TwigTemplate_f22c1bd2a9cce831d428191216f9ac5e3f5060a52c6bf913dabea3ecb6a
                         <div class=\"widget widget-recent-news\">
                             <h5 class=\"widget-title\">Berita Terkini</h5>
                             <ul class=\"popular-news clearfix\">
-                            \t{% for list in all|slice(0,5) %}
+                            \t{% for post in all|slice(0,5) %}
                             \t\t<li>
 \t                                    <div class=\"text\">
 \t                                        <h6>
-\t                                            <a href=\"{{ 'berita/detail'|page({ judul: list.slug }) }}\">
-\t                                            {{ list.judul }}
+\t                                            <a href=\"{{ 'berita/detail'|page({ slug: post.slug }) }}\">
+\t                                            {{ post.title }}
 \t                                            </a>
 \t                                        </h6>  
-\t                                        <p>{{ list.tanggal|date('F j, Y') }}</p>                                     
+\t                                        <p>{{ post.published_at|date('F j, Y') }}</p>                                     
 \t                                    </div>
 \t                                </li>
                             \t{% endfor %}

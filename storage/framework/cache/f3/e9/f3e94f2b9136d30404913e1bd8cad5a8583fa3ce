@@ -1,4 +1,4 @@
-1535530432a:1:{s:18:"berita/listing.htm";a:11:{s:8:"fileName";s:18:"berita/listing.htm";s:7:"content";s:3918:"title = "list_berita"
+1535954179a:1:{s:18:"berita/listing.htm";a:11:{s:8:"fileName";s:18:"berita/listing.htm";s:7:"content";s:3953:"title = "List"
 url = "/berita"
 layout = "default"
 is_hidden = 0
@@ -15,9 +15,10 @@ categoryPage = "beranda"
 ==
 <?php
 use Pda\Peraturan\Models\Berita;
+use Indikator\News\Models\Posts;
 
     function onStart() {
-        $this['all'] = Berita::orderBy('tanggal', 'desc')->paginate(5);
+        $this['all'] = Posts::orderBy('published_at', 'desc')->paginate(5);
     }
 ?>
 ==
@@ -61,15 +62,15 @@ use Pda\Peraturan\Models\Berita;
                         <div class="widget widget-recent-news">
                             <h5 class="widget-title">Recent Post</h5>
                             <ul class="popular-news clearfix">
-                                {% for list in all|slice(0,5) %}
+                                {% for post in all|slice(0,5) %}
                                     <li>
                                         <div class="text">
                                             <h6>
-                                                <a href="{{ 'berita/detail'|page({ judul: list.slug }) }}">
-                                                {{ list.judul }}
+                                                <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
+                                                {{ post.title }}
                                                 </a>
                                             </h6>  
-                                            <p>{{ list.tanggal|date('F j, Y') }}</p>                                     
+                                            <p>{{ post.published_at|date('F j, Y') }}</p>                                     
                                         </div>
                                     </li>
                                 {% endfor %}
@@ -88,7 +89,7 @@ use Pda\Peraturan\Models\Berita;
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:5:"mtime";i:1535528935;s:6:"markup";s:3471:"<!-- Page title -->
+    </section>";s:5:"mtime";i:1535681698;s:6:"markup";s:3475:"<!-- Page title -->
     <div class="page-title parallax parallax1">
         <div class="section-overlay">
         </div>
@@ -128,15 +129,15 @@ use Pda\Peraturan\Models\Berita;
                         <div class="widget widget-recent-news">
                             <h5 class="widget-title">Recent Post</h5>
                             <ul class="popular-news clearfix">
-                                {% for list in all|slice(0,5) %}
+                                {% for post in all|slice(0,5) %}
                                     <li>
                                         <div class="text">
                                             <h6>
-                                                <a href="{{ 'berita/detail'|page({ judul: list.slug }) }}">
-                                                {{ list.judul }}
+                                                <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
+                                                {{ post.title }}
                                                 </a>
                                             </h6>  
-                                            <p>{{ list.tanggal|date('F j, Y') }}</p>                                     
+                                            <p>{{ post.published_at|date('F j, Y') }}</p>                                     
                                         </div>
                                     </li>
                                 {% endfor %}
@@ -155,8 +156,9 @@ use Pda\Peraturan\Models\Berita;
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:4:"code";s:140:"use Pda\Peraturan\Models\Berita;
+    </section>";s:4:"code";s:178:"use Pda\Peraturan\Models\Berita;
+use Indikator\News\Models\Posts;
 
     function onStart() {
-        $this['all'] = Berita::orderBy('tanggal', 'desc')->paginate(5);
-    }";s:5:"title";s:11:"list_berita";s:3:"url";s:7:"/berita";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:9:"newsPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:7:"beranda";s:12:"categoryPage";s:7:"beranda";}}}
+        $this['all'] = Posts::orderBy('published_at', 'desc')->paginate(5);
+    }";s:5:"title";s:4:"List";s:3:"url";s:7:"/berita";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:9:"newsPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:7:"beranda";s:12:"categoryPage";s:7:"beranda";}}}

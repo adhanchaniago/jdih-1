@@ -9,9 +9,11 @@ show_menu = 0
 [searchForm]
 
 [newsSubscribe]
+
+[newsPosts]
 ==
 <?php
-use Pda\Peraturan\Models\Peraturan;
+    use Pda\Peraturan\Models\Peraturan;
     use Pda\Peraturan\Models\Jenis;
     use Pda\Peraturan\Models\Berita;
 
@@ -23,8 +25,6 @@ use Pda\Peraturan\Models\Peraturan;
     				     ->get();
 
         $this['jenis'] = Jenis::all();
-
-        $this['berita'] = Berita::orderBy('tanggal', 'desc')->get();
 
         // $this['latests'] = Peraturan::with('pda_peraturan_jenis', function ($q) {
         //     $q->with('logo');
@@ -272,33 +272,33 @@ use Pda\Peraturan\Models\Peraturan;
                 </div>
             </div>
             <div class="row">
-                {% for news in berita|slice(0, 3) %}
+                {% for news in newsPosts.posts|slice(0, 3) %}
                     <div class="col-lg-4 col-sm-6">
                         <article class="post clearfix">
                             <div class="featured-post">
-                                <a href="{{ 'berita/detail'|page({ judul: news.slug }) }}"><img src="{{ news.gambar.path }}" alt="img"></a>
+                                <a href="{{ 'berita/detail'|page({ slug: news.slug }) }}"><img src="{{ news.image|media }}" alt="img"></a>
                                 <ul class="post-comment">
                                     <li class="date">
-                                        {{ news.tanggal| date('j') }}        
+                                        {{ news.published_at| date('j') }}        
                                     </li>
                                     <li class="month">
-                                        {{ news.tanggal| date('F') }}
+                                        {{ news.published_at| date('F') }}
                                     </li>
                                 </ul>
                             </div><!-- /.feature-post -->
                             <div class="content-post">     
                                 <ul class="meta-data clearfix">
                                     <li class="category">
-                                        Posted in: <a href="https://maps.google.com?q={{ news.lokasi }}" target="_blank">{{ news.lokasi }}</a>
+                                        Kategori: <a href="{{ 'berita/category'|page({ slug: news.category.slug }) }}">{{ news.category.name }}</a>
                                     </li>
-                                    <li> by: <a href="#">admin</a></li>
+                                    <!-- <li> by: <a href="#">admin</a></li> -->
                                 </ul><!-- /.meta-post -->
                                 <h3 class="title-post"><a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">
-                                    {{ news.judul }}
+                                    {{ news.title }}
                                     </a></h3>                        
-                                <p>{{ str_words(news.isi, 10) }}</p>
+                                <p>{{ str_words(news.content|raw, 10) }}</p>
                                 <div class="more-link">
-                                    <a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">Read More</a>
+                                    <a href="{{ 'berita/detail'|page({ slug: news.slug }) }}">Read More</a>
                                 </div>
                             </div><!-- /.content-post -->
                         </article>
@@ -313,10 +313,10 @@ use Pda\Peraturan\Models\Peraturan;
             <div class="row">
                 <div class="col-lg-6">
                     <div class="title-section">
-                        <h1>Newsletter</h1>
-                        <div class="sub-title">Dapatkan informasi terkini dari JDIH LAPAN</div><br>
-                        {% component 'newsSubscribe' %}
+                        <h1 class="title">Surat Kabar</h1>
+                        <div class="sub-title">Dapatkan informasi terkini dari JDIH LAPAN</div>
                     </div>
+                    {% component 'newsSubscribe' %}
                 </div>
                 <div class="col-lg-2">
                     <div class="flat-counter text-center">                            

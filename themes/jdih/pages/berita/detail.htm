@@ -1,4 +1,4 @@
-title = "detail_berita"
+title = "Detail"
 url = "/:slug"
 layout = "default"
 is_hidden = 0
@@ -23,11 +23,11 @@ slug = "{{ :slug }}"
 ==
 <?php
 use Pda\Peraturan\Models\Berita;
+use Indikator\News\Models\Posts;
 
 	function onStart() {
-		$this['all'] = Berita::orderBy('tanggal', 'desc')->get();
-        $this['berita'] = Berita::where('slug', $this->param('judul'))->first();
-        $this['title'] = $this->param('title');
+		$this['all'] = Posts::orderBy('published_at', 'desc')->get();
+        $this['post'] = Posts::where('slug', $this->param('slug'))->first();
     }
 ?>
 ==
@@ -47,7 +47,7 @@ use Pda\Peraturan\Models\Berita;
                             <li> - </li>                            
                             <li><a href="{{ 'berita/listing'|page }}">Berita</a></li>
                             <li> - </li>
-                            <li><a href="{{ 'berita/detail'|page({ judul: berita.slug }) }}">{{ title }}</a></li>
+                            <li><a href="#">{{ post.title }}</a></li>
                         </ul>                   
                     </div><!-- /.breadcrumbs -->   
                 </div><!-- /.col-md-12 -->  
@@ -92,15 +92,15 @@ use Pda\Peraturan\Models\Berita;
                         <div class="widget widget-recent-news">
                             <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
-                            	{% for list in all|slice(0,5) %}
+                            	{% for post in all|slice(0,5) %}
                             		<li>
 	                                    <div class="text">
 	                                        <h6>
-	                                            <a href="{{ 'berita/detail'|page({ judul: list.slug }) }}">
-	                                            {{ list.judul }}
+	                                            <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
+	                                            {{ post.title }}
 	                                            </a>
 	                                        </h6>  
-	                                        <p>{{ list.tanggal|date('F j, Y') }}</p>                                     
+	                                        <p>{{ post.published_at|date('F j, Y') }}</p>                                     
 	                                    </div>
 	                                </li>
                             	{% endfor %}

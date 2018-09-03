@@ -21,7 +21,7 @@
 
     {% for post in posts %}
         <article class="post clearfix">
-            <h3 class="title-post"><a href="{{ 'berita/detail'|page({ slug: post.slug, title: post.title }) }}">
+            <h3 class="title-post"><a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
                 {{ post.title }}
                 </a></h3>                          
             <ul class="meta-post clearfix">

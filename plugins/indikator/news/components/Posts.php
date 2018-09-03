@@ -95,7 +95,7 @@ class Posts extends ComponentBase
                 'title'       => 'indikator.news::lang.settings.post_title',
                 'description' => 'indikator.news::lang.settings.post_description',
                 'type'        => 'dropdown',
-                'default'     => 'news/posts',
+                'default'     => 'berita/detail',
                 'group'       => 'indikator.news::lang.settings.links'
             ],
             'categoryPage' => [

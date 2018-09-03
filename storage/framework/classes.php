@@ -244,4 +244,8 @@
   'Indikator\\News\\Models\\Subscribers' => 'plugins\\indikator\\news\\models\\Subscribers.php',
   'indikator\\news\\Controllers\\statistics' => 'plugins\\indikator\\news\\controllers\\statistics.php',
   'indikator\\news\\Controllers\\logs' => 'plugins\\indikator\\news\\controllers\\logs.php',
+  'Indikator\\News\\FormWidgets\\CategoryInfo' => 'plugins\\indikator\\news\\formwidgets\\CategoryInfo.php',
+  'Indikator\\News\\Classes\\ConfirmationHandler' => 'plugins\\indikator\\news\\classes\\ConfirmationHandler.php',
+  'Indikator\\News\\Classes\\ConfirmationMail' => 'plugins\\indikator\\news\\classes\\ConfirmationMail.php',
+  'Indikator\\News\\FormWidgets\\SubscriberInfo' => 'plugins\\indikator\\news\\formwidgets\\SubscriberInfo.php',
 );
