@@ -4,10 +4,6 @@ fields:
         span: full
         required: 1
         type: text
-    kategori:
-        label: Kategori
-        span: full
-        type: text
     tahun:
         label: Tahun
         span: full
@@ -18,16 +14,28 @@ fields:
         span: full
         required: 1
         type: text
-    jenis:
+    jenis_:
         label: Jenis
         nameFrom: nama
         descriptionFrom: description
         span: full
         required: 1
         type: relation
+    keterangan:
+        label: Keterangan
+        span: full
+        type: text
+    file:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
     filename:
-        label: File
+        label: 'Media finder'
         mode: file
         span: auto
-        required: 1
         type: mediafinder

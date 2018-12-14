@@ -9,6 +9,15 @@
     <div class="form-buttons">
         <div class="loading-indicator-container">
             <button
+                type="submit"
+                data-request="onSave"
+                data-hotkey="ctrl+s"
+                data-hotkey-mac="cmd+s"
+                data-load-indicator="Saving Question..."
+                class="btn btn-primary">
+                Save
+            </button>
+            <button
                 type="button"
                 data-request="onSave"
                 data-request-data="close:true"
@@ -25,18 +34,28 @@
                 data-request-confirm="Do you really want to delete this category?">
                 Delete
             </button>
-            <span class="btn-text">
-                or <a href="<?= Backend::url('redmarlin/faq/questions') ?>">Cancel</a>
-            </span>
-        </div>
-        <button
+            <?php if ($formModel->email == null) : ?>
+            <button
                 type="button"
+                disabled="disabled"
                 data-request="onNotify"
-                data-request-data="close:false"
                 data-load-indicator="Notifying about answer..."
                 class="btn btn-default">
                 Notify about answer
             </button>
+            <?php else : ?>
+            <button
+                type="button"
+                data-request="onNotify"
+                data-load-indicator="Notifying about answer..."
+                class="btn btn-default">
+                Notify about answer
+            </button>
+            <?php endif ?>
+            <span class="btn-text">
+                or <a href="<?= Backend::url('redmarlin/faq/questions') ?>">Cancel</a>
+            </span>
+        </div>
     </div>
 
 <?= Form::close() ?>

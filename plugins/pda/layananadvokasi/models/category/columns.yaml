@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+    name:
+        label: 'Nama Kategori'
+        type: text
+        searchable: true
+        sortable: true

@@ -1,4 +1,4 @@
-1535954178a:1:{s:17:"berita/detail.htm";a:12:{s:8:"fileName";s:17:"berita/detail.htm";s:7:"content";s:6119:"title = "Detail"
+1544406436a:1:{s:17:"berita/detail.htm";a:13:{s:8:"fileName";s:17:"berita/detail.htm";s:7:"content";s:6170:"title = "Detail"
 url = "/:slug"
 layout = "default"
 is_hidden = 0
@@ -19,6 +19,7 @@ order_stumbleupon = 4
 order_linkedin = 5
 
 [newsPost]
+[newsCategories]
 slug = "{{ :slug }}"
 ==
 <?php
@@ -26,7 +27,7 @@ use Pda\Peraturan\Models\Berita;
 use Indikator\News\Models\Posts;
 
 	function onStart() {
-		$this['all'] = Posts::orderBy('published_at', 'desc')->get();
+		$this['all'] = Posts::where('status', 1)->orderBy('published_at', 'desc')->get();
         $this['post'] = Posts::where('slug', $this->param('slug'))->first();
     }
 ?>
@@ -65,21 +66,21 @@ use Indikator\News\Models\Posts;
                         <div id="disqus_thread"></div>
                         <script>
 
-                        /**
-                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                        
-                        var disqus_config = function () {
-                        this.page.url = "{{ ''| page }}";  // Replace PAGE_URL with your page's canonical URL variable
-                        this.page.identifier = "{{ ''| page }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                        };
-                        
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://jdih-2.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                        })();
+                            /**
+                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                            
+                            var disqus_config = function () {
+                                this.page.url = "{{ ''| page }}";  // Replace PAGE_URL with your page's canonical URL variable
+                                this.page.identifier = "{{ ''| page }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://jdih-2.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
                         </script>
                         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                            
@@ -105,16 +106,15 @@ use Indikator\News\Models\Posts;
 	                                </li>
                             	{% endfor %}
                             </ul><!-- /.popular-news -->
-                        </div><!-- /.widget-popular-news --><!-- 
+                        </div><!-- /.widget-popular-news -->
                         <div class="widget widget_categories">
                             <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Undang-Undang</a></li>
-                                <li><a href="#">Peraturan Pemerintah</a></li>
-                                <li><a href="#">Peraturan Presiden</a></li>
-                                <li><a href="#">Keputusan Presiden</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ 'berita/category'|page({ slug: category.slug }) }}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
-                        </div> --><!-- /.widget-categories -->
+                        </div> <!-- /.widget-categories -->
  
                         <!-- <div class="widget widget_tag">
                             <h5 class="widget-title">Tags</h5>
@@ -131,7 +131,7 @@ use Indikator\News\Models\Posts;
                 </div><!-- /.col-md-3 -->             
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:5:"mtime";i:1535681695;s:6:"markup";s:5525:"<!-- Page title -->
+    </section>";s:5:"mtime";i:1542773935;s:6:"markup";s:5538:"<!-- Page title -->
     <div class="page-title parallax parallax1">
         <div class="section-overlay">
         </div>
@@ -165,21 +165,21 @@ use Indikator\News\Models\Posts;
                         <div id="disqus_thread"></div>
                         <script>
 
-                        /**
-                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                        
-                        var disqus_config = function () {
-                        this.page.url = "{{ ''| page }}";  // Replace PAGE_URL with your page's canonical URL variable
-                        this.page.identifier = "{{ ''| page }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                        };
-                        
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://jdih-2.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                        })();
+                            /**
+                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                            
+                            var disqus_config = function () {
+                                this.page.url = "{{ ''| page }}";  // Replace PAGE_URL with your page's canonical URL variable
+                                this.page.identifier = "{{ ''| page }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://jdih-2.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
                         </script>
                         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                            
@@ -205,16 +205,15 @@ use Indikator\News\Models\Posts;
 	                                </li>
                             	{% endfor %}
                             </ul><!-- /.popular-news -->
-                        </div><!-- /.widget-popular-news --><!-- 
+                        </div><!-- /.widget-popular-news -->
                         <div class="widget widget_categories">
                             <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Undang-Undang</a></li>
-                                <li><a href="#">Peraturan Pemerintah</a></li>
-                                <li><a href="#">Peraturan Presiden</a></li>
-                                <li><a href="#">Keputusan Presiden</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ 'berita/category'|page({ slug: category.slug }) }}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
-                        </div> --><!-- /.widget-categories -->
+                        </div> <!-- /.widget-categories -->
  
                         <!-- <div class="widget widget_tag">
                             <h5 class="widget-title">Tags</h5>
@@ -231,10 +230,10 @@ use Indikator\News\Models\Posts;
                 </div><!-- /.col-md-3 -->             
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:4:"code";s:241:"use Pda\Peraturan\Models\Berita;
+    </section>";s:4:"code";s:261:"use Pda\Peraturan\Models\Berita;
 use Indikator\News\Models\Posts;
 
 	function onStart() {
-		$this['all'] = Posts::orderBy('published_at', 'desc')->get();
+		$this['all'] = Posts::where('status', 1)->orderBy('published_at', 'desc')->get();
         $this['post'] = Posts::where('slug', $this->param('slug'))->first();
-    }";s:5:"title";s:6:"Detail";s:3:"url";s:6:"/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:11:"ssbuttonsnb";a:12:{s:2:"fa";s:6:"maxcdn";s:2:"js";s:1:"0";s:7:"twitter";s:1:"1";s:8:"facebook";s:1:"1";s:7:"google+";s:1:"1";s:11:"stumbleupon";s:1:"1";s:8:"linkedin";s:1:"1";s:13:"order_twitter";s:1:"1";s:14:"order_facebook";s:1:"2";s:13:"order_google+";s:1:"3";s:17:"order_stumbleupon";s:1:"4";s:14:"order_linkedin";s:1:"5";}s:8:"newsPost";a:1:{s:4:"slug";s:11:"{{ :slug }}";}}}
+    }";s:5:"title";s:6:"Detail";s:3:"url";s:6:"/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:11:"ssbuttonsnb";a:12:{s:2:"fa";s:6:"maxcdn";s:2:"js";s:1:"0";s:7:"twitter";s:1:"1";s:8:"facebook";s:1:"1";s:7:"google+";s:1:"1";s:11:"stumbleupon";s:1:"1";s:8:"linkedin";s:1:"1";s:13:"order_twitter";s:1:"1";s:14:"order_facebook";s:1:"2";s:13:"order_google+";s:1:"3";s:17:"order_stumbleupon";s:1:"4";s:14:"order_linkedin";s:1:"5";}s:8:"newsPost";a:0:{}s:14:"newsCategories";a:1:{s:4:"slug";s:11:"{{ :slug }}";}}}

@@ -1,0 +1,84 @@
+{% set advokasi = __SELF__.advokasi %}
+{% set i = 1 %}
+
+{% put head %}
+<link href="{{ 'assets/listany/stylesheets/richeditor.css'|theme }}" rel="stylesheet" type="text/css" />
+{% endput %}
+<div class="col-lg-9">
+	<!-- <ul class="menu-tab clearfix">
+	<li class="active"><a href="#"><i class="ion-navicon-round"></i>(3) Listings</a></li>
+	<li class=""><a href="#"><i class="ion-chatbubbles"></i>(3) Reviews</a></li>
+	</ul> --><!-- /.menu-tab -->
+    <div class="flat-tabs style2" data-effect="fadeIn">
+		<div class="content-tab listing-user profile">
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Status Layanan</h4>
+					<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">Pertanyaan</th>
+					      <th scope="col" class="text-center">Status</th>
+					      <th scope="col" class="text-center">Tanggal Dibuat</th>
+					      <th scope="col" class="text-center">Keterangan</th>
+					      <th scope="col" class="text-center">Jawaban</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+						  	{% for adv in advokasi %}
+						    <tr>
+						      <th scope="row">{{ loop.index }}</th>
+						      <td>{{ adv.question }}</td>
+						      {% if adv.status_id == 1 %}
+						      	<td align="center"><span class="badge badge-primary">Diterima</span></td>
+						      {% elseif adv.status_id == 2 %}
+						      	<td align="center"><span class="badge badge-warning">Diproses</span></td>
+						      {% elseif adv.status_id == 3 %}
+						      	<td align="center"><span class="badge badge-success">Selesai</span></td>
+						      {% endif %}
+						      
+						      <td align="center">{{ adv.created_at| date('d-m-Y') }}</td>
+
+						      {% if (adv.keterangan != null) %}
+						      <td align="center">{{ adv.keterangan }}</td>
+						      {% else %}
+						      <td align="center">-</td>
+						      {% endif %}
+
+						      {% if (adv.answer != null) and (adv.status_id == 3) %}
+						      <td align="center"><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter" data-whatever="{{ adv.answer }}">Lihat Jawaban</button></td>
+						      {% else %}
+						      <td align="center">-</td>
+						      {% endif %}
+						    </tr>
+						    {% endfor %}
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Jawaban</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="jawaban" style="text-align: justify;"></div>
+        <!-- <textarea rows="16" style="height: auto; text-align: justify;" disabled></textarea> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                    

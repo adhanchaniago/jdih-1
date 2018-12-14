@@ -1,13 +1,54 @@
-1535954179a:1:{s:7:"faq.htm";a:10:{s:8:"fileName";s:7:"faq.htm";s:7:"content";s:1289:"title = "faq"
+1544406436a:1:{s:7:"faq.htm";a:15:{s:8:"fileName";s:7:"faq.htm";s:7:"content";s:1435:"title = "FAQ"
 url = "/faq"
 layout = "default"
+is_hidden = 0
+show_menu = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [FaqAsk]
+
 [FaqAll]
 limit = 25
+sortOrder = "asc"
+
+[captcha]
 ==
+<section class="flat-row v1 bg-theme">
+    <div class="container">            
+        <div class="wrap-accadion">
+            <div class="panel panel-danger">
+              <div class="panel-heading" align="center">
+                <h3 class="panel-title">Kami Memberikan Jawaban Yang Kamu Cari</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                <!-- <div class="col-lg-2">
+                    <h5 class="title-list">Pricing</h5>
+                </div> -->
+                    <div class="col-lg-12">
+                        <div class="flat-accordion">
+                            {% component 'FaqAll' %}<!-- /toggle -->
+                        </div> <!-- /.flat-accordion -->
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="flat-row page-addlisting">
+    <div id="footer-border"></div>
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+            <div align="center">
+                <h2>Tanyakan pada kami</h2>
+                {% component 'FaqAsk' %}
+            </div>
+        </div>       
+    </div>
+</section>";s:5:"mtime";i:1543980525;s:6:"markup";s:1236:"<section class="flat-row v1 bg-theme">
     <div class="container">            
         <div class="wrap-accadion">
             <div class="panel panel-danger">
@@ -31,7 +72,8 @@ limit = 25
     </div>
 </section>
 
-<section class="flat-row v1 bg-theme">
+<section class="flat-row page-addlisting">
+    <div id="footer-border"></div>
     <div class="container">
         <div class="col-md-8 offset-md-2">
             <div align="center">
@@ -40,37 +82,4 @@ limit = 25
             </div>
         </div>       
     </div>
-</section>";s:5:"mtime";i:1532939096;s:6:"markup";s:1200:"<section class="flat-row page-addlisting">
-    <div class="container">            
-        <div class="wrap-accadion">
-            <div class="panel panel-danger">
-              <div class="panel-heading" align="center">
-                <h3 class="panel-title">Kami Memberikan Jawaban Yang Kamu Cari</h3>
-              </div>
-              <div class="panel-body">
-                <div class="row">
-                <!-- <div class="col-lg-2">
-                    <h5 class="title-list">Pricing</h5>
-                </div> -->
-                    <div class="col-lg-12">
-                        <div class="flat-accordion">
-                            {% component 'FaqAll' %}<!-- /toggle -->
-                        </div> <!-- /.flat-accordion -->
-                    </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="flat-row v1 bg-theme">
-    <div class="container">
-        <div class="col-md-8 offset-md-2">
-            <div align="center">
-                <h2>Tanyakan pada kami</h2>
-                {% component 'FaqAsk' %}
-            </div>
-        </div>       
-    </div>
-</section>";s:4:"code";N;s:5:"title";s:3:"faq";s:3:"url";s:4:"/faq";s:6:"layout";s:7:"default";s:6:"FaqAsk";a:0:{}s:6:"FaqAll";a:1:{s:5:"limit";s:2:"25";}}}
+</section>";s:4:"code";N;s:5:"title";s:3:"FAQ";s:3:"url";s:4:"/faq";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:6:"FaqAsk";a:0:{}s:6:"FaqAll";a:2:{s:5:"limit";s:2:"25";s:9:"sortOrder";s:3:"asc";}s:7:"captcha";a:0:{}}}

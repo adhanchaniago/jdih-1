@@ -1,10 +1,11 @@
-1535954179a:1:{s:18:"berita/listing.htm";a:11:{s:8:"fileName";s:18:"berita/listing.htm";s:7:"content";s:3953:"title = "List"
+1544406436a:1:{s:18:"berita/listing.htm";a:12:{s:8:"fileName";s:18:"berita/listing.htm";s:7:"content";s:3979:"title = "List"
 url = "/berita"
 layout = "default"
 is_hidden = 0
 show_menu = 0
 
 [newsPosts]
+[newsCategories]
 pageNumber = "{{ :page }}"
 postsPerPage = 10
 noPostsMessage = "No posts found"
@@ -14,11 +15,12 @@ postPage = "beranda"
 categoryPage = "beranda"
 ==
 <?php
-use Pda\Peraturan\Models\Berita;
+use Pda\Peraturan\Models\Peraturan;
 use Indikator\News\Models\Posts;
 
     function onStart() {
-        $this['all'] = Posts::orderBy('published_at', 'desc')->paginate(5);
+        $this['all'] = Posts::where('status', 1)->orderBy('published_at', 'desc')->paginate(5);
+        
     }
 ?>
 ==
@@ -60,13 +62,13 @@ use Indikator\News\Models\Posts;
                 <div class="col-lg-3">
                     <div class="sidebar">
                         <div class="widget widget-recent-news">
-                            <h5 class="widget-title">Recent Post</h5>
+                            <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
                                 {% for post in all|slice(0,5) %}
                                     <li>
                                         <div class="text">
                                             <h6>
-                                                <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
+                                                <a href="{{ 'produk_hukum/detail'|page({ slug: post.slug }) }}">
                                                 {{ post.title }}
                                                 </a>
                                             </h6>  
@@ -76,20 +78,19 @@ use Indikator\News\Models\Posts;
                                 {% endfor %}
                             </ul><!-- /.popular-news -->
                         </div><!-- /.widget-popular-news -->
-                        <!-- <div class="widget widget_categories">
-                            <h5 class="widget-title">Category</h5>
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finanve</a></li>
-                                <li><a href="#">Insurance</a></li>
-                                <li><a href="#">Leasing</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ 'berita/category'|page({ slug: category.slug }) }}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
-                        </div> --><!-- /.widget-categories -->
+                        </div><!-- /.widget-categories -->
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:5:"mtime";i:1535681698;s:6:"markup";s:3475:"<!-- Page title -->
+    </section>";s:5:"mtime";i:1540953390;s:6:"markup";s:3450:"<!-- Page title -->
     <div class="page-title parallax parallax1">
         <div class="section-overlay">
         </div>
@@ -127,13 +128,13 @@ use Indikator\News\Models\Posts;
                 <div class="col-lg-3">
                     <div class="sidebar">
                         <div class="widget widget-recent-news">
-                            <h5 class="widget-title">Recent Post</h5>
+                            <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
                                 {% for post in all|slice(0,5) %}
                                     <li>
                                         <div class="text">
                                             <h6>
-                                                <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
+                                                <a href="{{ 'produk_hukum/detail'|page({ slug: post.slug }) }}">
                                                 {{ post.title }}
                                                 </a>
                                             </h6>  
@@ -143,22 +144,22 @@ use Indikator\News\Models\Posts;
                                 {% endfor %}
                             </ul><!-- /.popular-news -->
                         </div><!-- /.widget-popular-news -->
-                        <!-- <div class="widget widget_categories">
-                            <h5 class="widget-title">Category</h5>
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finanve</a></li>
-                                <li><a href="#">Insurance</a></li>
-                                <li><a href="#">Leasing</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ 'berita/category'|page({ slug: category.slug }) }}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
-                        </div> --><!-- /.widget-categories -->
+                        </div><!-- /.widget-categories -->
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           
         </div><!-- /.container -->   
-    </section>";s:4:"code";s:178:"use Pda\Peraturan\Models\Berita;
+    </section>";s:4:"code";s:211:"use Pda\Peraturan\Models\Peraturan;
 use Indikator\News\Models\Posts;
 
     function onStart() {
-        $this['all'] = Posts::orderBy('published_at', 'desc')->paginate(5);
-    }";s:5:"title";s:4:"List";s:3:"url";s:7:"/berita";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:9:"newsPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:7:"beranda";s:12:"categoryPage";s:7:"beranda";}}}
+        $this['all'] = Posts::where('status', 1)->orderBy('published_at', 'desc')->paginate(5);
+        
+    }";s:5:"title";s:4:"List";s:3:"url";s:7:"/berita";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:9:"newsPosts";a:0:{}s:14:"newsCategories";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:7:"beranda";s:12:"categoryPage";s:7:"beranda";}}}

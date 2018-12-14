@@ -1,9 +1,19 @@
-	{{ form_open({ request: 'onPost' }) }}
-        {% flash %}
+	
+	
+    <form data-request="onSubmit" data-request-files data-request-flash>
+        {% flash success %}
             <div class="alert alert-{{ type }}">{{ message }}</div>
         {% endflash %}
+        <input type="hidden" name="_handler" value="onSubmit">
+        {{ form_token() }}
+        {{ form_sessionKey() }}
+
         <textarea name="question" rows="3" placeholder="Pertanyaan"></textarea> 
-        <input type="text" name="email" placeholder="Email"/>
-        <input type="submit" value="Send" name="submit"/>
-    {{ form_close() }}
+        <input type="text" name="email" placeholder="Email">
+        <input type="file" name="files" style="padding: 10px;">
+        <!-- {% component 'fileUploader' %} -->
+        {% component 'captcha' %}<br>
+        <button type="submit">Submit</button>
+    </form>
+    
 

@@ -1,30 +1,20 @@
 <?php 
-use Pda\Peraturan\Models\Peraturan;use Pda\Peraturan\Models\Jenis;use Pda\Peraturan\Models\Berita;class Cms5b8cbad5d4964932773888_d84fcd129369c738dcac8b0a1bb0e39dClass extends \Cms\Classes\PageCode
+use Pda\Peraturan\Models\Peraturan;use Pda\Peraturan\Models\Jenis;use Pda\Peraturan\Models\Berita;class Cms5c0dc34dc1992238810234_c2a03f729538c82f86aada9a0cc3683aClass extends Cms\Classes\PageCode
 {
-    
+
     
     
 public function onStart() {
-		$peraturan     = Db::table('pda_peraturan_hukum')
-    				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
-    				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
-                         ->orderBy('tahun', 'desc')
-    				     ->get();
+		
+        $peraturan = Peraturan::where('deleted_at', NULL)->orderBy('tahun', 'desc')->get();
 
         $this['jenis'] = Jenis::all();
 
-        // $this['latests'] = Peraturan::with('pda_peraturan_jenis', function ($q) {
-        //     $q->with('logo');
-        // })->get();
-
         $years = [];
-        // $jenis_id = [];
-        // $jenis_nama = [];
         $totalList = [];
 
         foreach ($peraturan as $aturan) {
             $years[] = $aturan->tahun;
-            // $jenis_nama[] = $aturan->jenis_nama;
         }
 
         foreach ($this['jenis'] as $jns) {
@@ -32,20 +22,11 @@ public function onStart() {
         }
 
         $years = array_unique($years);
-        // $jenis_id = array_unique($jenis_id);
-        // $jenis_nama = array_unique($jenis_nama);
         rsort($years);
-        // rsort($totalList);
 
-        // for ($i=0; $i < count($jenis_id) ; $i++) { 
-        //     $totalList[$i] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jenis_id[$i])->count();
-        // }
 
         $this['peraturan'] = $peraturan;
         $this['years'] = $years;
-        // $this['jenis_id'] = $jenis_id;
-        // $this['jenis_nama'] = $jenis_nama;
         $this['totalList'] = $totalList;
-        // print_r($jenis_id);
     }
 }

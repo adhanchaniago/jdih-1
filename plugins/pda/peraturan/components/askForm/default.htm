@@ -1,0 +1,19 @@
+	
+	
+    <form method="POST" action="{{ url('faq') }}" data-request="onSave" accept-charset="UTF8" enctype="multipart/form-data">
+        {% flash success %}
+            <div class="alert alert-{{ type }}">{{ message }}</div>
+        {% endflash %}
+        <input type="hidden" name="_handler" value="onSave">
+        {{ form_token() }}
+        {{ form_sessionKey() }}
+
+        <textarea name="question" rows="3" placeholder="Pertanyaan"></textarea> 
+        <input type="text" name="email" placeholder="Email">
+        <input type="file" name="files">
+        <!-- {% component 'fileUploader' %} -->
+        {% component 'captcha' %}<br>
+        <button type="submit">Submit</button>
+    </form>
+    
+

@@ -20,7 +20,7 @@ code = "menu-utama"
                 <div class="col-lg-4">
                     <div id="logo" class="logo float-left">
                         <a href="{{ url('/') }}" rel="home">
-                            <img src="{{ url('/') }}/themes/jdih/assets/listany/images/logo jdih.png" alt="image" style="width: 350px; height: 55px;">
+                            <img src="{{ 'assets/listany/images/logo_jdih.png'|theme }}" alt="image" style="width: 350px; height: 55px;">
                         </a>
                     </div><!-- /.logo -->
                     <div class="btn-menu">
@@ -30,11 +30,12 @@ code = "menu-utama"
                 <div class="col-lg-8">
                     <div class="nav-wrap">                            
                         <nav id="mainnav" class="mainnav float-left">
-                        {% component 'staticMenu' %}
                             
+                                {% component 'staticMenu' %}
+                                
                         </nav><!-- /.mainnav -->  
-                        <div id="logo" class="logo float-right">
-	                        <a href="{{ url('/') }}" rel="home">
+                        <div class="button-addlist float-right">
+	                        <a href="https://lapan.go.id/" rel="home" target="_blank">
 	                            <img src="{{ url('/') }}/themes/jdih/assets/listany/images/logo-lapan.png" alt="image" style="width: 72px; height: 52px;">
 	                        </a>
 	                    </div>

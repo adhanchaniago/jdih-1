@@ -29,12 +29,28 @@ class Peraturan extends Model
     //     'filename' => 'System\Models\File'
     // ];
 
+    // public $belongsTo = [
+    //     'jenis' => [
+    //         'Pda\Peraturan\Models\Jenis',
+    //         //'order' => 'sator_id',
+    //         'key' => 'jenis_id'
+    //     ],
+    // ];
+
     public $belongsTo = [
-        'jenis' => [
+        'jenis_' => [
             'Pda\Peraturan\Models\Jenis',
-            //'order' => 'sator_id',
-            'key' => 'jenis_id'
-        ],
+            'key' => 'jenis_id',
+            'order' => 'id'
+        ]
+    ];
+
+    public $attachMany = [
+        'file' => 'System\Models\File'
+    ];
+
+    protected $jsonable = [
+        'filename'
     ];
 
     public $morphMany = [

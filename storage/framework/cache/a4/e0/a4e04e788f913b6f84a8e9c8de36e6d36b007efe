@@ -1,4 +1,4 @@
-1535954181a:1:{s:15:"menu-utama.yaml";a:7:{s:8:"fileName";s:15:"menu-utama.yaml";s:7:"content";s:2470:"name: 'Menu Utama'
+1544406449a:1:{s:15:"menu-utama.yaml";a:7:{s:8:"fileName";s:15:"menu-utama.yaml";s:7:"content";s:2809:"name: 'Menu Utama'
 items:
     -
         title: Beranda
@@ -42,9 +42,13 @@ items:
                     isExternal: '0'
             -
                 title: 'Visi Misi'
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: profil/visimisi
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -68,7 +72,7 @@ items:
         type: cms-page
         url: ''
         code: ''
-        reference: listing
+        reference: peraturan/listing
         cmsPage: ''
         replace: ''
         viewBag:
@@ -77,15 +81,11 @@ items:
             isExternal: '0'
     -
         title: Berita
-        nesting: ''
         type: cms-page
-        url: ''
         code: ''
         reference: berita/listing
-        cmsPage: ''
-        replace: ''
         viewBag:
-            isHidden: '0'
+            isHidden: '1'
             cssClass: ''
             isExternal: '0'
     -
@@ -101,4 +101,17 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
-";s:5:"mtime";i:1534302525;s:6:"markup";N;s:4:"code";N;s:4:"name";s:10:"Menu Utama";s:5:"items";a:5:{i:0;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:7:"Beranda";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"beranda";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:1;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:6:"Profil";s:5:"items";a:3:{i:0;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:15:"Sejarah Singkat";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:14:"profil/sejarah";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:1;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:9:"Visi Misi";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";N;s:4:"type";s:8:"cms-page";s:3:"url";N;s:4:"code";s:0:"";s:9:"reference";s:15:"profil/visimisi";s:7:"replace";N;s:7:"cmsPage";N;s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:2;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:19:"Struktur Organisasi";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:26:"profil/struktur_organisasi";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:14:"profil/sejarah";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:2;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:12:"Produk Hukum";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"listing";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:3;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:6:"Berita";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:14:"berita/listing";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:4;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:11:"Tanya-Jawab";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:3:"faq";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}}}}
+    -
+        title: 'Layanan Advokasi'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: advokasi/layanan-advokasi
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+";s:5:"mtime";i:1540974054;s:6:"markup";N;s:4:"code";N;s:4:"name";s:10:"Menu Utama";s:5:"items";a:6:{i:0;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:7:"Beranda";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"beranda";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:1;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:6:"Profil";s:5:"items";a:3:{i:0;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:15:"Sejarah Singkat";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:14:"profil/sejarah";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:1;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:9:"Visi Misi";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:15:"profil/visimisi";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:2;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:19:"Struktur Organisasi";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:26:"profil/struktur_organisasi";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:14:"profil/sejarah";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:2;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:12:"Produk Hukum";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:17:"peraturan/listing";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:3;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:6:"Berita";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";N;s:4:"type";s:8:"cms-page";s:3:"url";N;s:4:"code";s:0:"";s:9:"reference";s:14:"berita/listing";s:7:"replace";N;s:7:"cmsPage";N;s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"1";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:4;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:11:"Tanya-Jawab";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:3:"faq";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:5;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:16:"Layanan Advokasi";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:25:"advokasi/layanan-advokasi";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}}}}

@@ -1,0 +1,45 @@
+plugin:
+    name: 'pda.layananadvokasi::lang.plugin.name'
+    description: 'pda.layananadvokasi::lang.plugin.description'
+    author: PDA
+    icon: oc-icon-gavel
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Advokasi
+        url: pda/layananadvokasi/questions
+        icon: icon-bullhorn
+        permissions:
+            - pda.layananadvokasi.kelola_advokasi
+        sideMenu:
+            side-menu-item2:
+                label: Pertanyaan
+                url: /pda/layananadvokasi/questions
+                icon: icon-bullhorn
+                permissions:
+                    - pda.layananadvokasi.kelola_pertanyaan
+            side-menu-item:
+                label: Status
+                url: pda/layananadvokasi/status
+                icon: icon-list-ol
+                permissions:
+                    - pda.layananadvokasi.kelola_status
+            side-menu-item3:
+                label: Kategori
+                url: pda/layananadvokasi/category
+                icon: icon-sitemap
+                permissions:
+                    - pda.layananadvokasi.kelola_kategori
+permissions:
+    pda.layananadvokasi.kelola_pertanyaan:
+        tab: 'pda.layananadvokasi::lang.plugin.name'
+        label: 'Kelola Pertanyaan'
+    pda.layananadvokasi.kelola_kategori:
+        tab: 'pda.layananadvokasi::lang.plugin.name'
+        label: 'Kelola Kategori'
+    pda.layananadvokasi.kelola_status:
+        tab: 'pda.layananadvokasi::lang.plugin.name'
+        label: 'Kelola Status'
+    pda.layananadvokasi.kelola_advokasi:
+        tab: 'pda.layananadvokasi::lang.plugin.name'
+        label: 'Menu Advokasi'

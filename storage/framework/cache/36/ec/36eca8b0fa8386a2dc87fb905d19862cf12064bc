@@ -1,8 +1,10 @@
-1535954178a:1:{s:11:"beranda.htm";a:14:{s:8:"fileName";s:11:"beranda.htm";s:7:"content";s:20249:"title = "beranda"
+1544406436a:1:{s:11:"beranda.htm";a:18:{s:8:"fileName";s:11:"beranda.htm";s:7:"content";s:21797:"title = "JDIH LAPAN"
 url = "/"
 layout = "default"
 is_hidden = 0
 show_menu = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [FaqAsk]
 
@@ -11,33 +13,37 @@ show_menu = 0
 [newsSubscribe]
 
 [newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+postPage = "berita/detail"
+
+[session]
+security = "all"
+
+[account]
+redirect = "layanan-advokasi"
+paramCode = "code"
+forceSecure = 0
 ==
 <?php
-    use Pda\Peraturan\Models\Peraturan;
+use Pda\Peraturan\Models\Peraturan;
     use Pda\Peraturan\Models\Jenis;
     use Pda\Peraturan\Models\Berita;
 
 	function onStart() {
-		$peraturan     = Db::table('pda_peraturan_hukum')
-    				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
-    				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
-                         ->orderBy('tahun', 'desc')
-    				     ->get();
+		
+        $peraturan = Peraturan::where('deleted_at', NULL)->orderBy('tahun', 'desc')->get();
 
         $this['jenis'] = Jenis::all();
 
-        // $this['latests'] = Peraturan::with('pda_peraturan_jenis', function ($q) {
-        //     $q->with('logo');
-        // })->get();
-
         $years = [];
-        // $jenis_id = [];
-        // $jenis_nama = [];
         $totalList = [];
 
         foreach ($peraturan as $aturan) {
             $years[] = $aturan->tahun;
-            // $jenis_nama[] = $aturan->jenis_nama;
         }
 
         foreach ($this['jenis'] as $jns) {
@@ -45,21 +51,12 @@ show_menu = 0
         }
 
         $years = array_unique($years);
-        // $jenis_id = array_unique($jenis_id);
-        // $jenis_nama = array_unique($jenis_nama);
         rsort($years);
-        // rsort($totalList);
 
-        // for ($i=0; $i < count($jenis_id) ; $i++) { 
-        //     $totalList[$i] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jenis_id[$i])->count();
-        // }
 
         $this['peraturan'] = $peraturan;
         $this['years'] = $years;
-        // $this['jenis_id'] = $jenis_id;
-        // $this['jenis_nama'] = $jenis_nama;
         $this['totalList'] = $totalList;
-        // print_r($jenis_id);
     }
 ?>
 ==
@@ -171,7 +168,7 @@ show_menu = 0
                                 data-fontweight="['300','300','300','300']"
                                 data-width="['1200','660','660','300']"
                                 data-height="none"
-                                data-whitespace="nowrap"
+                                data-whitespace="['nowrap',normal','normal','normal']"
                      
                                 data-type="text" 
                                 data-responsive_offset="on" 
@@ -194,7 +191,7 @@ show_menu = 0
         <div class="wrap-form">
             <div class="flat-formsearch ">
             <!-- <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post" action="#"> -->
-            	<form novalidate="" class="search-form form-filter clearfix" id="main-contact-form" action="{{ 'listing' | page }}" method="get">
+            	<form novalidate="" class="search-form form-filter clearfix" id="main-contact-form" action="{{ 'peraturan/listing' | page }}" method="get">
 				    <span class="input-question">
 				        <input type="text" placeholder="Nomor" name="nomor">
 				    </span>
@@ -249,7 +246,7 @@ show_menu = 0
 	                                </div>
 	                                <div class="text">
 	                                	<input type="hidden" name="jenis" value="Undang-Undang" />
-	                                    <h6><a href="{{ 'listing'|page({ slug: jns.nama }) }}" title="">{{ jns.nama }}</a></h6>
+	                                    <h6><a href="{{ 'peraturan/listing'|page({ slug: jns.nama }) }}" title="">{{ jns.nama }}</a></h6>
 	                                    <p>{{ totalList[i] }} Listing</p>
 	                                </div>
 	                            </div>
@@ -267,15 +264,15 @@ show_menu = 0
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-section style2">
-                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Informasi Hukum Terkini</a></h1>
+                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Peraturan Terkini</a></h1>
                     </div>
                 </div>
             </div>
             <div class="row">
-                {% for news in newsPosts.posts|slice(0, 3) %}
+                {% for aturan in peraturan|slice(0, 3) %}
                     <div class="col-lg-4 col-sm-6">
                         <article class="post clearfix">
-                            <div class="featured-post">
+                            <!-- <div class="featured-post">
                                 <a href="{{ 'berita/detail'|page({ slug: news.slug }) }}"><img src="{{ news.image|media }}" alt="img"></a>
                                 <ul class="post-comment">
                                     <li class="date">
@@ -285,21 +282,22 @@ show_menu = 0
                                         {{ news.published_at| date('F') }}
                                     </li>
                                 </ul>
-                            </div><!-- /.feature-post -->
+                            </div> --><!-- /.feature-post -->
                             <div class="content-post">     
+                                
+                                <h3 class="title-post"><a href="{{ 'peraturan/detail'|page({ peraturan_id: aturan.id }) }}">
+                                    {{ aturan.tentang }}
+                                    </a></h3>                        
+                                <!-- <p>{{ str_words(news.content|raw, 10) }}</p> -->
                                 <ul class="meta-data clearfix">
                                     <li class="category">
-                                        Kategori: <a href="{{ 'berita/category'|page({ slug: news.category.slug }) }}">{{ news.category.name }}</a>
+                                        Kategori: <a href="{{ 'peraturan/listing'|page({ slug: aturan.jenis_.nama }) }}">{{ aturan.jenis_.nama }}</a>
                                     </li>
                                     <!-- <li> by: <a href="#">admin</a></li> -->
                                 </ul><!-- /.meta-post -->
-                                <h3 class="title-post"><a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">
-                                    {{ news.title }}
-                                    </a></h3>                        
-                                <p>{{ str_words(news.content|raw, 10) }}</p>
-                                <div class="more-link">
+                                <!-- <div class="more-link">
                                     <a href="{{ 'berita/detail'|page({ slug: news.slug }) }}">Read More</a>
-                                </div>
+                                </div> -->
                             </div><!-- /.content-post -->
                         </article>
                     </div>
@@ -353,7 +351,38 @@ show_menu = 0
                 </div>
             </div>
         </div>  
-    </section>";s:5:"mtime";i:1535949523;s:6:"markup";s:18392:"<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+    </section>
+    <div class="modal fade flat-popupform" id="popup_login">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body text-center clearfix">
+                        {% component 'account' %}
+                        <!-- <form class="form-login form-listing" action="#" method="post">
+                            <h3 class="title-formlogin">Log in</h3>
+                            <span class="input-login icon-form"><input type="text" placeholder="Your Name*" name="email" required="required"><i class="fa fa-user"></i></span>
+                            <span class="input-login icon-form"><input type="text" placeholder="Password*" name="password" required="required"><i class="fa fa-lock"></i></span>
+                            <div class="flat-fogot clearfix">
+                                <label class="float-left">
+                                   <span class="input-check">
+                                        <input type="checkbox" id="rem" name="check" value="0" checked="">
+                                        <label for="rem" class="remember">Remember me</label> 
+                                    </span>
+                                </label>
+                                <label class="float-right link-register">
+                                    <a href="#">Lost your password?</a>
+                                </label>
+                            </div>
+                            <span class="wrap-button">
+                                <button type="button" id="login-button" class=" login-btn effect-button" title="log in">LOG IN</button>
+                            </span>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+    </div>";s:5:"mtime";i:1543980569;s:6:"markup";s:20539:"<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
                 <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
                 <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
                     <div class="slotholder"></div>
@@ -461,7 +490,7 @@ show_menu = 0
                                 data-fontweight="['300','300','300','300']"
                                 data-width="['1200','660','660','300']"
                                 data-height="none"
-                                data-whitespace="nowrap"
+                                data-whitespace="['nowrap',normal','normal','normal']"
                      
                                 data-type="text" 
                                 data-responsive_offset="on" 
@@ -484,7 +513,7 @@ show_menu = 0
         <div class="wrap-form">
             <div class="flat-formsearch ">
             <!-- <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post" action="#"> -->
-            	<form novalidate="" class="search-form form-filter clearfix" id="main-contact-form" action="{{ 'listing' | page }}" method="get">
+            	<form novalidate="" class="search-form form-filter clearfix" id="main-contact-form" action="{{ 'peraturan/listing' | page }}" method="get">
 				    <span class="input-question">
 				        <input type="text" placeholder="Nomor" name="nomor">
 				    </span>
@@ -539,7 +568,7 @@ show_menu = 0
 	                                </div>
 	                                <div class="text">
 	                                	<input type="hidden" name="jenis" value="Undang-Undang" />
-	                                    <h6><a href="{{ 'listing'|page({ slug: jns.nama }) }}" title="">{{ jns.nama }}</a></h6>
+	                                    <h6><a href="{{ 'peraturan/listing'|page({ slug: jns.nama }) }}" title="">{{ jns.nama }}</a></h6>
 	                                    <p>{{ totalList[i] }} Listing</p>
 	                                </div>
 	                            </div>
@@ -557,15 +586,15 @@ show_menu = 0
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-section style2">
-                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Informasi Hukum Terkini</a></h1>
+                        <h1 class="title"><a href="{{ 'berita/listing'|page }}">Peraturan Terkini</a></h1>
                     </div>
                 </div>
             </div>
             <div class="row">
-                {% for news in newsPosts.posts|slice(0, 3) %}
+                {% for aturan in peraturan|slice(0, 3) %}
                     <div class="col-lg-4 col-sm-6">
                         <article class="post clearfix">
-                            <div class="featured-post">
+                            <!-- <div class="featured-post">
                                 <a href="{{ 'berita/detail'|page({ slug: news.slug }) }}"><img src="{{ news.image|media }}" alt="img"></a>
                                 <ul class="post-comment">
                                     <li class="date">
@@ -575,21 +604,22 @@ show_menu = 0
                                         {{ news.published_at| date('F') }}
                                     </li>
                                 </ul>
-                            </div><!-- /.feature-post -->
+                            </div> --><!-- /.feature-post -->
                             <div class="content-post">     
+                                
+                                <h3 class="title-post"><a href="{{ 'peraturan/detail'|page({ peraturan_id: aturan.id }) }}">
+                                    {{ aturan.tentang }}
+                                    </a></h3>                        
+                                <!-- <p>{{ str_words(news.content|raw, 10) }}</p> -->
                                 <ul class="meta-data clearfix">
                                     <li class="category">
-                                        Kategori: <a href="{{ 'berita/category'|page({ slug: news.category.slug }) }}">{{ news.category.name }}</a>
+                                        Kategori: <a href="{{ 'peraturan/listing'|page({ slug: aturan.jenis_.nama }) }}">{{ aturan.jenis_.nama }}</a>
                                     </li>
                                     <!-- <li> by: <a href="#">admin</a></li> -->
                                 </ul><!-- /.meta-post -->
-                                <h3 class="title-post"><a href="{{ 'berita/detail'|page({ judul: news.slug }) }}">
-                                    {{ news.title }}
-                                    </a></h3>                        
-                                <p>{{ str_words(news.content|raw, 10) }}</p>
-                                <div class="more-link">
+                                <!-- <div class="more-link">
                                     <a href="{{ 'berita/detail'|page({ slug: news.slug }) }}">Read More</a>
-                                </div>
+                                </div> -->
                             </div><!-- /.content-post -->
                         </article>
                     </div>
@@ -643,31 +673,52 @@ show_menu = 0
                 </div>
             </div>
         </div>  
-    </section>";s:4:"code";s:1694:"    use Pda\Peraturan\Models\Peraturan;
+    </section>
+    <div class="modal fade flat-popupform" id="popup_login">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body text-center clearfix">
+                        {% component 'account' %}
+                        <!-- <form class="form-login form-listing" action="#" method="post">
+                            <h3 class="title-formlogin">Log in</h3>
+                            <span class="input-login icon-form"><input type="text" placeholder="Your Name*" name="email" required="required"><i class="fa fa-user"></i></span>
+                            <span class="input-login icon-form"><input type="text" placeholder="Password*" name="password" required="required"><i class="fa fa-lock"></i></span>
+                            <div class="flat-fogot clearfix">
+                                <label class="float-left">
+                                   <span class="input-check">
+                                        <input type="checkbox" id="rem" name="check" value="0" checked="">
+                                        <label for="rem" class="remember">Remember me</label> 
+                                    </span>
+                                </label>
+                                <label class="float-right link-register">
+                                    <a href="#">Lost your password?</a>
+                                </label>
+                            </div>
+                            <span class="wrap-button">
+                                <button type="button" id="login-button" class=" login-btn effect-button" title="log in">LOG IN</button>
+                            </span>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+    </div>";s:4:"code";s:771:"use Pda\Peraturan\Models\Peraturan;
     use Pda\Peraturan\Models\Jenis;
     use Pda\Peraturan\Models\Berita;
 
 	function onStart() {
-		$peraturan     = Db::table('pda_peraturan_hukum')
-    				     ->join('pda_peraturan_jenis', 'pda_peraturan_hukum.jenis_id', '=', 'pda_peraturan_jenis.id')
-    				     ->select('pda_peraturan_hukum.*', 'pda_peraturan_jenis.nama as jenis_nama')
-                         ->orderBy('tahun', 'desc')
-    				     ->get();
+		
+        $peraturan = Peraturan::where('deleted_at', NULL)->orderBy('tahun', 'desc')->get();
 
         $this['jenis'] = Jenis::all();
 
-        // $this['latests'] = Peraturan::with('pda_peraturan_jenis', function ($q) {
-        //     $q->with('logo');
-        // })->get();
-
         $years = [];
-        // $jenis_id = [];
-        // $jenis_nama = [];
         $totalList = [];
 
         foreach ($peraturan as $aturan) {
             $years[] = $aturan->tahun;
-            // $jenis_nama[] = $aturan->jenis_nama;
         }
 
         foreach ($this['jenis'] as $jns) {
@@ -675,19 +726,10 @@ show_menu = 0
         }
 
         $years = array_unique($years);
-        // $jenis_id = array_unique($jenis_id);
-        // $jenis_nama = array_unique($jenis_nama);
         rsort($years);
-        // rsort($totalList);
 
-        // for ($i=0; $i < count($jenis_id) ; $i++) { 
-        //     $totalList[$i] = Db::table('pda_peraturan_hukum')->where('jenis_id',$jenis_id[$i])->count();
-        // }
 
         $this['peraturan'] = $peraturan;
         $this['years'] = $years;
-        // $this['jenis_id'] = $jenis_id;
-        // $this['jenis_nama'] = $jenis_nama;
         $this['totalList'] = $totalList;
-        // print_r($jenis_id);
-    }";s:5:"title";s:7:"beranda";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:6:"FaqAsk";a:0:{}s:10:"searchForm";a:0:{}s:13:"newsSubscribe";a:0:{}s:9:"newsPosts";a:0:{}}}
+    }";s:5:"title";s:10:"JDIH LAPAN";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:6:"FaqAsk";a:0:{}s:10:"searchForm";a:0:{}s:13:"newsSubscribe";a:0:{}s:9:"newsPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:13:"berita/detail";}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:7:"account";a:3:{s:8:"redirect";s:16:"layanan-advokasi";s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

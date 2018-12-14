@@ -33,4 +33,14 @@
             <th>Tentang</th>
         </tr>
     </thead>
+    <tbody>
+        {% for aturan in peraturan %}
+         <tr>
+            <td>{{ aturan.jenis }}</td>
+            <td>{{ aturan.nomor }}</td>
+            <td>{{ aturan.tahun }}</td>
+            <td><a href="{{ aturan.filename|media }}">{{ aturan.tentang }}</a></td>
+        <tr>
+        {% endfor %}
+    </tbody>
 </table>

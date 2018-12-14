@@ -5,6 +5,7 @@ is_hidden = 0
 show_menu = 0
 
 [newsPosts]
+[newsCategories]
 pageNumber = "{{ :page }}"
 postsPerPage = 10
 noPostsMessage = "No posts found"
@@ -14,11 +15,12 @@ postPage = "beranda"
 categoryPage = "beranda"
 ==
 <?php
-use Pda\Peraturan\Models\Berita;
+use Pda\Peraturan\Models\Peraturan;
 use Indikator\News\Models\Posts;
 
     function onStart() {
-        $this['all'] = Posts::orderBy('published_at', 'desc')->paginate(5);
+        $this['all'] = Posts::where('status', 1)->orderBy('published_at', 'desc')->paginate(5);
+        
     }
 ?>
 ==
@@ -60,13 +62,13 @@ use Indikator\News\Models\Posts;
                 <div class="col-lg-3">
                     <div class="sidebar">
                         <div class="widget widget-recent-news">
-                            <h5 class="widget-title">Recent Post</h5>
+                            <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
                                 {% for post in all|slice(0,5) %}
                                     <li>
                                         <div class="text">
                                             <h6>
-                                                <a href="{{ 'berita/detail'|page({ slug: post.slug }) }}">
+                                                <a href="{{ 'produk_hukum/detail'|page({ slug: post.slug }) }}">
                                                 {{ post.title }}
                                                 </a>
                                             </h6>  
@@ -76,15 +78,14 @@ use Indikator\News\Models\Posts;
                                 {% endfor %}
                             </ul><!-- /.popular-news -->
                         </div><!-- /.widget-popular-news -->
-                        <!-- <div class="widget widget_categories">
-                            <h5 class="widget-title">Category</h5>
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finanve</a></li>
-                                <li><a href="#">Insurance</a></li>
-                                <li><a href="#">Leasing</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ 'berita/category'|page({ slug: category.slug }) }}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
-                        </div> --><!-- /.widget-categories -->
+                        </div><!-- /.widget-categories -->
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           

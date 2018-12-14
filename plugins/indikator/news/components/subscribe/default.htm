@@ -1,14 +1,23 @@
 <form class="flat-mailchimp" data-request="onSubscription" data-request-success="alert('{{ text_messages }}')">
-    <div class="field clearfix" id="subscribe-content" style="width: 540px;">
+    <div class="field clearfix" id="subscribe-content">
         <p class="wrap-input-email">
             <input name="name" type="hidden" class="form-control" id="subscribersName" value="unnamed" required>
+            <input type="hidden" name="category" value="0">
         </p>
         <p class="wrap-input-email">
             <input name="email" type="email" tabindex="2" id="subscribersEmail" name="subscribe-email" placeholder="Masukan Email Anda" required>
         </p>
         <p class="wrap-btn">
-            <button type="submit" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">BERLANGGANAN</button>
+            <button type="submit" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">{{ text_button }}</button>
         </p>
     </div>
+
+    {% if category_count == 0 %}
+    <input type="hidden" name="category" value="0">
+    {% else %}
+        {% for category in category_list %}
+        <input type="checkbox" name="category[]" value="{{ category.id }}" style="display: none;" checked>
+        {% endfor %}
+    {% endif %}
 </form>
                         

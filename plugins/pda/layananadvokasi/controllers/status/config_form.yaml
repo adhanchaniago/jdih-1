@@ -1,0 +1,10 @@
+name: Status
+form: $/pda/layananadvokasi/models/status/fields.yaml
+modelClass: Pda\LayananAdvokasi\Models\Status
+defaultRedirect: pda/layananadvokasi/status
+create:
+    redirect: 'pda/layananadvokasi/status/update/:id'
+    redirectClose: pda/layananadvokasi/status
+update:
+    redirect: pda/layananadvokasi/status
+    redirectClose: pda/layananadvokasi/status

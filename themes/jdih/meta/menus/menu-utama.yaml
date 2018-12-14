@@ -42,9 +42,13 @@ items:
                     isExternal: '0'
             -
                 title: 'Visi Misi'
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: profil/visimisi
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -68,7 +72,7 @@ items:
         type: cms-page
         url: ''
         code: ''
-        reference: listing
+        reference: peraturan/listing
         cmsPage: ''
         replace: ''
         viewBag:
@@ -77,15 +81,11 @@ items:
             isExternal: '0'
     -
         title: Berita
-        nesting: ''
         type: cms-page
-        url: ''
         code: ''
         reference: berita/listing
-        cmsPage: ''
-        replace: ''
         viewBag:
-            isHidden: '0'
+            isHidden: '1'
             cssClass: ''
             isExternal: '0'
     -
@@ -95,6 +95,19 @@ items:
         url: ''
         code: ''
         reference: faq
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Layanan Advokasi'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: advokasi/layanan-advokasi
         cmsPage: ''
         replace: ''
         viewBag:

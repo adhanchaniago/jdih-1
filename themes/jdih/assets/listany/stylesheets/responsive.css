@@ -70,9 +70,17 @@
 	    top: -165px;
 	}
 
+	.form-submit {
+		width: 19.4%;
+	}
+
+	/*.flat-button {
+		padding: 18px 28px 17px 25px;
+	}
+
 	.flat-product .rate-product .link-review {
 	    margin-bottom: 5px;
-	}
+	}*/
 
 	.flex-direction-nav a {
 		top: 6%;
@@ -173,6 +181,14 @@
 	.flat-formsearch .search-form {
 		padding: 7px 9px 7px 9px;
 	}
+
+	/*.form-submit span {
+		width: 19.4%;
+	}
+
+	.flat-button button {
+		padding: 18px 28px 17px 25px;
+	}*/
 
 	.client .content-client {
 		padding: 70px 5px 10px 40px;
@@ -350,7 +366,7 @@
 	}
 
 	.search-form span {
-	    width: 28.8%;
+	    width: 27.4%;
 	}
 
 	.flat-row.v1.bg-theme .col-lg-2 {

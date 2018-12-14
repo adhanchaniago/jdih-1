@@ -9,16 +9,37 @@ navigation:
         label: 'pda.peraturan::lang.plugin.name'
         url: pda/peraturan/peraturan
         icon: icon-legal
+        permissions:
+            - pda.peraturan.kelola_peraturan
         sideMenu:
             jenis:
                 label: 'Jenis Peraturan'
                 url: pda/peraturan/jenis
                 icon: icon-list-ol
+                permissions:
+                    - pda.peraturan.kelola_jenis_peraturan
             berita:
                 label: Berita
                 url: pda/peraturan/berita
                 icon: icon-book
+                permissions:
+                    - pda.peraturan.kelola_berita
             profil:
                 label: Profil
                 url: pda/peraturan/profil
                 icon: icon-building
+                permissions:
+                    - pda.peraturan.kelola_profil
+permissions:
+    pda.peraturan.kelola_peraturan:
+        tab: 'pda.peraturan::lang.plugin.name'
+        label: 'Kelola Peraturan'
+    pda.peraturan.kelola_jenis_peraturan:
+        tab: 'pda.peraturan::lang.plugin.name'
+        label: 'Kelola Jenis Peraturan'
+    pda.peraturan.kelola_berita:
+        tab: 'pda.peraturan::lang.plugin.name'
+        label: 'Kelola Berita'
+    pda.peraturan.kelola_profil:
+        tab: 'pda.peraturan::lang.plugin.name'
+        label: 'Kelola Profil'

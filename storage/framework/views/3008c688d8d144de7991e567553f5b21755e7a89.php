@@ -1,10 +1,10 @@
 <?php if($paginator->hasPages()): ?>
-    <ul class="flat-pagination clearfix">
+    <ul class="pagination">
         
         <?php if($paginator->onFirstPage()): ?>
-            <li class="disabled"><span><i class="fa fa-angle-left"></i></span></li>
+            <li class="disabled"><span>&laquo;</span></li>
         <?php else: ?>
-            <li class="previous"><a href="<?php echo e($paginator->previousPageUrl()); ?>" rel="prev"><i class="fa fa-angle-left"></i></a></li>
+            <li><a href="<?php echo e($paginator->previousPageUrl()); ?>" rel="prev">&laquo;</a></li>
         <?php endif; ?>
 
         
@@ -18,7 +18,7 @@
             <?php if(is_array($element)): ?>
                 <?php $__currentLoopData = $element; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page => $url): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php if($page == $paginator->currentPage()): ?>
-                        <li class="active"><a href=""><span><?php echo e($page); ?></span></a></li>
+                        <li class="active"><span><?php echo e($page); ?></span></li>
                     <?php else: ?>
                         <li><a href="<?php echo e($url); ?>"><?php echo e($page); ?></a></li>
                     <?php endif; ?>
@@ -28,9 +28,9 @@
 
         
         <?php if($paginator->hasMorePages()): ?>
-            <li class="next"><a href="<?php echo e($paginator->nextPageUrl()); ?>" rel="next"><i class="fa fa-angle-right"></i></a></li>
+            <li><a href="<?php echo e($paginator->nextPageUrl()); ?>" rel="next">&raquo;</a></li>
         <?php else: ?>
-            <li class="disabled"><span><i class="fa fa-angle-right"></i></span></li>
+            <li class="disabled"><span>&raquo;</span></li>
         <?php endif; ?>
     </ul>
 <?php endif; ?>

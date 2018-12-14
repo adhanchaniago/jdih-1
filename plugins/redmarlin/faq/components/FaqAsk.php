@@ -9,6 +9,8 @@ use Request;
 use Validator;
 use Html;
 use Mail;
+use Input;
+use Redirect;
 
 class FaqAsk extends ComponentBase
 {
@@ -26,11 +28,13 @@ class FaqAsk extends ComponentBase
     {
         return [];
     }
-     public function onPost()
+
+    public function onSubmit()
     {
     
-    $question = Html::clean(post('question'));
-    $reply_email = post('email');
+    $question = Input::get('question');
+    $reply_email = Input::get('email');
+    $files = Input::file('files');
     
     $validator = Validator::make(
         [
@@ -49,7 +53,7 @@ class FaqAsk extends ComponentBase
         }
         else 
         {
-            $ask = new Question;
+            $ask = new Question();
             $ask->question = $question;
 
             /**
@@ -58,6 +62,7 @@ class FaqAsk extends ComponentBase
             $ask->is_approved = '0';
             $ask->category_id = '0';
             $ask->reply_email = $reply_email;
+            $ask->files = $files;
             $ask->save();
 
             /**

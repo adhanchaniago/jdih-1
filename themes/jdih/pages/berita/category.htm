@@ -5,6 +5,7 @@ is_hidden = 0
 show_menu = 0
 
 [newsPosts]
+[newsCategories]
 pageNumber = "{{ :page }}"
 postsPerPage = 10
 noPostsMessage = "No posts found"
@@ -95,7 +96,7 @@ postPage = "berita/detail"
 				            {% endif %}
 				        </article>
 				    {% else %}
-				    <span class="post-nodata">{{ noPostsMessage }}</span>
+				    <span class="post-nodata" style="display: table; margin: 0 auto;">{{ noPostsMessage }}</span>
 				    {% endfor %}
                     </div><!-- /.post-wrap --> 
 
@@ -106,7 +107,7 @@ postPage = "berita/detail"
                 <div class="col-lg-3">
                     <div class="sidebar">
                         <div class="widget widget-recent-news">
-                            <h5 class="widget-title">Recent Post</h5>
+                            <h5 class="widget-title">Berita Terkini</h5>
                             <ul class="popular-news clearfix">
                                 {% for post in posts|slice(0,5) %}
                                     <li>
@@ -122,15 +123,14 @@ postPage = "berita/detail"
                                 {% endfor %}
                             </ul><!-- /.popular-news -->
                         </div><!-- /.widget-popular-news -->
-                        <!-- <div class="widget widget_categories">
-                            <h5 class="widget-title">Category</h5>
+                        <div class="widget widget_categories">
+                            <h5 class="widget-title">Kategori</h5>
                             <ul>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finanve</a></li>
-                                <li><a href="#">Insurance</a></li>
-                                <li><a href="#">Leasing</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ 'berita/category'|page({ slug: category.slug }) }}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
-                        </div> --><!-- /.widget-categories -->
+                        </div> <!-- /.widget-categories -->
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-md-3 -->            
             </div><!-- /.row -->           

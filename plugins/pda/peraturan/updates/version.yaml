@@ -63,3 +63,6 @@
 1.0.22:
     - 'Updated table pda_peraturan_profil'
     - builder_table_update_pda_peraturan_profil.php
+1.0.23:
+    - 'Updated table pda_peraturan_hukum'
+    - builder_table_update_pda_peraturan_hukum_6.php

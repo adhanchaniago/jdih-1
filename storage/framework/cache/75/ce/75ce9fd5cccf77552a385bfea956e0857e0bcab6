@@ -1,0 +1,35 @@
+1544406436a:1:{s:18:"advokasi/reset.htm";a:12:{s:8:"fileName";s:18:"advokasi/reset.htm";s:7:"content";s:517:"title = "Reset"
+url = "/advokasi/reset"
+layout = "default"
+is_hidden = 0
+show_menu = 0
+
+[session]
+security = "all"
+
+[resetPassword]
+redirect = "advokasi/layanan-advokasi"
+paramCode = "code"
+forceSecure = 0
+==
+<section class="main-content blog-posts blog-single">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            	<div align="center">
+				{% component 'resetPassword' %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>";s:5:"mtime";i:1542860635;s:6:"markup";s:294:"<section class="main-content blog-posts blog-single">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            	<div align="center">
+				{% component 'resetPassword' %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>";s:4:"code";N;s:5:"title";s:5:"Reset";s:3:"url";s:15:"/advokasi/reset";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:7:"session";a:1:{s:8:"security";s:3:"all";}s:13:"resetPassword";a:3:{s:8:"redirect";s:25:"advokasi/layanan-advokasi";s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

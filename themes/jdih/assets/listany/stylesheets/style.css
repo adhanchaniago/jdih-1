@@ -232,7 +232,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {		
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: #ffffff;
     padding: 15px 45px;
@@ -261,7 +261,8 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"],
-input[type="color"] {	
+input[type="color"],
+input[type="file"] {	
 	background-color: transparent;
     border: 2px solid #e5e5e5;
     height: 50px;
@@ -342,7 +343,8 @@ input[type="email"],
 input[type="url"], 
 input[type="search"], 
 input[type="tel"], 
-input[type="color"], 
+input[type="color"],
+input[type="file"], 
 .uneditable-input,
 .dropdown-menu,
 .navbar .nav > .active > a, 
@@ -1279,7 +1281,6 @@ section.main-content.blog-single {
 }
 
 .form-listing .icon-form input {
-	color: #C3C3C3;
 	font-size: 14px;
 	margin-bottom: 20px;
 }
@@ -2737,6 +2738,16 @@ footer a:hover {
 	color: #ea240a;
 }
 
+#footer-border {
+	background-image: url('../images/footer-border.png');
+	background-size: cover;
+    height: 50px;
+    width: 100%;
+    top: -2.5em;
+    left: 0;
+    position: absolute;
+}
+
 .effect {
 	display: block;
 	position: relative;
@@ -2955,6 +2966,37 @@ footer a:hover {
   color: #25282A;
   padding-left: 25px;
   margin-top: 1em;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 9px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
 }
 
 

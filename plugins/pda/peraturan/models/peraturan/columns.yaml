@@ -2,12 +2,6 @@ columns:
     kategori:
         label: kategori
         type: text
-    jenis:
-        label: jenis
-        type: text
-        searchable: true
-        invisible: false
-        sortable: true
     nomor:
         label: nomor
         type: text
@@ -26,11 +20,6 @@ columns:
     keterangan:
         label: keterangan
         type: text
-    filename:
-        label: filename
-        type: text
-        searchable: true
-        sortable: true
     created_at:
         label: created_at
         type: datetime
@@ -46,4 +35,4 @@ columns:
         searchable: true
         sortable: true
         select: nama
-        relation: jenis
+        relation: jenis_

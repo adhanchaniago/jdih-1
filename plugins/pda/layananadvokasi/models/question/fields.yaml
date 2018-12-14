@@ -1,0 +1,48 @@
+fields:
+    question:
+        label: Petanyaan
+        span: auto
+        type: text
+    created_at:
+        label: 'Tanggal Dibuat'
+        mode: datetime
+        span: right
+        hidden: 0
+        disabled: 1
+        type: datepicker
+    category:
+        label: Kategori
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    status:
+        label: Status
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    email:
+        label: Email
+        span: auto
+        disabled: 1
+        type: text
+    files:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    keterangan:
+        label: Keterangan
+        size: ''
+        span: right
+        type: textarea
+    answer:
+        label: Jawaban
+        size: ''
+        span: left
+        type: richeditor

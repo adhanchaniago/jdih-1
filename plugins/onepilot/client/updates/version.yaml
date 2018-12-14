@@ -1,0 +1,10 @@
+0.1.0:
+    - Initialize plugin.
+    - initialize_settings.php
+0.1.1:
+    - Display core changelog
+1.0.0:
+    - Response format improved
+1.0.1:
+    - Migrate from CmsPilot
+    - migrate_from_cmspilot.php

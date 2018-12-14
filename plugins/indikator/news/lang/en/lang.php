@@ -110,7 +110,7 @@ return [
         'import' => 'Import',
         'export' => 'Export',
         'unsubscribe' => 'Unsubscribe',
-        'subscribe' => 'Subscription',
+        'subscribe' => 'BERLANGGANAN',
         'test' => 'Send test mail',
         'send' => 'Send newsletter',
         'send_confirmation' => 'Do you want to send the newsletter?',

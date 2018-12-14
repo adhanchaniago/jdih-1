@@ -4774,8 +4774,8 @@ tbody.collapse.show {
 .page-item.active .page-link {
   z-index: 2;
   color: #fff;
-  background-color: #0275d8;
-  border-color: #0275d8;
+  background-color: #ea240a;
+  border-color: #ea240a;
 }
 
 .page-item.disabled .page-link {
@@ -4792,13 +4792,13 @@ tbody.collapse.show {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #0275d8;
+  color: #ea240a;
   background-color: #fff;
   border: 1px solid #ddd;
 }
 
 .page-link:focus, .page-link:hover {
-  color: #014c8c;
+  color: #ea240a;
   text-decoration: none;
   background-color: #eceeef;
   border-color: #ddd;
@@ -5015,6 +5015,20 @@ a.badge:focus, a.badge:hover {
 }
 
 .alert-danger .alert-link {
+  color: #843534;
+}
+
+.alert-error {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+}
+
+.alert-error hr {
+  border-top-color: #e4b9b9;
+}
+
+.alert-error .alert-link {
   color: #843534;
 }
 

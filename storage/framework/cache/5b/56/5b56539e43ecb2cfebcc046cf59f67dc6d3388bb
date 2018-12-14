@@ -1,0 +1,168 @@
+1544406436a:1:{s:7:"404.htm";a:11:{s:8:"fileName";s:7:"404.htm";s:7:"content";s:1989:"title = 404
+url = "/coming-soon"
+is_hidden = 0
+show_menu = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coming Soon</title>
+	<link href="{{ '/assets/img/logo-csirt.png'|theme }}" rel="icon">
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		header
+		{
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('themes/jdih/assets/listany/images/IMG_3426.jpg');
+			height: 100vh;
+			background-position: center;
+			background-size: cover;
+		}
+		.hero
+		{
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			text-align: center;
+			font-family: 'Dosis', sans-serif;
+		}
+		h1
+		{
+			font-size: 60px;
+			letter-spacing: 15px;
+		}
+		hr
+		{
+			width: 50%;
+			margin: 30px auto;
+			border: 1.5px solid #fff; 
+		}
+		p
+		{
+			font-size: 20px;
+			margin-bottom: 30px;
+		}
+		#launch
+		{
+			font-size: 40px;
+			word-spacing: 20px;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="hero">
+			<p>Your website is under maintenance</p>
+			<h1>COMING SOON</h1>
+			<hr>
+			<p id="launch"></p>
+		</div>
+	</header>
+</body>
+<script type="text/javascript">
+	var countDownDate = new Date("Jan 1, 2019 00:00:00").getTime();
+	var x =  setInterval(function() {
+		var now = new Date().getTime();
+		var distance = countDownDate - now;
+		var days = Math.floor(distance/(1000*60*60*24));
+		var hours = Math.floor((distance%(1000*60*60*23))/(1000*60*60));
+		var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+		var seconds = Math.floor((distance%(1000*60))/1000);
+
+		document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("launch").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+</script>
+</html>";s:5:"mtime";i:1544064155;s:6:"markup";s:1872:"<!DOCTYPE html>
+<html>
+<head>
+	<title>Coming Soon</title>
+	<link href="{{ '/assets/img/logo-csirt.png'|theme }}" rel="icon">
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		header
+		{
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('themes/jdih/assets/listany/images/IMG_3426.jpg');
+			height: 100vh;
+			background-position: center;
+			background-size: cover;
+		}
+		.hero
+		{
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			text-align: center;
+			font-family: 'Dosis', sans-serif;
+		}
+		h1
+		{
+			font-size: 60px;
+			letter-spacing: 15px;
+		}
+		hr
+		{
+			width: 50%;
+			margin: 30px auto;
+			border: 1.5px solid #fff; 
+		}
+		p
+		{
+			font-size: 20px;
+			margin-bottom: 30px;
+		}
+		#launch
+		{
+			font-size: 40px;
+			word-spacing: 20px;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="hero">
+			<p>Your website is under maintenance</p>
+			<h1>COMING SOON</h1>
+			<hr>
+			<p id="launch"></p>
+		</div>
+	</header>
+</body>
+<script type="text/javascript">
+	var countDownDate = new Date("Jan 1, 2019 00:00:00").getTime();
+	var x =  setInterval(function() {
+		var now = new Date().getTime();
+		var distance = countDownDate - now;
+		var days = Math.floor(distance/(1000*60*60*24));
+		var hours = Math.floor((distance%(1000*60*60*23))/(1000*60*60));
+		var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+		var seconds = Math.floor((distance%(1000*60))/1000);
+
+		document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("launch").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+</script>
+</html>";s:4:"code";N;s:5:"title";s:3:"404";s:3:"url";s:12:"/coming-soon";s:9:"is_hidden";s:1:"0";s:9:"show_menu";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";}}

@@ -1,24 +1,26 @@
-<form
-    data-request="onSignin">
-    <div class="form-group">
-        <label for="userSigninLogin">{{ loginAttributeLabel }}</label>
-        <input
-            name="login"
-            type="text"
-            class="form-control"
-            id="userSigninLogin"
-            placeholder="Enter your {{ loginAttributeLabel|lower }}" />
+<form class="form-login form-listing" data-request="onSignin" data-request-flash>
+    <h3 class="title-formlogin">Log in Layanan Advokasi</h3>
+    {% flash %}
+        <div class="alert alert-{{ type }}">{{ message }}</div>
+    {% endflash %}
+    <!-- <p data-control="flash-message" data-interval="60" class="success">
+        This message is created from a static element. It will go away in 5 seconds.
+    </p> -->
+    <span class="input-login icon-form"><input type="text" placeholder="Your Email*" name="login" id="userSigninLogin" required="required"><i class="fa fa-user"></i></span>
+    <span class="input-login icon-form"><input type="password" placeholder="Password*" name="password" id="userSigninPassword" required="required"><i class="fa fa-lock"></i></span>
+    <div class="flat-fogot clearfix">
+        <label class="float-left">
+           <span class="input-check">
+                <input type="checkbox" id="rem" name="check" value="0">
+                <label for="rem" class="remember">Remember me</label> 
+            </span>
+        </label>
+        <label class="float-right link-register">
+            <a href="reset/">Reset your password</a>
+        </label>
     </div>
-
-    <div class="form-group">
-        <label for="userSigninPassword">Password</label>
-        <input
-            name="password"
-            type="password"
-            class="form-control"
-            id="userSigninPassword"
-            placeholder="Enter your password" />
-    </div>
-
-    <button type="submit" class="btn btn-default">Sign in</button>
+    <!-- {% component 'captcha' %}<br> -->
+    <span class="wrap-button">
+        <button type="submit" id="login-button" class=" login-btn effect-button" title="log in">LOG IN</button>
+    </span>
 </form>

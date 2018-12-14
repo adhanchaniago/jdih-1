@@ -19,7 +19,7 @@ class Question extends Model
         'category_id' => 'integer|required',
         'is_approved' => 'boolean',
         'is_featured' => 'boolean',
-        'answer' => ''
+        // 'answer' => ''
     ];
      
     /**
@@ -42,6 +42,10 @@ class Question extends Model
      */
      public $belongsTo = [
         'category' => 'RedMarlin\Faq\Models\Category'
+    ];
+
+    public $attachOne = [
+        'files' => 'System\Models\File'
     ];
      
      /**

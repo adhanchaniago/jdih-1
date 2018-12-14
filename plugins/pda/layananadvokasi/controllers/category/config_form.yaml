@@ -1,0 +1,10 @@
+name: Category
+form: $/pda/layananadvokasi/models/category/fields.yaml
+modelClass: Pda\LayananAdvokasi\Models\Category
+defaultRedirect: pda/layananadvokasi/category
+create:
+    redirect: 'pda/layananadvokasi/category/update/:id'
+    redirectClose: pda/layananadvokasi/category
+update:
+    redirect: pda/layananadvokasi/category
+    redirectClose: pda/layananadvokasi/category

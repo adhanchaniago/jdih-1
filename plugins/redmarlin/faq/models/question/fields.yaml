@@ -1,40 +1,47 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
 fields:
     id:
         label: ID
         disabled: true
         hidden: true
+        type: text
     category:
         label: Category
         type: relation
         nameFrom: title
-        span: right  
+        span: right
     is_approved:
-        label: Is Public?
-        description: Make this Question visible on the site
+        label: 'Is Public?'
+        description: 'Make this Question visible on the site'
         type: switch
         span: left
     is_featured:
-        label: Is Featured?
-        description: Make this Question Featured
+        label: 'Is Featured?'
+        description: 'Make this Question Featured'
         type: switch
         span: left
     question:
         label: Question
-        description: Edit question here
+        description: 'Edit question here'
         type: text
     answer:
         label: Answer
-        description: Edit answer here
+        description: 'Edit answer here'
         type: markdown
         size: small
     created_at:
-        label: Creation Date
-        description: When the Question was created
+        label: 'Creation Date'
+        description: 'When the Question was created'
         type: datepicker
     reply_email:
-        label: Notification Email
+        label: 'Notification Email'
         disabled: true
+        type: text
+    files:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

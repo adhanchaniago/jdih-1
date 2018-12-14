@@ -1,0 +1,115 @@
+title = "Layanan Advokasi"
+url = "/layanan-advokasi"
+layout = "default"
+is_hidden = 0
+show_menu = 0
+
+[session]
+security = "user"
+redirect = "advokasi/login"
+
+[AdvQuestion]
+==
+<section class="flat-row page-profile bg-theme">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="flat-user profile">
+                    <!-- <a href="page-user.html" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a> -->
+                    <a href="#" data-request="onLogout" data-request-data="redirect: '/layanan-advokasi'" class="edit">Sign out<i class="fa fa-backward"></i></a>
+                    <ul class="info">
+                        <li class="active"><a href="{{ 'advokasi/layanan-advokasi'|page }}" title=""><i class="fa fa-user"></i>Layanan</a></li>
+                        <li><a href="{{ 'advokasi/status'|page }}" title=""><i class="fa fa-link"></i>Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="flat-tabs style2" data-effect="fadeIn">
+                    <!-- <ul class="menu-tab clearfix">
+                        <li class="active"><a href="#"><i class="ion-navicon-round"></i>(3) Listings</a></li>
+                        <li class=""><a href="#"><i class="ion-chatbubbles"></i>(3) Reviews</a></li>
+                    </ul> --><!-- /.menu-tab -->
+                
+                <div class="content-tab listing-user profile">
+                    
+                    {% component 'AdvQuestion' %}
+                    <div class="content-inner">
+                        <div class="author-review content-listing">
+                            <div class="comments-area">
+                                <ol class="comment-list">
+                                    <li class="comment">
+                                        <article class="comment-body clearfix">        
+                                            <div class="comment-author">
+                                                <img src="images/services/c1.png" alt="image">  
+                                            </div><!-- .comment-author -->
+                                            <div class="comment-text">
+                                                <div class="comment-metadata">
+                                                    <h5><a href="#">Shaya Hill </a><span>on San Angelo Restaurants</span></h5>  
+                                                    <p class="day">12/01/2017</p> <div class="flat-start">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </div>             
+                                                </div><!-- .comment-metadata -->
+                                                <div class="comment-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+                                                </div><!-- .comment-content -->
+                                            </div><!-- /.comment-text -->         
+                                        </article><!-- .comment-body -->
+                                    </li><!-- #comment-## -->
+                                    <li class="comment">
+                                        <article class="comment-body clearfix">        
+                                            <div class="comment-author">
+                                                <img src="images/services/c2.png" alt="image">  
+                                            </div><!-- .comment-author -->
+                                            <div class="comment-text">
+                                                <div class="comment-metadata">
+                                                    <h5><a href="#">Alex Poole </a><span>on Grand Prairie Restaurants</span></h5>  
+                                                    <p class="day">12/01/2017</p> <div class="flat-start">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </div>             
+                                                </div><!-- .comment-metadata -->
+                                                <div class="comment-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+                                                </div><!-- .comment-content -->
+                                            </div><!-- /.comment-text -->         
+                                        </article><!-- .comment-body -->
+                                    </li><!-- #comment-## -->
+                                    <li class="comment">
+                                        <article class="comment-body clearfix">        
+                                            <div class="comment-author">
+                                                <img src="images/services/c3.png" alt="image">  
+                                            </div><!-- .comment-author -->
+                                            <div class="comment-text">
+                                                <div class="comment-metadata">
+                                                    <h5><a href="#">Anthony Jones </a><span>on San Antonio Restaurants</span></h5>  
+                                                    <p class="day">12/01/2017</p> <div class="flat-start">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </div>             
+                                                </div><!-- .comment-metadata -->
+                                                <div class="comment-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+                                                </div><!-- .comment-content -->
+                                            </div><!-- /.comment-text -->         
+                                        </article><!-- .comment-body -->
+                                    </li><!-- #comment-## -->                                   
+                                </ol><!-- .comment-list -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

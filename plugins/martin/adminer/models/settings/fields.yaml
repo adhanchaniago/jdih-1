@@ -1,0 +1,87 @@
+tabs:
+    fields:
+
+        ########################################################################
+        # General Tab
+        ########################################################################
+        mode_section:
+            tab    : martin.adminer::lang.settings.tabs.general
+            label  : martin.adminer::lang.settings.mode
+            comment: martin.adminer::lang.settings.mode_comment
+            type   : section
+
+        mode:
+            tab     : martin.adminer::lang.settings.tabs.general
+            type    : balloon-selector
+            default : 1
+            options :
+                1: martin.adminer::lang.settings.full_window
+                2: martin.adminer::lang.settings.iframe
+
+        autologin_section:
+            tab     : martin.adminer::lang.settings.tabs.general
+            label   : martin.adminer::lang.settings.autologin
+            comment : martin.adminer::lang.settings.autologin_comment
+            type    : section
+            cssClass: m-t-md
+
+        autologin:
+            tab    : martin.adminer::lang.settings.tabs.general
+            span   : left
+            type   : switch
+            default: false
+
+        hide_menu_section:
+            tab     : martin.adminer::lang.settings.tabs.general
+            label   : martin.adminer::lang.settings.hide_menu
+            comment : martin.adminer::lang.settings.hide_menu_comment
+            type    : section
+            cssClass: m-t-md
+
+        hide_menu:
+            tab    : martin.adminer::lang.settings.tabs.general
+            span   : left
+            type   : switch
+            default: false
+
+        hide_menu_link:
+            tab    : martin.adminer::lang.settings.tabs.general
+            span   : left
+            type   : partial
+            path   : $/martin/adminer/models/settings/_adminer_link.htm
+            trigger:
+                action   : show
+                field    : hide_menu
+                condition: checked
+
+        ########################################################################
+        # Themes Tab
+        ########################################################################
+        themes_section:
+            tab     : martin.adminer::lang.settings.tabs.themes
+            label   : martin.adminer::lang.settings.themes
+            comment : martin.adminer::lang.settings.themes_comment
+            type    : section
+
+        theme:
+            tab    : martin.adminer::lang.settings.tabs.themes
+            type   : partial
+            path   : $/martin/adminer/models/settings/_themes_preview.htm
+            default: ""
+
+        ########################################################################
+        # Advanced Tab
+        ########################################################################
+        use_connection_section:
+            tab        : martin.adminer::lang.settings.tabs.advanced
+            label      : martin.adminer::lang.settings.use_conn
+            comment    : martin.adminer::lang.settings.use_conn_comment
+            commentHtml: true
+            type       : section
+
+        use_connection:
+            tab       : martin.adminer::lang.settings.tabs.advanced
+            span      : left
+            type      : dropdown
+            default   : ""
+            showSearch: false

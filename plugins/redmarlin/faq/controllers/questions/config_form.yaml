@@ -15,7 +15,7 @@ create:
 
 update:
     title: Edit Question
-    redirect: redmarlin/faq/questions
+    redirect: redmarlin/faq/questions/update/:id
     redirectClose: redmarlin/faq/questions
     flashSave: QUESTION updated successfully!
     flashDelete: Question has been deleted.

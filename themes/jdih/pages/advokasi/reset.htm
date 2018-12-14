@@ -1,0 +1,25 @@
+title = "Reset"
+url = "/advokasi/reset"
+layout = "default"
+is_hidden = 0
+show_menu = 0
+
+[session]
+security = "all"
+
+[resetPassword]
+redirect = "advokasi/layanan-advokasi"
+paramCode = "code"
+forceSecure = 0
+==
+<section class="main-content blog-posts blog-single">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            	<div align="center">
+				{% component 'resetPassword' %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

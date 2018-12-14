@@ -1,0 +1,10 @@
+name: Questions
+form: $/pda/layananadvokasi/models/question/fields.yaml
+modelClass: Pda\LayananAdvokasi\Models\Question
+defaultRedirect: pda/layananadvokasi/questions
+create:
+    redirect: 'pda/layananadvokasi/questions/update/:id'
+    redirectClose: pda/layananadvokasi/questions
+update:
+    redirect: pda/layananadvokasi/questions
+    redirectClose: pda/layananadvokasi/questions

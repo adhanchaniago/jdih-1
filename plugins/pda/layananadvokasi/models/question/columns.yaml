@@ -1,0 +1,46 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        invisible: false
+        sortable: true
+    question:
+        label: Pertanyaan
+        type: text
+    answer:
+        label: Jawaban
+        type: text
+        invisible: true
+    category_id:
+        label: Kategori
+        type: number
+        searchable: false
+        sortable: false
+        select: name
+        relation: category
+    status_id:
+        label: Status
+        type: number
+        select: name
+        relation: status
+    created_at:
+        label: created_at
+        type: datetime
+        searchable: true
+        invisible: false
+        sortable: true
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+    email:
+        label: email
+        type: text
+    user_id:
+        label: User
+        type: number
+        select: name
+        relation: user

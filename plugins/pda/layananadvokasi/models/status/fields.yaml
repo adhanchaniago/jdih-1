@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: Status
+        span: auto
+        type: text
+    description:
+        label: Deskripsi
+        span: auto
+        size: large
+        type: textarea

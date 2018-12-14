@@ -1,0 +1,27 @@
+title = "Login"
+url = "/advokasi/login"
+layout = "default"
+is_hidden = 0
+show_menu = 0
+
+[session]
+security = "all"
+
+[account]
+redirect = "advokasi/layanan-advokasi"
+paramCode = "code"
+forceSecure = 0
+
+[captcha]
+==
+<section class="main-content blog-posts blog-single">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            	<div align="center">
+				{% component 'account' %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
