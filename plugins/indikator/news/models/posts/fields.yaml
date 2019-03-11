@@ -2,18 +2,36 @@
 #  Field Definitions
 # ===================================
 
+cssClass: row
+
 fields:
 
     title:
         label: indikator.news::lang.form.title
         required: true
-        span: auto
+        attributes:
+           autofocus: ''
+        span: storm
+        cssClass: col-sm-12 col-lg-6
 
     slug:
         label: indikator.news::lang.form.slug
         required: true
         preset: title
-        span: auto
+        span: storm
+        cssClass: col-sm-12 col-lg-6
+
+    category:
+        label: indikator.news::lang.form.category
+        type: relation
+        span: storm
+        cssClass: col-sm-12 col-lg-6
+
+    tags:
+        label: indikator.news::lang.form.tags
+        type: taglist
+        span: storm
+        cssClass: col-sm-12 col-lg-6
 
 tabs:
     fields:
@@ -28,6 +46,21 @@ tabs:
             type: richeditor
             size: giant
 
+        enable_newsletter_content:
+            tab: indikator.news::lang.form.newsletter_content_tab
+            label: indikator.news::lang.form.enable_newsletter_content
+            comment: indikator.news::lang.form.enable_newsletter_content_description
+            type: switch
+            default: false
+            context: update
+
+        newsletter_content:
+            tab: indikator.news::lang.form.newsletter_content_tab
+            label: indikator.news::lang.form.newsletter_content
+            type: richeditor
+            size: giant
+            context: update
+
 secondaryTabs:
     fields:
 
@@ -41,13 +74,20 @@ secondaryTabs:
             mode: image
 
         published_at:
-            label: indikator.news::lang.form.published
+            label: indikator.news::lang.form.published_at
             type: datepicker
             mode: datetime
 
-        category:
-            label: indikator.news::lang.form.category
-            type: relation
+        last_send_at:
+            label: indikator.news::lang.form.last_send_at
+            type: datepicker
+            readOnly: true
+            mode: datetime
+            disabled: disabeld
+
+        user:
+            label: indikator.news::lang.form.author
+            type: dropdown
 
         status:
             label: indikator.news::lang.form.status
@@ -69,10 +109,3 @@ secondaryTabs:
                 2: indikator.news::lang.form.no
             default: 2
             span: auto
-
-        last_send_at:
-            label: indikator.news::lang.form.last_send_at
-            type: datepicker
-            readOnly: true
-            mode: datetime
-            disabled: disabeld

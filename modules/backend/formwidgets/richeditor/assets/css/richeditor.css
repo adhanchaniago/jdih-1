@@ -355,8 +355,8 @@ to{left:100%}
 .fr-view blockquote blockquote blockquote{border-color:#43a047;color:#43a047}
 .fr-view span.fr-emoticon{font-weight:normal;font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";display:inline;line-height:0}
 .fr-view span.fr-emoticon.fr-emoticon-img{background-repeat:no-repeat !important;font-size:inherit;height:1em;width:1em;min-height:20px;min-width:20px;display:inline-block;margin:-0.1em 0.1em 0.1em;line-height:1;vertical-align:middle}
-.fr-view img{position:relative !important;max-width:100% !important}
-.fr-view img.fr-dib{margin:5px auto !important;display:block !important;float:none !important;vertical-align:top !important}
+.fr-view img{position:relative;max-width:100%}
+.fr-view img.fr-dib{margin:5px auto;display:block;float:none;vertical-align:top}
 .fr-view img.fr-dib.fr-fil{margin-left:0}
 .fr-view img.fr-dib.fr-fir{margin-right:0}
 .fr-view img.fr-dii{display:inline-block;float:none;vertical-align:bottom;margin-left:5px;margin-right:5px;max-width:calc(90%)}
@@ -382,7 +382,7 @@ to{left:100%}
 .fr-view table td.oc-cell-highlighted,.fr-view table th.oc-cell-highlighted{border:1px double red}
 .fr-view table td.oc-cell-thick-border,.fr-view table th.oc-cell-thick-border{border-width:2px}
 .fr-view img.oc-img-rounded{border-radius:100%;background-clip:padding-box}
-.fr-view img.oc-img-bordered{border:solid 10px #CCC !important;box-sizing:content-box !important}
+.fr-view img.oc-img-bordered{border:solid 10px #CCC;box-sizing:content-box}
 body .fr-box.fr-basic.fr-top .fr-wrapper,body .fr-box.fr-basic.fr-bottom .fr-wrapper{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
 body .fr-box .ace_editor{display:none}
 body .fr-box .ace_editor{position:absolute;top:0;bottom:0;left:0;right:0;margin:0}

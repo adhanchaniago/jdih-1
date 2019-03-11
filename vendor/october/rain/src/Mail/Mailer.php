@@ -73,8 +73,10 @@ class Mailer extends MailerBase
             $this->addContent($message, $view, $plain, $raw, $data);
         }
 
-        call_user_func($callback, $message);
-
+        if ($callback !== null) {
+            call_user_func($callback, $message);
+        }
+        
         if (isset($this->to['address'])) {
             $this->setGlobalTo($message);
         }
@@ -195,7 +197,7 @@ class Mailer extends MailerBase
         }
         else {
             $mailable = $view;
-            $queue = $queue !== null ? $queue : $data;
+            $queue = $queue ?? $data;
         }
 
         return parent::queue($mailable, $queue);
@@ -232,7 +234,7 @@ class Mailer extends MailerBase
         }
         else {
             $mailable = $view;
-            $queue = $queue !== null ? $queue : $data;
+            $queue = $queue ?? $data;
         }
 
         return parent::later($delay, $mailable, $queue);
@@ -265,7 +267,9 @@ class Mailer extends MailerBase
 
         $mailable->view($view)->withSerializedData($data);
 
-        call_user_func($callback, $mailable);
+        if ($callback !== null) {
+            call_user_func($callback, $mailable);
+        }
 
         return $mailable;
     }

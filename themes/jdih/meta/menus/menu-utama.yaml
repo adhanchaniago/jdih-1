@@ -15,13 +15,9 @@ items:
             isExternal: '0'
     -
         title: Profil
-        nesting: ''
         type: cms-page
-        url: ''
         code: ''
         reference: profil/sejarah
-        cmsPage: ''
-        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -29,39 +25,27 @@ items:
         items:
             -
                 title: 'Sejarah Singkat'
-                nesting: ''
                 type: cms-page
-                url: ''
                 code: ''
                 reference: profil/sejarah
-                cmsPage: ''
-                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: 'Visi Misi'
-                nesting: ''
                 type: cms-page
-                url: ''
                 code: ''
                 reference: profil/visimisi
-                cmsPage: ''
-                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: 'Struktur Organisasi'
-                nesting: ''
                 type: cms-page
-                url: ''
                 code: ''
                 reference: profil/struktur_organisasi
-                cmsPage: ''
-                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -81,9 +65,13 @@ items:
             isExternal: '0'
     -
         title: Berita
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: berita/listing
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '1'
             cssClass: ''
@@ -114,3 +102,30 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: Login
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: advokasi/login
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '1'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Reset
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: advokasi/reset
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '1'
+                    cssClass: ''
+                    isExternal: '0'

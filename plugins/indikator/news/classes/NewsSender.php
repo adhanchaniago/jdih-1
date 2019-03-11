@@ -145,17 +145,28 @@ class NewsSender
     {
         // Locale
         if ($receiver->locale != '' && $this->locale) {
-            $content = $this->news->lang($receiver->locale)->content;
+            if ($this->news->enable_newsletter_content) {
+                $content = $this->news->lang($receiver->locale)->newsletter_content;
+            }
+            else {
+                $content = $this->news->lang($receiver->locale)->content;
+            }
+
         }
         else {
-            $content = $this->news->content;
+            if ($this->news->enable_newsletter_content) {
+                $content = $this->news->newsletter_content;
+            }
+            else {
+                $content = $this->news->content;
+            }
         }
 
         // Replace
         if ($this->replacedContent === null) {
             // Replace all relative URL of images to absolute URL's
             $url = url('/');
-            $this->replacedContent = preg_replace('/src="\/([^"]*)"/i', 'src="' . $url . '/$1"', $this->news->content);
+            $this->replacedContent = preg_replace('/src="\/([^"]*)"/i', 'src="' . $url . '/$1"', $content);
 
             // Bugfix while displaying images in Microsoft Outlook
             // height/width must be set as img attribute and not as style
@@ -169,9 +180,10 @@ class NewsSender
             'title' => $this->news->title,
             'slug'  => $this->news->slug,
             'introductory' => $this->news->introductory,
-            'summary' => $this->news->introductory,
-            'content' => $this->replacedContent,
-            'image'   => $this->news->image
+            'summary'   => $this->news->introductory,
+            'plaintext' => strip_tags($this->news->introductory),
+            'content'   => $this->replacedContent,
+            'image'     => $this->news->image
         ];
     }
 
@@ -229,8 +241,7 @@ class NewsSender
 
             return true;
         }
-        else {
-            return SendNews::sendWithLogger($template, $params, $receiver, $this->news->title, $logEntry);
-        }
+
+        return SendNews::sendWithLogger($template, $params, $receiver, $this->news->title, $logEntry);
     }
 }

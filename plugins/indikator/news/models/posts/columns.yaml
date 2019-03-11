@@ -25,17 +25,35 @@ columns:
         searchable: true
         invisible: true
 
+    category:
+        label: indikator.news::lang.form.category
+        sortable: false
+        invisible: true
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_category.htm
+
+    tags:
+        label: indikator.news::lang.form.tags
+        sortable: false
+        invisible: true
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_tags.htm
+
+    author:
+        label: indikator.news::lang.form.author
+        sortable: false
+        invisible: true
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_author.htm
+
     statistics:
         label: indikator.news::lang.stat.viewed
-        align: center
 
     length:
         label: indikator.news::lang.form.length
         sortable: false
         type: partial
         path: ~/plugins/indikator/news/models/posts/_length.htm
-        align: center
-        width: 85px
 
     featured:
         label: indikator.news::lang.form.featured

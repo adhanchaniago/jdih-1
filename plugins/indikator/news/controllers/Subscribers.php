@@ -3,6 +3,7 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 use Indikator\News\Models\Subscribers as Item;
+use Indikator\News\Models\Logs;
 use Db;
 use Flash;
 use Jenssegers\Date\Date;
@@ -40,16 +41,9 @@ class Subscribers extends Controller
 
     public function onSubscribe()
     {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-            foreach ($checkedIds as $itemId) {
-                if (!$item = Item::where('status', 2)->whereId($itemId)) {
-                    continue;
-                }
-
-                $item->update(['status' => 1]);
-            }
-
-            Flash::success(Lang::get('indikator.content::lang.flash.subscribe'));
+        if ($this->isSelected()) {
+            $this->changeStatus(post('checked'), 2, 1);
+            $this->setMessage('subscribe');
         }
 
         return $this->listRefresh();
@@ -57,16 +51,9 @@ class Subscribers extends Controller
 
     public function onUnsubscribe()
     {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-            foreach ($checkedIds as $itemId) {
-                if (!$item = Item::where('status', 1)->whereId($itemId)) {
-                    continue;
-                }
-
-                $item->update(['status' => 2]);
-            }
-
-            Flash::success(Lang::get('indikator.content::lang.flash.unsubscribe'));
+        if ($this->isSelected()) {
+            $this->changeStatus(post('checked'), 1, 2);
+            $this->setMessage('unsubscribe');
         }
 
         return $this->listRefresh();
@@ -74,8 +61,8 @@ class Subscribers extends Controller
 
     public function onRemove()
     {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-            foreach ($checkedIds as $itemId) {
+        if ($this->isSelected()) {
+            foreach (post('checked') as $itemId) {
                 if (!$item = Item::whereId($itemId)) {
                     continue;
                 }
@@ -83,14 +70,51 @@ class Subscribers extends Controller
                 $item->delete();
 
                 Db::table('indikator_news_relations')->where('subscriber_id', $itemId)->delete();
+                Logs::where('subscriber_id', $itemId)->delete();
             }
 
-            Flash::success(Lang::get('indikator.news::lang.flash.remove'));
+            $this->setMessage('remove');
         }
 
         return $this->listRefresh();
     }
 
+    /**
+     * @return bool
+     */
+    private function isSelected()
+    {
+        return ($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds);
+    }
+
+    /**
+     * @param $action
+     */
+    private function setMessage($action)
+    {
+        Flash::success(Lang::get('indikator.news::lang.flash.'.$action));
+    }
+
+    /**
+     * @param $post
+     * @param $from
+     * @param $to
+     */
+    private function changeStatus($post, $from, $to)
+    {
+        foreach ($post as $itemId) {
+            if (!$item = Item::where('status', $from)->whereId($itemId)) {
+                continue;
+            }
+
+            $item->update(['status' => $to]);
+        }
+    }
+
+    /**
+     * @param $id
+     * @param $hash
+     */
     public function confirm($id = null, $hash = null)
     {
         $subscriber = Item::find($id);
@@ -124,11 +148,26 @@ class Subscribers extends Controller
 
     public function onShowStat()
     {
-        $this->vars['user'] = $user = Item::whereId(post('id'))->first();
-        $this->vars['registered_at']   = ($user->registered_at) ? $user->registered_at : $user->created_at;
-        $this->vars['confirmed_at']    = ($user->confirmed_at) ? $user->confirmed_at : '<em>'.e(trans('indikator.news::lang.form.no_data')).'</em>';
-        $this->vars['unsubscribed_at'] = ($user->unsubscribed_at) ? $user->unsubscribed_at : '<em>'.e(trans('indikator.news::lang.form.no_data')).'</em>';
+        $this->vars['subscriber']      = $subscriber = Item::whereId(post('id'))->first();
+        $this->vars['registered_at']   = ($subscriber->registered_at) ? $subscriber->registered_at : $subscriber->created_at;
+        $this->vars['confirmed_at']    = ($subscriber->confirmed_at) ? $subscriber->confirmed_at : '<em>'.e(trans('indikator.news::lang.form.no_data')).'</em>';
+        $this->vars['unsubscribed_at'] = ($subscriber->unsubscribed_at) ? $subscriber->unsubscribed_at : '<em>'.e(trans('indikator.news::lang.form.no_data')).'</em>';
 
         return $this->makePartial('show_stat');
+    }
+
+    public function onShowEmails()
+    {
+        $this->vars['subscriber'] = Item::whereId(post('id'))->first();
+        $this->vars['emails']     = Logs::where('subscriber_id', post('id'))->orderBy('send_at', 'desc')->get()->all();
+        $this->vars['class'] = [
+            'Queued'  => 'text-warning',
+            'Sent'    => 'text-info',
+            'Viewed'  => 'text-success',
+            'Clicked' => 'text-success',
+            'Failed'  => 'text-danger'
+        ];
+
+        return $this->makePartial('show_emails');
     }
 }

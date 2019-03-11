@@ -54,9 +54,9 @@ use Pda\Peraturan\Models\Jenis;
             			</tr>
             			<tr>
             				<th width="21%" style="font-weight: bold;">Download</th>
-            				<td>
+            				<td> 
             					{% for berkas in aturan.file %}
-                                <a href="{{ berkas.path }}" title="{{ berkas.file_name }}" target="_blank"><i class="fa fa-file"></i></a>&nbsp;
+                                <a href="{{ berkas.path }}" title="{{ berkas.file_name }}" target="_blank">{{ berkas.file_name }}</a><br>
                                 {% endfor %}
                             </td>
             			</tr>

@@ -32,6 +32,8 @@ return [
         'view' => ' Megtekintés',
         'mail' => 'Elküldve',
         'loss' => 'Veszteség',
+        'basic' => 'Alap',
+        'emails' => 'Levelek',
         'top' => 'TOP',
         'longest' => 'Leghosszabb',
         'shortest' => 'Legrövidebb',
@@ -59,6 +61,9 @@ return [
         'content' => 'Tartalom',
         'image' => 'Kép',
         'category' => 'Kategória',
+        'tags' => 'Címkék',
+        'author' => 'Szerző',
+        'select_user' => '-- válasszon felhasználót --',
         'status' => 'Státusz',
         'status_published' => 'Közzétéve',
         'status_hide' => 'Rejtett',
@@ -78,12 +83,16 @@ return [
         'length' => 'Hossz',
         'clone_of' => 'Másolat',
         'news_cloning' => 'Hír másolása :name',
+        'newsletter_content_tab' => 'Hírlevél',
+        'newsletter_content' => 'Hírlevél tartalma',
+        'enable_newsletter_content' => 'Funkció bekapcsolása',
+        'enable_newsletter_content_description' => 'Engedélyezés esetén a hírlevél tartalma le fog cserélődni erre a szöveges részre.',
         // Feliratkozók
         'name' => 'Név',
         'email' => 'E-mail',
-        'categories_comment' => 'Ha nincs kijelölve egyik kategória sem, akkor a feliratkozó minden hirlevelet meg fog kapni.',
         'comment' => 'Megjegyzés',
         'locale' => 'Nyelv',
+        'locale_comment' => '<a href="https://hu.wikipedia.org/wiki/ISO_3166-1" target="_blank">Országkódok megtekintése</a>',
         'lang' => 'hu',
         'mail' => 'levél',
         'registered_at' => 'Regisztráció ideje',
@@ -112,6 +121,7 @@ return [
         'unsubscribe' => 'Leiratkozás',
         'subscribe' => 'Feliratkozás',
         'test' => 'Tesztlevél küldése',
+        'copy_content_to_newsletter' => 'Tartalom másolása a hírlevélhez',
         'send' => 'Hírlevél küldése',
         'send_confirmation' => 'Valóban el akarja küldeni a hírlevelet?',
         'resend' => 'Hírlevél újraküldése',
@@ -157,7 +167,8 @@ return [
         'statistic_show_mails' => 'Levél naplózás mutatása',
         'statistic_show_longest_posts' => 'Leghosszabb bejegyzések mutatása',
         'statistic_show_shortest_posts' => 'Legrövidebb bejegyzések mutatása',
-        'statistic_comment' => 'A Statisztika oldalon.'
+        'statistic_comment' => 'A Statisztika oldalon.',
+        'extra_fields' => 'Plussz mezők a hír adatlapon'
     ],
     'widget' => [
         'posts' => 'Hírek - Gyors statisztika',
@@ -227,7 +238,9 @@ return [
         'updated_at_asc' => 'Frissítve (növekvő)',
         'updated_at_desc' => 'Frissítve (csökkenő)',
         'published_at_asc' => 'Publikálva (növekvő)',
-        'published_at_desc' => 'Publikálva (csökkenő)'
+        'published_at_desc' => 'Publikálva (csökkenő)',
+        'statistics_asc' => 'Népszerűség (növekvő)',
+        'statistics_desc' => 'Népszerűség (csökkenő)'
     ],
     'sitemap' => [
         'post_list' => 'Bejegyzés lista',

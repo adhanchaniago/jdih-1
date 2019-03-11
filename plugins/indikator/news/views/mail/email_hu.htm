@@ -1,16 +1,18 @@
 subject = "Hírlevél"
+layout = "newsletter"
+description = "Newsletter email"
 ==
-<p>
-    Kedves {{name}}!<br>
-    <br>
-    Új bejegyzés az oldalunkon:<br>
-    <br>
-    <img src="https://weboldalad.hu/storage/app/media{{image}}" alt="{{title}}"><br>
-    <br>
-    <em>{{title}}</em><br>
-    {{summary|raw}}<br>
-    <a href="https://weboldalad.hu/hirek/{{slug}}" target="_blank">Tovább...</a><br>
-    <br>
-    Üdvözlettel:<br>
-    A Szerkesztők
-</p>
+Kedves {{name}}!
+
+Új bejegyzés az oldalunkon:
+
+![{{title}}](https://weboldalad.hu/storage/app/media{{image}})
+
+*{{title}}*
+
+{{content|raw}}
+
+[Tovább olvasom...](https://weboldalad.hu/hirek/{{slug}})
+
+Üdvözlettel:  
+A Szerkesztők

@@ -3,7 +3,6 @@
 use Cookie;
 use Session;
 use Request;
-use Flash;
 
 /**
  * Authentication manager
@@ -77,8 +76,7 @@ class Manager
     public function createUserModel()
     {
         $class = '\\'.ltrim($this->userModel, '\\');
-        $user = new $class();
-        return $user;
+        return new $class();
     }
 
     /**
@@ -228,12 +226,12 @@ class Manager
                 // Incorrect password
                 if ($credential == 'password') {
                     throw new AuthException(sprintf(
-                        '<p data-control="flash-message" data-interval="60" class="error">Password yang Anda masukan salah. Silahkan coba kembali atau Reset Password Anda. <a href="reset/" class="btn btn-primary btn-sm"> Reset Password</a></p>', $credential
+                        'A user was found to match all plain text credentials however hashed credential "%s" did not match.', $credential
                     ));
                 }
 
                 // User not found
-                throw new AuthException('Maaf, username atau email Anda belum terdaftar.');
+                throw new AuthException('A user was not found with the given credentials.');
             }
         }
 
@@ -252,8 +250,7 @@ class Manager
     public function createThrottleModel()
     {
         $class = '\\'.ltrim($this->throttleModel, '\\');
-        $throttle = new $class();
-        return $throttle;
+        return new $class();
     }
 
     /**
@@ -267,7 +264,7 @@ class Manager
     {
         $user = $this->findUserByLogin($loginName);
         if (!$user) {
-            throw new AuthException("Maaf, username atau email Anda belum terdaftar.");
+            throw new AuthException("A user was not found with the given credentials.");
         }
 
         $userId = $user->getKey();
@@ -329,7 +326,7 @@ class Manager
          * Default to the login name field or fallback to a hard-coded 'login' value
          */
         $loginName = $this->createUserModel()->getLoginName();
-        $loginCredentialKey = (isset($credentials[$loginName])) ? $loginName : 'login';
+        $loginCredentialKey = isset($credentials[$loginName]) ? $loginName : 'login';
 
         if (empty($credentials[$loginCredentialKey])) {
             throw new AuthException(sprintf('The "%s" attribute is required.', $loginCredentialKey));
@@ -411,7 +408,16 @@ class Manager
             /*
              * Look up user
              */
-            if (!$user = $this->createUserModel()->find($id)) {
+            if (!$user = $this->createUserModel()->withTrashed()->find($id)) {
+                return false;
+            }
+
+            // Perform deleted_at check manually since the relevant migrations
+            // might not have been run yet during the update to build 444.
+            // @see https://github.com/octobercms/october/issues/3999
+            if (array_key_exists('deleted_at', $user->getAttributes())
+                && $user->deleted_at !== null
+                && $user->deleted_at->lt(now())) {
                 return false;
             }
 
@@ -513,7 +519,7 @@ class Manager
 
         $this->user = null;
 
-        Session::forget($this->sessionKey);
+        Session::flush();
         Cookie::queue(Cookie::forget($this->sessionKey));
     }
 

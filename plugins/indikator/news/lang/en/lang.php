@@ -32,6 +32,8 @@ return [
         'view' => 'View',
         'mail' => 'Sent',
         'loss' => 'Loss',
+        'basic' => 'Basic',
+        'emails' => 'Emails',
         'top' => 'TOP',
         'longest' => 'Longest',
         'shortest' => 'Shortest',
@@ -59,6 +61,9 @@ return [
         'content' => 'Content',
         'image' => 'Image',
         'category' => 'Category',
+        'tags' => 'Tags',
+        'author' => 'Author',
+        'select_user' => '-- select user --',
         'status' => 'Status',
         'status_published' => 'Published',
         'status_hide' => 'Hidden',
@@ -78,12 +83,16 @@ return [
         'length' => 'Length',
         'clone_of' => 'Clone of',
         'news_cloning' => 'Cloning news :name',
+        'newsletter_content_tab' => 'Newsletter content',
+        'newsletter_content' => 'Newsletter email content',
+        'enable_newsletter_content' => 'Enable newsletter email content',
+        'enable_newsletter_content_description' => 'When this is enabled, the content for the email will be replaced with this textarea. Otherwise the content of the news will be taken.',
         // Subscribers
         'name' => 'Name',
         'email' => 'E-mail',
-        'categories_comment' => 'If no category is selected then the subscriber will receive the all newsletters.',
         'comment' => 'Comment',
         'locale' => 'Locale',
+        'locale_comment' => '<a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="_blank">View the country codes</a>',
         'lang' => 'en',
         'mail' => 'mail',
         'registered_at' => 'Registered date',
@@ -110,7 +119,8 @@ return [
         'import' => 'Import',
         'export' => 'Export',
         'unsubscribe' => 'Unsubscribe',
-        'subscribe' => 'BERLANGGANAN',
+        'subscribe' => 'Subscription',
+        'copy_content_to_newsletter' => 'Copy content to newsletter content',
         'test' => 'Send test mail',
         'send' => 'Send newsletter',
         'send_confirmation' => 'Do you want to send the newsletter?',
@@ -157,7 +167,8 @@ return [
         'statistic_show_mails' => 'Show mail logs',
         'statistic_show_longest_posts' => 'Show longest posts',
         'statistic_show_shortest_posts' => 'Show shortest posts',
-        'statistic_comment' => 'In the Statistics page.'
+        'statistic_comment' => 'In the Statistics page.',
+        'extra_fields' => 'Extra fields for News form'
     ],
     'widget' => [
         'posts' => 'News - Posts',
@@ -227,7 +238,9 @@ return [
         'updated_at_asc' => 'Updated (ascending)',
         'updated_at_desc' => 'Updated (descending)',
         'published_at_asc' => 'Published (ascending)',
-        'published_at_desc' => 'Published (descending)'
+        'published_at_desc' => 'Published (descending)',
+        'statistics_asc' => 'Popularity (ascending)',
+        'statistics_desc' => 'Popularity (descending)'
     ],
     'sitemap' => [
         'post_list' => 'Post list',

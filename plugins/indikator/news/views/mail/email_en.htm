@@ -1,16 +1,18 @@
 subject = "Newsletter"
+layout = "newsletter"
+description = "Newsletter email"
 ==
-<p>
-    Dear Sobat JDIH Lapan,<br>
-    <br>
-    New post of the website:<br>
-    <br>
-    <img src="http://localhost/jdih/storage/app/media{{image}}" alt="{{title}}"><br>
-    <br>
-    <em>{{title}}</em><br>
-    {{summary|raw}}<br>
-    <a href="http://localhost/jdih/news/{{slug}}" target="_blank">More...</a><br>
-    <br>
-    Best regards,<br>
-    The Team
-</p>
+Dear {{name}},
+
+New post of the website:
+
+![{{title}}](https://yourwebsite.com/storage/app/media{{image}})
+
+*{{title}}*
+
+{{content|raw}}
+
+[Read more...](https://yourwebsite.com/news/{{slug}})
+
+Best regards,  
+The Team

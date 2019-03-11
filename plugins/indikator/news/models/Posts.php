@@ -5,9 +5,10 @@ use BackendAuth;
 use Carbon\Carbon;
 use Cms\Classes\Page as CmsPage;
 use Indikator\News\Models\Categories as NewsCategories;
-use Url;
-use App;
 use Db;
+use App;
+use Str;
+use Url;
 
 class Posts extends Model
 {
@@ -20,7 +21,7 @@ class Posts extends Model
 
     public $rules = [
         'title'    => 'required',
-        'slug'     => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_posts'],
+        'slug'     => ['regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_posts'],
         'status'   => 'required|between:1,3|numeric',
         'featured' => 'required|between:1,2|numeric'
     ];
@@ -33,7 +34,8 @@ class Posts extends Model
         'title',
         ['slug', 'index' => true],
         'introductory',
-        'content'
+        'content',
+        'newsletter_content'
     ];
 
     protected $dates = [
@@ -56,7 +58,8 @@ class Posts extends Model
         'category' => [
             'Indikator\News\Models\Categories',
             'order' => 'name'
-        ]
+        ],
+        'user' => ['Backend\Models\User']
     ];
 
     public $hasMany = [
@@ -103,12 +106,33 @@ class Posts extends Model
     }
 
     /**
-     * Check the ID of category
+     * List of administrators
+     */
+    public function getUserOptions()
+    {
+        $result = [0 => 'indikator.news::lang.form.select_user'];
+        $users = Db::table('backend_users')->orderBy('login', 'asc')->get()->all();
+
+        foreach ($users as $user) {
+            $name = trim($user->first_name.' '.$user->last_name);
+            $name = ($name != '') ? ' ('.$name.')' : '';
+            $result[$user->id] = $user->login.$name;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Check value of some fields
      */
     public function beforeSave()
     {
         if (!isset($this->category_id) || empty($this->category_id)) {
-            $this->category_id = 0;
+            $this->slug = Str::slug($this->title);
+        }
+
+        if (!isset($this->user_id) || empty($this->user_id)) {
+            $this->user_id = 0;
         }
 
         if ($this->status == 1 && empty($this->published_at)) {
@@ -124,6 +148,56 @@ class Posts extends Model
         if (($lastSend = $this->getOriginal('last_send_at')) != null) {
             $this->last_send_at = $lastSend;
         }
+    }
+
+    // Next / Previous
+
+    /**
+     * Apply a constraint to the query to find the nearest sibling
+     *
+     * @param       $query
+     * @param array $options
+     */
+    public function scopeApplySibling($query, $options = [])
+    {
+        if (!is_array($options)) {
+            $options = ['direction' => $options];
+        }
+
+        extract(array_merge([
+            'direction' => 'next',
+            'attribute' => 'published_at'
+        ], $options));
+
+        $isPrevious = in_array($direction, ['previous', -1]);
+        $directionOrder = $isPrevious ? 'asc' : 'desc';
+        $directionOperator = $isPrevious ? '>' : '<';
+
+        return $query
+        ->where('id', '<>', $this->id)
+        ->whereDate($attribute, $directionOperator, $this->$attribute)
+        ->orderBy($attribute, $directionOrder)
+        ;
+    }
+
+    /**
+     * Returns the next post, if available.
+     *
+     * @return self
+     */
+    public function next()
+    {
+        return self::isPublished()->applySibling(-1)->first();
+    }
+
+    /**
+     * Returns the previous post, if available.
+     *
+     * @return self
+     */
+    public function prev()
+    {
+        return self::isPublished()->applySibling()->first();
     }
 
     public function scopeListFrontEnd($query, $options)
@@ -193,7 +267,7 @@ class Posts extends Model
             $default_locale = Db::table('rainlab_translate_locales')->where('is_default', 1)->value('code');
 
             if ($current_locale != $default_locale) {
-                $ids = Db::table('rainlab_translate_attributes')->where('model_type', 'Indikator\News\Models\Posts')->where('locale', $current_locale)->where('attribute_data', 'not like', '%"title":""%')->value('model_id')->toArray();
+                $ids = Db::table('rainlab_translate_attributes')->where('model_type', 'Indikator\News\Models\Posts')->where('locale', $current_locale)->where('attribute_data', 'not like', '%"title":""%')->pluck('model_id');
                 $query->whereIn('id', $ids);
             }
         }

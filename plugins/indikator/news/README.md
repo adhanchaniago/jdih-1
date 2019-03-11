@@ -11,6 +11,7 @@ Plugin is same like put together a blog and a newsletter plugin. The main differ
 - [Available components](#available_components)
 - [HTML template variables](#html_template)
 - [Mail template variables](#mail_template)
+- [Useful extensions](#eseful_extensions)
 - [Supported plugins](#supported_plugins)
 - [Available languages](#available_languages)
 - [Requirements](#requirements)
@@ -30,6 +31,7 @@ Plugin is same like put together a blog and a newsletter plugin. The main differ
 * Detailed mail logs
 * Front-end forms
 * Back-end widgets
+* Available extensions
 * Innovative solutions
 * Regular updates
 
@@ -72,6 +74,7 @@ Use the __Components > News__ panel in CMS menu. At this moment there are the fo
 ## HTML template variables
 __For post__
 * {{ posts }} - List of posts in array
+* {{ posts.render|raw }} - Build-in pagination
 * {{ post.title }} - Title of post
 * {{ post.slug }} - Slug of post
 * {{ post.image|media }} - Full url of post image
@@ -79,8 +82,11 @@ __For post__
 * {{ post.content|raw }} - Content of post
 * {{ post.published_at }} - Published date of post
 * {{ post.category }} - ID of category (0: no category selected)
+* {{ post.tags }} - List of tags in array
 * {{ post.status }} - Status of post (1: published, 2: hide, 3: draft)
 * {{ post.featured }} - Is post featured? (1: yes, 2: no)
+* {{ post.next() }} -  First post after current post
+* {{ post.prev() }} - Last post before current post
 
 __For category__
 * {{ categories }} - List of categories in array
@@ -91,6 +97,16 @@ __For category__
 * {{ category.status }} - Status of post (1: published, 2: hide)
 * {{ category.hidden }} - Is category hidden? (1: yes, 2: no)
 
+__For user (Backend User)__
+All attributes and methods available in `Backend\Models\User` are accesible via {{ post.user }}. Examples:
+
+* {{ post.user.first_name }} - Post author first name (attribute)
+* {{ post.user.email }} - Post author email (attribute)
+* {{ post.user.getFullNameAttribute }} - Post author full name (method)
+* {{ post.user.getAvatarThumb }} - Public path to author avatar (method)
+
+Checkout the `Backend\Models\User` interface and attributes for all possibilities.
+
 <a name="mail_template"></a>
 ## Mail template variables
 * {{ name }} - Name of subscriber
@@ -99,8 +115,16 @@ __For category__
 * {{ slug }} - Slug of post
 * {{ introductory }} - Introductory of post
 * {{ summary }} - Alias of introductory
+* {{ plaintext }} - Introductory without HTML elements
 * {{ content }} - Content of post
 * {{ image }} - Relative path of post image
+
+You can customize the layout of emails in the __Settings > Mail > Mail templates__ page.
+
+<a name="eseful_extensions"></a>
+## Useful extensions
+* [FennCS Page Views](https://octobercms.com/plugin/fenncs-newspageviews)
+* [TimFoerster NewsPdf](http://octobercms.com/plugin/timfoerster-newspdf)
 
 <a name="supported_plugins"></a>
 ## Supported plugins
@@ -108,7 +132,6 @@ __For category__
 * [RainLab Sitemap](http://octobercms.com/plugin/rainlab-sitemap)
 * [Offline SiteSearch](http://octobercms.com/plugin/offline-sitesearch)
 * [Indikator Popup](http://octobercms.com/plugin/indikator-popup)
-* [TimFoerster NewsPdf](http://octobercms.com/plugin/timfoerster-newspdf)
 
 <a name="available_languages"></a>
 ## Available languages

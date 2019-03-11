@@ -2,9 +2,9 @@
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
-use Lang;
 use Indikator\News\Models\Posts as NewsPost;
 use Indikator\News\Models\Categories as NewsCategory;
+use Lang;
 use Redirect;
 
 class Posts extends ComponentBase
@@ -65,7 +65,9 @@ class Posts extends ComponentBase
                     'updated_at asc'    => Lang::get('indikator.news::lang.sorting.updated_at_asc'),
                     'updated_at desc'   => Lang::get('indikator.news::lang.sorting.updated_at_desc'),
                     'published_at asc'  => Lang::get('indikator.news::lang.sorting.published_at_asc'),
-                    'published_at desc' => Lang::get('indikator.news::lang.sorting.published_at_desc')
+                    'published_at desc' => Lang::get('indikator.news::lang.sorting.published_at_desc'),
+                    'statistics asc'    => Lang::get('indikator.news::lang.sorting.statistics_asc'),
+                    'statistics desc'   => Lang::get('indikator.news::lang.sorting.statistics_desc')
                 ]
             ],
             'postFeatured' => [
@@ -95,7 +97,7 @@ class Posts extends ComponentBase
                 'title'       => 'indikator.news::lang.settings.post_title',
                 'description' => 'indikator.news::lang.settings.post_description',
                 'type'        => 'dropdown',
-                'default'     => 'berita/detail',
+                'default'     => 'news/post',
                 'group'       => 'indikator.news::lang.settings.links'
             ],
             'categoryPage' => [
@@ -140,9 +142,8 @@ class Posts extends ComponentBase
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
         $this->noPostsMessage = $this->page['noPostsMessage'] = $this->property('noPostsMessage');
         $this->searchFilter = $this->page['searchFilter'] = trim(input('search'));
-        /*
-         * Page links
-         */
+
+        // Page links
         $this->postPage = $this->page['postPage'] = $this->property('postPage');
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
     }
@@ -151,7 +152,7 @@ class Posts extends ComponentBase
     {
         $category = $this->category ? $this->category->id : null;
 
-        $posts =  NewsPost::listFrontEnd([
+        $posts = NewsPost::listFrontEnd([
             'page'     => $this->property('pageNumber'),
             'sort'     => $this->property('sortOrder'),
             'perPage'  => $this->property('postsPerPage'),
@@ -168,6 +169,8 @@ class Posts extends ComponentBase
                     $category->setUrl($this->categoryPage, $this->controller);
                 });
             }
+
+            $post->tags = explode(',', $post->tags);
         });
 
         return $posts;

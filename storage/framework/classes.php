@@ -371,4 +371,6 @@
   'AnandPatel\\SeoExtension\\Components\\CmsPage' => 'plugins\\anandpatel\\seoextension\\components\\CmsPage.php',
   'AnandPatel\\SeoExtension\\models\\Settings' => 'plugins\\anandpatel\\seoextension\\models\\Settings.php',
   'AnandPatel\\SeoExtension\\classes\\Helper' => 'plugins\\anandpatel\\seoextension\\classes\\Helper.php',
+  'AnandPatel\\SeoExtension\\Models\\Settings' => 'plugins\\anandpatel\\seoextension\\models\\Settings.php',
+  'Indikator\\News\\Controllers\\Posts' => 'plugins\\indikator\\news\\controllers\\Posts.php',
 );
